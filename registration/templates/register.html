@@ -1,14 +1,67 @@
+<style>
+	body{
+		background-color:#7C97CC;
+		width: 400px;
+		height: 800px;
+		font-size: 20px;
+	}
+	h1{
+		color: #192E5B;
+		margin-left: 20%;
+	}
+	h2{
+		color:#000000;
+		margin-left: 20%;
+	}
 
+	.container{
+		background-color:#E5E5E5;
+		margin-left: 50px;
+		width: 950px;
+		height: 700px;
+		padding-left: 60px;
+		padding-bottom: 40px;
+		padding-right: 220px;
+		/* padding: 100px; */
+		font-size: 20px;
+		border-radius: 30px;
+		/* margin-right: -200px; */
+	}
+	input{
+		width: 50%;
+		outline: none;
+		border: 4px seashell;
+		font-size: 16px;
+		padding: 8px 10px;
+		border-radius: 5px;
+		background-color: white;
+	}
+	img{
+		margin-left: 65%;
+		position: relative; top: -720px;
+		border-radius: 30px;
+		border-radius:40% 30px 30px 35%;
+	}
+	.btn-primary{
+		width:50%;
+		height: 5%;
+		background-color: #192E5B;
+		color: white;
+		border-radius: 5px;
+	}
+		</style>
 
-{% load crispy_forms_tags %}         
+{% load crispy_forms_tags %}
 <!--Register--> 
 <div class="container py-5">
-	<h1>Register</h1>
-	<form method="POST">
+	<h1>Agricoop</h1>
+	<h2>Welcome</h2>
+<form method="POST">
 		{% csrf_token %}
-		{{ register_form|crispy }}                    
-		<button class="btn btn-primary" type="submit">Register</button>
+		{{ register_form|crispy }}
+		<button class="btn btn-primary" type="submit">Register</button> 
 	</form>
 	<p class="text-center">If you already have an account, <a href="/login">login</a> instead.</p>
+	<img src="https://img.freepik.com/free-vector/login-concept-illustration_114360-757.jpg?size=338&ext=jpg"width="67%" height="106%" alt="">
 </div>
 
