@@ -28,7 +28,7 @@ SECRET_KEY = 'django-insecure-$da-%))urip@h-45-*exazruqop%iea)2+417oo3g1(+8u)#$p
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['0.0.0.0', 'localhost', '127.0.0.1','agricoop-project.herokuapp.com']
 
 
 # Application definition
