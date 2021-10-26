@@ -6,6 +6,9 @@ from django.contrib import messages
 from django.contrib.auth import login, authenticate
 from django.contrib.auth.forms import AuthenticationForm
 
+def index(request):
+	return render(request, template_name='homepage.html')
+
 def register_request(request):
 	if request.method == "POST":
 		form = NewUserForm(request.POST)
