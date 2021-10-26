@@ -1,1 +1,3 @@
-web: gunicorn Agricoop.wsgi --log-file -
+
+web: gunicorn --chdir Agricoop Agricoop.wsgi
+
