@@ -2,6 +2,9 @@ from django.shortcuts import  render, redirect
 from django.contrib.auth import login, authenticate
 from django.contrib import messages
 from django.contrib.auth.forms import AuthenticationForm
+from django import forms
+from .forms import GroupRegistrationForm
+from .models import Group_list
 
 
 def login_request(request):
@@ -26,3 +29,7 @@ def logout_request(request):
 	logout(request)
 	messages.info(request, "You have successfully logged out.") 
 	return redirect("login")
+
+
+def home_page(request):
+    return render(request,"homepage.html",{"form":forms})
