@@ -4,6 +4,7 @@
   {% block title %}<title>Group List</title>{% endblock %}
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
   <!-- <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous"> -->
   {% load static %}
   <link rel="stylesheet" href="{% static 'css/styles.css' %}">
@@ -73,43 +74,68 @@
   text-align: center;
   text-decoration: none;
   display: inline-block;
-  font-size: 20px;
+   font-size: 20px;
   margin-left: 940px;
   position: relative;
   bottom: -35px;
-  /* border-radius: 10px; */
-  cursor: pointer;
-}
-.button-add {
-  background-color: #192E5B;
-  border: none;
-  color: white;
-  text-align: center;
-  text-decoration: none;
-  display: inline-block;
-  font-size: 20px;
-  margin-left: 1000px;
-  position: relative;
-  bottom: 150px;
-  border-radius: 50%;
-  cursor: pointer;
-}
-.button-add2 {
-  background-color: #192E5B;
-  border: none;
-  color: white;
-  text-align: center;
-  text-decoration: none;
-  display: inline-block;
-  font-size: 20px;
-  margin-left: 1000px;
-  position: relative;
-  bottom: 103px;
-  border-radius: 50%;
-  cursor: pointer;
+  border-radius: 10px;
+   cursor: pointer;
 }
 .input-field{
   margin-left: 9%;
+}
+
+.button-add{
+  background-color: #192E5B;
+  border: none;
+  color: white;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+ font-size: 20px;
+   margin-left: 1150px;
+  position: relative;
+  bottom: 380px;
+ border-radius: 50%;
+  cursor: pointer;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+
+}
+
+/* Links inside the dropdown */
+.dropdown-content a {
+  float: none;
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+  text-align: left;
+  margin-left: 1150px;
+  position: relative;
+  bottom: 380px;
+}
+
+/* Add a grey background color to dropdown links on hover */
+.dropdown-content a:hover {
+  background-color: white;
+}
+
+/* Show the dropdown menu on hover */
+.dropdown:hover .dropdown-content {
+  display: white;
+}
+/* Add a grey background color to dropdown links on hover */
+.dropdown-content a:hover {
+  background-color: white;
+}
+
+/* Show the dropdown menu on hover */
+.dropdown:hover .dropdown-content {
+  display: block;
 }
   </style>
 </head>
@@ -120,7 +146,6 @@
 </div>
   <h3>Group A </h3>
   <div class="input-field">
-    <!-- <h4 <input> id="group">Name of the group</h4> -->
    <h4> <input type="text" id="group" name="name" value="Date of delivery "></h4>
    <h4> <input type="text" id="leader" name="name" value="Bean Variety"></h4>
    <h4> <input type="text" id="members" name="name" value="Kgs of beans "></h4>
@@ -138,6 +163,32 @@
         </div>
    </div>
     <button class="button">Confirm delivery</button>
-    <!-- <button class="button-add">+</button> -->
+    </div>
+    <div class="dropdown">
+      <button class="button-add" id="button-add"><i class="fa fa-caret-down"></i> </button>
+        <div class="dropdown-content">
+          <a href="#">Climbing Beans</a>
+          <a href="#">Bush Beans</a>
+          <a href="#">Ruvuninkingi</a>
+        </div>
+      </div>
+
+    <!-- Choose the type beans of your choice -->
+    <script>
+      //show the confirmation div
+      function chooseBeanType() {
+        document.getElementById("confirm").hidden=false
+      }
+
+      //redirect to the delete profile script
+      function confirmYes() {
+            location.href = '/resetDatabase.php';
+      }
+      //hide the confirmation div
+      function confirmNo() {
+        document.getElementById("confirm").hidden=true
+      }
+    </script>
 </body>
 </html>
+
