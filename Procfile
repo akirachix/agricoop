@@ -1,0 +1,1 @@
+web :gunicorn Agricoop.wsg --log-file -
