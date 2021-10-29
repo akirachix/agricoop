@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  {% block title %}<title>Payments</title>{% endblock %}
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!-- <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous"> -->
+  {% load static %}
+  <link rel="stylesheet" href="{% static 'css/styles.css' %}">
+  <style type="text/css">
+  body{
+    background-color:#b4bfcc;
+    margin-top: 0;
+  }
+  form{
+      padding: 15%;
+     margin-top: -15%;
+  }
+  .sidebar-nav{
+    height: 100%;
+    width: 160px;
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    background-color:#192E5B;
+    overflow: hidden;
+    padding-top: 100px;
+  }
+  .sidebar-nav a{
+    padding:10px 10px 10px 16px;
+    text-decoration: none;
+    font-size: 20px;
+    color: #F1F1F1;
+    display: block;
+    }
+  .sidebar-nav a:hover{
+    color: black;
+        }
+  h1{
+    text-align: center;
+    text-decoration-color: black;
+    /* background-color: whitesmoke; */
+    margin-top: 0%;
+    padding-left: 3%;
+  }
+  </style>
+</head>
+<body>
+<div class="content" >
+  <h1>Payments</h1>
+        <div class="sidebar-nav">
+          <a href="{% url 'payments' %}">Home</a>
+          <a href="">Group</a>
+          <a href="{% url 'products' %}">Beans</a>
+          <a href="{% url 'payments' %}">Payment</a>
+          <a href="">Setting</a>
+          <a href="">LogOut</a>
+        </div>
+   </div>
+  <form action="/action_page.php">
+    <p>Please select your payment method:</p>
+    <input type="radio" id="html" name="bulk_payment" value="HTML">
+    <label for="html">Bulk Payment</label><br>
+    <input type="radio" id="css" name="bulk_payment" value="CSS">
+    <label for="css">Single Payment</label><br>
+  </form>
+   -->
+  </body>
+  </html>
+</body>
+</html>

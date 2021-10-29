@@ -44,7 +44,10 @@ INSTALLED_APPS = [
     'crispy_forms',
     'registration',
     'whitenoise',
-    # 'groupslist'
+    'home',
+    'group_details',
+    'payments',
+   
 ]
 
 MIDDLEWARE = [
