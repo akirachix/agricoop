@@ -115,7 +115,8 @@ margin: -3;
   <a href="{%url 'register' %}">Forgot Password?</a>
 </div>
 </div>
-  <button class="btn btn-primary" type="submit">Login</button>
+<a class="btn btn-primary" type="submit" href="{% url 'Home:home' %}">Login</a>      
+<!-- <button class="btn btn-primary" type="submit">Login</button> -->
 </form>
 <p class="text-center">Don't have an account? <a href="{%url 'register' %}">SignUp</a>.</p>
 </div>
