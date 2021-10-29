@@ -1,6 +1,6 @@
 from django import forms
 from django.forms import fields
-from .models import Bean_details
+from group_details.models import Bean_details
 
 class BeansDetailsRegistrationForm():
     class Meta:
