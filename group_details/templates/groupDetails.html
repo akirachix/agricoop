@@ -154,7 +154,7 @@
    <h4> <input type="text" id="group" name="name" value="Total amount"></h4>
   </div>
         <div class="sidebar-nav">
-          <a href="{% url 'groupDetails' %}">Group List</a>
+          <a href="{% url 'group_details' %}">Group List</a>
           <a href="">Group</a>
           <a href="">Beans</a>
           <a href="">Payment</a>
@@ -175,19 +175,7 @@
 
     <!-- Choose the type beans of your choice -->
     <script>
-      //show the confirmation div
-      function chooseBeanType() {
-        document.getElementById("confirm").hidden=false
-      }
-
-      //redirect to the delete profile script
-      function confirmYes() {
-            location.href = '/resetDatabase.php';
-      }
-      //hide the confirmation div
-      function confirmNo() {
-        document.getElementById("confirm").hidden=true
-      }
+    
     </script>
 </body>
 </html>
