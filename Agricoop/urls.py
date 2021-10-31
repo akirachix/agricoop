@@ -24,6 +24,8 @@ urlpatterns = [
     path('group_details/',include('group_details.urls')),
     path("payments/",include("payments.urls")),
 
+
+
     # path('groupslist/',include('groupslist.urls'))
 
 ]

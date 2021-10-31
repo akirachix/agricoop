@@ -1,20 +1,18 @@
 from django.db import models
-
-from django.db import models
-from django.db import models
-from django.db.models.deletion import CASCADE
-from django.db.models.fields import BigIntegerField
-class Bean_details(models.Model):
-    # bean_variety=models.OneToOneField(Group_Details,on_delete=models.CASCADE,primary_key=True)
-    price_per_kg=models.PositiveSmallIntegerField
-    total_quantity_purchased=BigIntegerField
-    date_of_delivery=models.DateField(auto_now_add=True)
-    group_name=models.CharField(max_length=100)
-    number_of_group_members=models.PositiveSmallIntegerField()
-    bean_type=models.CharField
-    Quantity=models.BigIntegerField
-    price=models.BigIntegerField
-    date_of_Delivary=models.DateField
-    status= models.BooleanField
-    group_leader=models.CharField
-    batch_number=models.OneToOneField
+class Group_details(models.Model):
+    date_of_delivery=models.DateField(null=True)
+    beans_variety_choice=(
+        ('Bush Beans','Bush Beans'),
+        ('Climbing Beans','Climbing Beans'),
+        ('Ruvuninkingi','Ruvuninkingi')
+    )
+    beans_variety = models.CharField(
+        max_length=800, choices= beans_variety_choice,null=True)
+    group_name= models.CharField(
+        max_length=120,null=True
+    )
+    kgs_of_beans= models.PositiveSmallIntegerField(null=True)
+    Price_per_kg= models.DateField(null=True)
+    total_amount= models.CharField(max_length= 20,null=True)
+    total_quantity_purchased= models.PositiveSmallIntegerField(null=True)
+# Create your models here.
