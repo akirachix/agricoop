@@ -16,7 +16,7 @@ class NewUserForm(UserCreationForm):
         user.email=self.cleaned_data['email']
         if commit:
             user.save()
-        return user      
+        return user
 
 
 

@@ -1,67 +1,113 @@
-<style>
-	body{
-		background-color:#7C97CC;
-		font-size: 20px;
-		min-height: 70%;
 
-	}
-	h1{
-		color: #192E5B;
-		margin-left: 20%;
-	}
-	h2{
-		color:#000000;
-		margin-left: 19%;
-	}
+{% load crispy_forms_tags %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel=”stylesheet” href=”css/bootstrap.css”>
+    <link rel=”stylesheet” href=”css/bootstrap-responsive.css”>
+    <title>Document</title>
+</head>
+<body>
+    <div class="main">
+        <div class="container py-5">
+            <div class="registerWord">
+                <h1>Agricoop</h1>
+                <h2>Welcome Back</h2>
+                <form method="POST">
+                    {% csrf_token %}
+                    {{ register_form|crispy }}
+                    <button class="btn btn-primary" type="submit">Register</button>
+                </form>
+                <p class="text-center">Already have an Account?<a href="{% url 'login'%}">login</a> instead.</p>
+            </div>
+            <div class="registImg">
+                <img src="https://img.freepik.com/free-vector/login-concept-illustration_114360-757.jpg?size=338&ext=jpg"
+                    width="60%" height="106%" alt="">
+            </div>
+        </div>
+    </div>
+    <div id="login">
+        <p>LogIn</p>
+      </div>
+    <style>
+        body{
+            background-color: #7C97CC;
+        }
+            .main {
+            position: absolute;
+            background-color: #7C97CC;
+            font-size: 15px;
+            height: 101vh;
+            top: 0;
+            right: 0;
+            left: 0;
+        }
+        h1 {
+            color: #192E5B;
+            margin-left: 40%;
+            margin-top:3%;
+            font-size: 20px;
+        }
+        h2 {
+            color: #000000;
+            margin-left: 27%;
+            margin-top:-2%;
 
-	.container{
-		background-color:#E5E5E5;
-		margin-left: 50px;
-		width: 950px;
-		height: 700px;
-		padding-left: 60px;
-		padding-bottom: 40px;
-		padding-right: 220px;
-		/* padding: 100px; */
-		font-size: 20px;
-		border-radius: 30px;
-		margin-right: -200%;
-	}
-	input{
-		width: 50%;
-		outline: none;
-		border: 4px seashell;
-		font-size: 16px;
-		padding: 8px 10px;
-		border-radius: 5px;
-		background-color: white;
-	}
-	img{
-		margin-left: 65%;
-		position: relative; top: -720px;
-		border-radius: 30px;
-		border-radius:40% 30px 30px 35%;
-	}
-	.btn-primary{
-		width:50%;
-		height: 5%;
+        }
+        #login {
+      color: hsl(0, 32%, 15%);
+      font-size: 30px;
+      margin-left: 80%;
+      position: relative;
+      bottom: -20px;
+    }
+        .container {
+            background-color: #E5E5E5;
+            margin: 30px 20px; 
+            padding-left: 10px; 
+            padding-bottom: 9px; 
+            padding-right: 220px;
+            font-size: 17px;
+            border-radius: 30px;
+            display: flex;
+            height: 640px;
+        }
+        input {
+            /* margin-right: 20%; */
+            width: 5%;
+            outline: none;
+            border: 4px seashell;
+            font-size: 15px;
+            padding: 8px 55%;
+		    border-radius: 5px;
+            background-color: white;
+            line-height: 15px;
+        }
+        img {
+            margin-left: 45%;
+            top: -720px;
+            border-radius: 20px;
+            border-radius: 40% 30px 30px 35%;
+            width: 500px;
+            height: 650px;
+            margin-bottom: 30%;
+        }
+		.btn-primary{
+        padding: 9px 51%;
 		background-color: #192E5B;
 		color: white;
 		border-radius: 5px;
-	}
-		</style>
-
-{% load crispy_forms_tags %}
-<!--Register--> 
-<div class="container py-5">
-	<h1>Agricoop</h1>
-	<h2>Welcome</h2>
-<form method="POST">
-		{% csrf_token %}
-		{{ register_form|crispy }}
-		<button class="btn btn-primary" type="submit">Register</button> 
-	</form>
-	<p class="text-center">If you already have an account,<a href="{% url 'login'%}">login</a> instead.</p>
-	<img src="https://img.freepik.com/free-vector/login-concept-illustration_114360-757.jpg?size=338&ext=jpg"width="67%" height="106%" alt="">
-</div>
-
+		}
+        form{
+            margin-right:-10%;
+            margin-left: 30px;
+        }
+        .text-center{
+            margin-left: 30px;
+        }    
+        </style>
+</body>
+</html>

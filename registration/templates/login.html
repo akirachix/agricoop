@@ -1,20 +1,133 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<style>
+  body{
+    background-color:#7C97CC;
+    margin: 0;
+    padding: 0;
+  }
+  .forms{
+    display: flex;
+    width: 80%;
+    border-radius: 30px;
+    background-color:#E5E5E5 ;
+    margin: 5% 10%;
+  }
+  .login-image > img{
+    width: 500px;
+    height: 500px;
+    border-radius:25px 30% 35% 30px;
+  }
+  input{
+    width: 100%;
+    outline: none;
+    border: 4px seashell;
+    font-size: 14px;
+    padding: 15px 32%;
+    border-radius: 5px;
+    background-color: white;
+    margin-bottom: 25px;
+  }
+  h1{
+    font-size: 20px;
+    color: #192E5B;
+     margin-left: 10%;
+  }
+  h2{
+    font: size 40px; ;
+    margin-left: -0%;
+  }
+  .login{
+    font-size: 20px;
+    position: absolute;
+    left: 30%;
+  }
+  .btn-primary{
+    padding: 12px 53px;
+    background-color: #192E5B;
+    color: white;
+    border-radius: 5px;
+    width: 120%;
+  }
+  .primary{
+    padding: 9px;
+    margin-bottom: -2%;
+  }
+  .hell{
+    position: relative;
+    bottom: 35px;
+  }
+  .forg{
+margin-left:60%;
+margin: -3;
+  }
+  form{
+    width: 90%;
+  }
+  .container{
+    margin-left: 3%;
+
+  }
+  .recovery{
+    display: flex;
+    width:  180%;
+  }
+  .keep-logged> p{
+    margin-left: -30%;
+    width: 100%;
+    margin-top: 1%;
+  }
+  .keep-logged > input{
+    margin-left: -39%;
+    margin-top: 2%;
+  }
+  .keep-logged{
+    display: flex;
+    width: 50%;
+   }
+  .fogort{
+    margin-left: 12%;
+  }
 </style>
+</head>
+<body>
+  <!-- <p class="login">LogIn</p> -->
+  <div class="login"><h3>LogIn</h3></div>
+  <div class="forms">
+<div class="login-image">
+<img src="https://img.freepik.com/free-vector/login-concept-illustration_114360-757.jpg?size=338&ext=jpg" alt="">
+</div>
 {% load crispy_forms_tags %}
-<div class="container py-5">
-<h1>WELCOME BACK TO AGRICOOP</h1>
+<div class="container py-5" id="ctn">
+<h1>AGRICOOP</h1>
+<h2>Welcome Back</h2>
 <form method="POST">
   {% csrf_token %}
   {{ login_form|crispy }}
-  <button class="btn btn-primary" type="submit">Login</button>
-</form>
-<p class="text-center">Don't have an account? <a href="{%url 'register' %}">Create an account</a>.</p>
+  <div class="recovery">
+    <div class="keep-logged">
+  <input class="primary" type="checkbox"></input>
+  <p>Keep me Logged In</p>
 </div>
-<nav class="navbar navbar-expand-lg navbar-light bg-light">
+<div class="fogort">
+  <a href="{%url 'register' %}">Forgot Password?</a>
+</div>
+</div>
+<div class="btn btn-primary">
+<a class="btn btn-primary" type="submit" href="{% url 'Home:home' %}">Login</a>      
+</div>
+<!-- <button class="btn btn-primary" type="submit">Login</button> -->
+</form>
+<p class="text-center">Don't have an account? <a href="{%url 'register' %}">SignUp</a>.</p>
+</div>
+<nav class="navbar navbar-expand-lg navbar-light bg-lighort">
 <div class="collapse navbar-collapse" id="navbarText">
   <ul class="navbar-nav mr-auto">
     {% if user.is_authenticated %}
     <li class="nav-item">
-      <a class="nav-link" href="/logout">Logout</a>
+      <a class="nav-link" href="{% url 'logout'%}">Logout</a>
     </li>
     <li class="nav-item">
       <a class="nav-link" href="#">Welcome,{{user.username}}</a>
@@ -22,58 +135,8 @@
     {% else %}
     {% endif %}
   </ul>
-  <img src="https://img.freepik.com/free-vector/login-concept-illustration_114360-757.jpg?size=338&ext=jpg"width="150%" height="93%" alt="">
 </div>
-</nav><style>
-  body{
-      background-color:#7C97CC;
-      width: 400px;
-      height: 800px;
-      font-size: 19px;
-  }
-  h1{
-      color: hsl(221, 57%, 23%);
-      margin-left: -5%;
-      padding-top: 20%;
-      font-size: 35px;
-      padding-bottom: 9%;
-  }
-  h2{
-      color:#000000;
-      margin-left: 20%;
-      font-size: 20px;
-  }
-  .container{
-      background-color:#E5E5E5;
-      margin-left: 50px;
-      width: 950px;
-      height: 700px;
-      padding-left: 60px;
-      padding-bottom: 40px;
-      padding-right: 40%;
-      font-size: 20px;
-      border-radius: 30px;
-  }
-  input{
-      width: 50%;
-      outline: none;
-      border: 4px seashell;
-      font-size: 16px;
-      padding-bottom: 12;
-      border-radius: 5px;
-      background-color: white;
-  }
-  img{
-      margin-left: 160%;
-      position: relative; top: -760px;
-      border-radius: 30px;
-      border-radius:40% 30px 30px 35%;
-  }
-  .btn-primary{
-      width:20%;
-      height: 5%;
-      background-color: #192E5B;
-      color: white;
-      border-radius: 5px;
-      margin-top:20px
-  }
+</nav>
+</div>
+</body>
+</html>
