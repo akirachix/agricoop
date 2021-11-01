@@ -1,0 +1,370 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  {% block title %}<title>Group List</title>{% endblock %}
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  {% load static %}
+  <link rel="stylesheet" href="{% static 'css/styles.css' %}">
+  <style type="text/css">
+
+  
+  body{
+    background-color:#b4bfcc;
+    margin-top: 0;
+  }
+  .sidebar-nav{
+    height: 100%;
+    width: 160px;
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    background-color:#192E5B;
+    overflow: hidden;
+    padding-top: 100px;
+  }
+  .sidebar-nav a{
+    padding:10px 10px 10px 16px;
+    text-decoration: none;
+    font-size: 20px;
+    color: #F1F1F1;
+    display: block;
+    }
+  .sidebar-nav a:hover{
+    color: black;
+        }
+  h1{
+    text-align: center;
+    text-decoration-color: black;
+    margin-top: 0%;
+    padding-left: 3%;
+  }
+  h3{
+    color: black;
+    font-size: 30px;
+    margin-left: 200px;
+    text-align: center;
+    margin-right:60px;
+  }
+  h4{
+    color: black;
+    font-size: 20px;
+    margin-left: 200px;
+    position: relative;
+    bottom: -40px;
+
+  }
+  #group{
+    background-color: white;
+    padding: 15px 350px;
+    text-align: right 100px;
+    text-align: top;
+    box-shadow: 0 0 8px black;
+
+  }
+
+  #leader{
+    background-color: white;
+    padding: 15px 350px;
+    
+
+  }
+  #members{
+    background-color: white;
+    padding: 15px 350px;
+    box-shadow: 0 0 8px black;
+
+  }
+
+.button {
+  background-color: #192E5B;
+  border: none;
+  color: white;
+  padding: 15px 60px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 20px;
+  margin-left: 600px;
+  position: relative;
+  bottom: -80px;
+  border-radius: 10px;
+  cursor: pointer;
+
+}
+#addbutton {
+  background-color: #192E5B;
+  border: none;
+  color: #ffffff;
+  padding: 5px 10px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 20px;
+  margin-left: 1050px;
+  position: relative;
+  bottom: 165px;
+  border-radius: 10px;
+  cursor: pointer;
+  border-radius: 50%;
+
+}
+
+#addbutton2 {
+  background-color: #192E5B;
+  border: none;
+  color: #ffffff;
+  padding: 5px 10px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 20px;
+  margin-left: 1050px;
+  position: relative;
+  bottom: 115px;
+  border-radius: 10px;
+  cursor: pointer;
+  border-radius: 50%;
+}
+
+
+
+.mybutton {
+  background-color: #192E5B;
+  border: none;
+  color: white;
+  padding: 15px 60px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 20px;
+  margin-left: 150px;
+  position: relative;
+  bottom: -90px;
+  border-radius: 10px;
+  cursor: pointer;
+
+}
+
+#btn {
+  background-color: #192E5B;
+  border: none;
+  color: white;
+  padding: 15px 60px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 20px;
+  margin-left: 550px;
+  position: relative;
+  bottom: -90px;
+  border-radius: 10px;
+  cursor: pointer;
+
+}
+/* pop up one */
+
+.hidden{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  top: 0;
+  margin:8% 32%;
+  display: none;
+}
+.modal-content{
+  width: 600px;
+  height: 550px;
+  background-color: white;
+}
+
+
+.hidden2{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  top: 0;
+  margin:8% 32%;
+  display: none;
+}
+.modal-content2{
+  width: 600px;
+  height: 550px;
+  background-color: white;
+}
+input{
+  width: 50%;
+  padding: 10px;
+ 
+ position: relative;
+ bottom: -50px;
+ margin-left: 100px;
+
+ 
+}  
+input[type=text1]{
+  width: 81%;
+  border: 2px;
+  margin: 8px 0;
+  outline: none;
+  margin-left: 200px; 
+  padding-bottom: 28px;
+  position: relative;
+
+  font-size: 15px;
+  font-weight: bold;
+ 
+} 
+
+input[type=text1]{
+  box-shadow: 0 0 8px black;
+  text-align: center;
+  margin-right: -100px;
+} 
+
+
+
+h5{
+  padding: 5px 100px;
+  
+}
+h2{
+  text-align: center;
+  font-size: 20px;
+}
+form input{
+  position: relative;
+  bottom: 4px;
+  align-items: center;
+}
+form{
+  position: relative;
+  bottom: -20px;
+  
+}
+.submit1{
+  text-decoration-style:none;
+  top: 30px;
+  height: 50px;
+  width :30%;
+  border-radius: 6px;
+  align-items: center;
+  font-size: 1.4rem;
+  margin-left: 500px;
+  position: relative;
+  bottom: 200px;
+  text-decoration: none;
+                
+}
+
+
+
+  </style>
+</head>
+<body>
+  <div class="row my-3 p-3">
+    <div class="sidebar-nav">
+      <a href="">Home</a>
+      <a href="">Group</a>
+      <a href="">Payments</a>
+
+      <a href="">Setting</a>
+      <a href="">LogOut</a>
+    </div>
+</div>
+<div class="content" >
+  <h3>Add group</h3>
+  <div class="input-field">
+    
+  <input type="text1" name="name" value="Name of the group">
+    <h4 id="group">Group leader details</h4>
+     <h4 id="members">Group members</h4>
+     <button class="submit1"><a href="{% url 'addgroup:display_group' %}">View groups</a></button>
+
+     
+
+  </div>
+
+
+   </div>
+ 
+    
+   <button onclick="toggleAddBtn()" id="addbutton">+</button>
+   <button onclick="toggleAddBtn2()" id="addbutton2">+</button>
+  
+  <div id="bg-modal"  class="hidden">
+    <div class="modal-content">
+      
+      <form method="POST">
+     <h2>Group leader details</h2>
+     <div class="wrapper">
+        <div class="form">
+     <form method="POST" enctype="multipart/form-data">
+         {%csrf_token%}
+         {{form.as_p}}
+         {{Name}}
+         <button class="submit">Submit</button>
+     </form>
+     </div>
+     </div>
+    
+      </form>
+    </div>
+    
+  </div>
+
+  <div id="bg-modal2"  class="hidden2">
+    <div class="modal-content2">
+      
+      <form method="POST">
+          {% csrf_token %}
+          {{from.as_p}}
+     <h2>Add members</h2>   
+     <div class="wrapper">
+        <div class="form">
+     <form method="POST" enctype="multipart/form-data">
+         {%csrf_token%}
+         {{form.as_p}}
+         {{Name}}
+
+         <button class="submit">Submit</button>
+      
+        
+     </form>
+     </div>
+     </div>
+    
+      </form>
+    </div>
+    
+  </div>
+
+  
+
+
+<script>
+  function toggleAddBtn() {
+    var div = document.getElementById("bg-modal");
+     div.style.position='absolute'
+     div.style.top = 0
+     div.style.margin = '8% 32%'
+     div.style.boxShadow = '5px 10px 8px 10px #888888'
+     div.classList.toggle('hidden')
+  
+}
+
+function toggleAddBtn2() {
+    var div = document.getElementById("bg-modal2");
+     div.style.position='absolute'
+     div.style.top = 0
+     div.style.margin = '8% 32%'
+     div.style.boxShadow = '5px 10px 8px 10px #888888'
+     div.classList.toggle('hidden2')
+  
+}
+</script>
+</body>
+</html> 

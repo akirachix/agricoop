@@ -20,8 +20,7 @@ from django.urls.conf import include
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('',include('registration.urls')),
-    path('home/',include('home.urls')),
-    path('group_details/',include('group_details.urls')),
+    path('addgroup/',include('addgroup.urls')),
     path("payments/",include("payments.urls")),
 
     # path('groupslist/',include('groupslist.urls'))

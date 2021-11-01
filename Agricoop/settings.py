@@ -44,8 +44,7 @@ INSTALLED_APPS = [
     'crispy_forms',
     'registration',
     'whitenoise',
-    'home',
-    'group_details',
+    'addgroup',
     'payments',
    
 ]
@@ -55,7 +54,7 @@ MIDDLEWARE = [
     'whitenoise.middleware.WhiteNoiseMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
-    'django.middleware.csrf.CsrfViewMiddleware',
+    # 'django.middleware.csrf.CsrfViewMiddleware',
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
@@ -87,14 +86,14 @@ WSGI_APPLICATION = 'Agricoop.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3', 
-        'NAME': BASE_DIR / 'db.sqlite3', 
-        # 'ENGINE': 'django.db.backends.postgresql_psycopg2',
-        # 'NAME': 'agricoop',
-        # 'USER': 'farmtoplate',
-        # 'PASSWORD': 'farmtoplate',
-        # 'HOST': 'localhost',
-        # 'PORT': '',
+        # 'ENGINE': 'django.db.backends.sqlite3', 
+        # 'NAME': BASE_DIR / 'db.sqlite3', 
+        'ENGINE': 'django.db.backends.postgresql_psycopg2',
+        'NAME': 'agricoop',
+        'USER': 'farmtoplate',
+        'PASSWORD': 'farmtoplate',
+        'HOST': 'localhost',
+        'PORT': '',
     }
 }
 from_Agricoop=dj_database_url.config(conn_max_age=600)
@@ -139,6 +138,9 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/3.2/howto/static-files/
 
 STATIC_URL = '/static/'
+
+MEDIA_URL="/images/"
+MEDIA_ROOT=os.path.join(BASE_DIR,'static/images')
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/3.2/ref/settings/#default-auto-field
