@@ -13,8 +13,8 @@
     margin-top: 0;
   }
   form{
-      padding: 15%;
-     margin-top: -15%;
+     padding: 15%;
+     margin-top: 15%;
   }
   .sidebar-nav{
     height: 100%;
@@ -50,8 +50,8 @@
 <div class="content" >
   <h1>Payments</h1>
         <div class="sidebar-nav">
-          <a href="">Home</a>
-          <a href="">Add group</a>
+          <a href="{% url 'payments' %}">Home</a>
+          <a href="">Group</a>
           <a href="">Beans</a>
           <a href="">Payment</a>
           <a href="">Setting</a>
@@ -60,13 +60,24 @@
    </div>
   <form action="/action_page.php">
     <p>Please select your payment method:</p>
-    <input type="radio" id="html" name="bulk_payment" value="HTML">
+    <input type="radio" id="html" name="bulk_payment" value="HTML" onclick="functionCalled()">
     <label for="html">Bulk Payment</label><br>
-    <input type="radio" id="css" name="bulk_payment" value="CSS">
+    <input type="radio" id="css" name="bulk_payment" value="CSS" onclick="functionCalled()" >
     <label for="css">Single Payment</label><br>
   </form>
    -->
   </body>
   </html>
+  <script>
+     function functionCalled() {
+          window.open("{%url 'payment_list'%}"); //if you want to open in new window
+          window.location = "{%url 'payment_list'%}"; //if you want to redirect
+     }
+  </script>
 </body>
 </html>
+
+
+
+
+
