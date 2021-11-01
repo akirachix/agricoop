@@ -11,8 +11,7 @@ class Group_details(models.Model):
     group_name= models.CharField(
         max_length=120,null=True
     )
-    kgs_of_beans= models.PositiveSmallIntegerField(null=True)
+    kgs_of_beans= models.PositiveBigIntegerField(null=True)
     Price_per_kg= models.BigIntegerField(null=True)
-    total_amount= models.CharField(max_length= 20,null=True)
-    total_quantity_purchased= models.PositiveSmallIntegerField(null=True)
+    total_amount= models.BigIntegerField(null=True)
 # Create your models here.
