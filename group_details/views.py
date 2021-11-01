@@ -1,6 +1,3 @@
-from django.shortcuts import render
-from django.shortcuts import render
-from django import forms
 from django.shortcuts import  render, redirect
 from .forms import GroupRegistrationForm
 from .models import Group_details
@@ -20,10 +17,17 @@ def group_details(request):
 def display_beans(request):
     products=Group_details.objects.all()
     return render(request,"bean_details.html",{"products":products})
+
     
 def profile(request,id):
     product=Group_details.objects.get(id=id)
     return render(request,"profile.html",{"product":product})
+
+
+def profile(request,id):
+    product=Group_details.objects.get(id=id)
+    return render(request,"profile.html",{"product":product})
+
 def edit(request,id):
     product=Group_details.objects.get(id=id)
     if request.method=="POST":
@@ -33,4 +37,7 @@ def edit(request,id):
             return redirect(display_beans)
     else:
         form=GroupRegistrationForm(instance=product)
-    return render(request,"edit.html",{"form":form})
+        return render(request,"edit.html",{"form":form})
+        
+         
+

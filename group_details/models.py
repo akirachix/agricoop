@@ -1,6 +1,9 @@
 from django.db import models
+import datetime
+
+
 class Group_details(models.Model):
-    date_of_delivery=models.DateField(null=True)
+    date_of_delivery=models.DateTimeField(null=True)
     beans_variety_choice=(
         ('Bush Beans','Bush Beans'),
         ('Climbing Beans','Climbing Beans'),
@@ -11,7 +14,6 @@ class Group_details(models.Model):
     group_name= models.CharField(
         max_length=120,null=True
     )
-    kgs_of_beans= models.PositiveBigIntegerField(null=True)
+    kgs_of_beans= models.PositiveSmallIntegerField(null=True)
     Price_per_kg= models.BigIntegerField(null=True)
     total_amount= models.BigIntegerField(null=True)
-# Create your models here.

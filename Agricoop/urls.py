@@ -21,6 +21,7 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('',include('registration.urls')),
     path('addgroup/',include('addgroup.urls')),
+     path("group_details/",include("group_details.urls")),
     path("payments/",include("payments.urls")),
     path("group_details/",include("group_details.urls")),
 

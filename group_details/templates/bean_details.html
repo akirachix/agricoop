@@ -11,9 +11,13 @@
     <div class="row my-3 p-3">
           <div class="sidebar-nav">
             <a href="">Home</a>
+
             <a href="">Add group</a>
             <a href="">Beans</a>
             <a href="">Payment</a>
+            <a href="">Group</a>
+            <a href="">Beans</a>
+            <a href="{%url 'payments'%}">Payment</a>
             <a href="">Setting</a>
             <a href="">LogOut</a>
           </div>
@@ -29,19 +33,28 @@
                 <th>Total amount paid</th>
                 <th>Edit</th>
             </tr>
+            
             {% for group_details in products %}
             <tr>
+
               <td>{{group_details.date_of_delivery}}</td>
               <td>{{group_details.beans_variety}}</td>
               <td>{{group_details.group_name}}</td>
               <td>{{group_details.kgs_of_beans}}</td>
               <td>{{group_details.Price_per_kg}}</td>
               <td>{{group_details.total_amount}}</td>
+
               <td><a href="{% url 'group_details:edit' id=group_details.id %}"><img src="https://icons-for-free.com/iconfiles/png/512/svg+create+edit+edit+file+office+pencil+writing+creativ+icon-1320185158722776676.png" alt="" id="image"></a></td>
+
+              <td><a href="{% url 'edit' id=group_details.id %}"><img src="https://icons-for-free.com/iconfiles/png/512/svg+create+edit+edit+file+office+pencil+writing+creativ+icon-1320185158722776676.png" alt="" id="image"></a></td>
+
+
           </tr>
           {% endfor %}
         </table>
     </div>
+
+
     <script>
       function toggleAddBtn() {
     var div = document.getElementById("bg-modal");
@@ -52,6 +65,7 @@
      div.classList.toggle('hidden')
 }
     </script>
+
   <style type="text/css">
   body{
     background-color:#b4bfcc;

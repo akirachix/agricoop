@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+ {% block title %}<title>Group List</title>{% endblock %}
+ <meta charset="utf-8">
+ <meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+<body>
+ <style type="text/css">
+ body{
+   background-color:#b4bfcc;
+   font-family: Arial, Helvetica, sans-serif;
+ }
+ .sidebar-nav{
+   height: 100%;
+   width: 250px;
+   position: fixed;
+   z-index: 1;
+   top: 0;
+   left: 0;
+   background-color:#192E5B;
+   overflow: hidden;
+   padding-top: 100px;
+  }
+ .sidebar-nav a{
+   padding:10px 10px 10px 16px;
+   text-decoration: none;
+   font-size: 20px;
+   color: #F1F1F1;
+   display: block;
+   }
+ .sidebar-nav a:hover{
+   color: black;
+       }
+ h1{
+   text-align: center;
+   text-decoration-color: black;
+   margin-top: 0%;
+   padding-left: 3%;
+ }
+ #groups{
+   padding-left: 30%;
+   color: black;
+ }
+ .dropbtn {
+ background-color: #192E5B;
+ color: white;
+ padding: 16px;
+ font-size: 16px;
+ border: none;
+ border-radius: 20%;
+}
+.dropdown {
+ position: relative;
+ display: inline-block;
+ padding-left: 23%;
+}
+.dropdown-content {
+ display: none;
+ position: absolute;
+ background-color: #F1F1F1;
+ min-width: 160px;
+}
+.dropdown-content a {
+ color: black;
+ padding: 12px 16px;
+ text-decoration: none;
+ display: block;
+}
+.dropdown-content a:hover {
+ background-color: #ddd;
+}
+.dropdown:hover .dropdown-content {
+ display: block;
+}
+.dropdown:hover .dropbtn {
+ background-color: #3E8E41;
+}
+.topnav {
+ overflow: hidden;
+ padding-left: 40%;
+ margin-top:-20px;
+ }
+.group{
+ margin-left: 190px;
+ background-color:rgb(244, 240, 245);
+}
+.groups{
+ margin-left: 200px;
+}
+table, td, th {
+          text-align: left;
+          padding-left: 45%;
+        }
+        tr:hover {
+          cursor: pointer;
+          color: antiquewhite;
+          
+        }
+        th, td {
+          padding: 15px;
+        }
+        th{
+          color: black;
+        }
+
+        tr{
+          font-size: small;
+          position: relative;
+          bottom: 50px;
+          
+        }
+ </style>
+</head>
+<body>
+<div class="content" >
+ <h1>Group List</h1>
+       <div class="sidebar-nav">
+         <a href="{% url 'Home:home'%}">Home</a>
+         <a href="{% url 'Home:add_group'%}">Add group</a>
+         <a href="">Beans</a>
+         <a href="{% url 'payments'%}">Payment</a>
+         <a href="">Setting</a>
+         <a href="{% url 'logout'%}">LogOut</a>
+       </div>
+  </div>
+  <div class="dropdown">
+   <button class="dropbtn">Group name</button>
+   <div class="dropdown-content">
+     <a href="date">Date</a>
+     <a href="variety">Variety</a>
+     <a href="quantity">Quantity</a>
+   </div>
+   </div>
+     <table>
+         <tr>
+             <th>Group name</th>
+             <th>No of group member</th>
+             <th>Group leader contact</th>
+             <th>Edit</th>
+             <th>Delete</th>
+         </tr>
+         <tr>
+           {% for group in groups %}
+             <td>{{group.group_name}}</td>
+             <td>{{group.no_of_group_member}}</td>
+             <td>{{group.group_leader_contact}}</td>
+             <td>{{group.edit}}</td>
+             <td>{{group.delete}}</td>
+         </tr>
+         {%endfor%}
+     </table>
+  </div>
+</body>
+</html>

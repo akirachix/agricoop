@@ -74,9 +74,10 @@ h3{
     <div class="container">
         <h3>Group A </h3>
         <form method="POST" enctype="multipart/form-data">
-    {%csrf_token%}
-    {{form.as_p}}
+          {%csrf_token%}
+          {{form.as_p}}
     <input type="submit" value="Confirm delivery" class="button-add">
+
     </form>
 </div>
 </div>
