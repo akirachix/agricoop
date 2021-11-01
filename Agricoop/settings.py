@@ -47,7 +47,6 @@ INSTALLED_APPS = [
     'home',
     'group_details',
     'payments',
-   
 ]
 
 MIDDLEWARE = [
