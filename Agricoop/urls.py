@@ -23,6 +23,8 @@ urlpatterns = [
     path('addgroup/',include('addgroup.urls')),
     path("payments/",include("payments.urls")),
 
+
+
     # path('groupslist/',include('groupslist.urls'))
 
 ]

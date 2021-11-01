@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Group Details</title>
+    <style>
+body{
+    background-color:#b4bfcc;
+    margin-top: 0;
+}
+.head{
+    color: rgb(112, 22, 112);
+    font-size: 25px;
+    text-align: center;
+    margin-bottom: 40px;
+    padding-top: 40px;
+}
+.container{
+    margin-left: 400px;
+    width: 700px;
+    padding: 2px;
+    font-size: 20px;
+    border-radius: 30px;
+    margin-right: -250px;
+}
+input{
+    width: 100%;
+    outline: none;
+    border: 1px;
+    font-size: 15px;
+    padding: 13px 18px;
+    border-radius: 5px;
+    background-color: rgba(255, 255, 255, 0.938);
+}
+  .sidebar-nav{
+    height: 100%;
+    width: 270px;
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    background-color:#192E5B;
+    overflow: hidden;
+    padding-top: 150px;
+  }
+  .sidebar-nav a{
+    padding:10px 10px 10px 30px;
+    text-decoration: none;
+    font-size: 20px;
+    color: #F1F1F1;
+    display: block;
+    }
+  .sidebar-nav a:hover{
+    color: black;
+}
+h3{
+    color: black;
+    font-size: 30px;
+    text-align: center;
+  }
+  .button-add{
+  background-color: #192E5B;
+  border: none;
+  color: white;
+  text-align: center;
+ width: 105%;
+ font-size: 20px;
+  position: relative;
+  cursor: pointer;
+  top: 20px;
+}
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h3>Group A </h3>
+        <form method="POST" enctype="multipart/form-data">
+    {%csrf_token%}
+    {{form.as_p}}
+    <input type="submit" value="Comfirrm Delivary" class="button-add">
+    </form>
+</div>
+</div>
+<div class="sidebar-nav">
+  <a href="">Group</a>
+  <a href="">Beans</a>
+  <a href="">Payment</a>
+  <a href="">Setting</a>
+  <a href="">LogOut</a>
+</div>
+</body>
+</html>

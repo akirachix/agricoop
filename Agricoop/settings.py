@@ -46,7 +46,6 @@ INSTALLED_APPS = [
     'whitenoise',
     'addgroup',
     'payments',
-   
 ]
 
 MIDDLEWARE = [
