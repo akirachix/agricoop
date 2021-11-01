@@ -33,7 +33,6 @@
                 <th>Total amount paid</th>
                 <th>Edit</th>
             </tr>
-            
             {% for group_details in products %}
             <tr>
 
@@ -43,10 +42,7 @@
               <td>{{group_details.kgs_of_beans}}</td>
               <td>{{group_details.Price_per_kg}}</td>
               <td>{{group_details.total_amount}}</td>
-
               <td><a href="{% url 'group_details:edit' id=group_details.id %}"><img src="https://icons-for-free.com/iconfiles/png/512/svg+create+edit+edit+file+office+pencil+writing+creativ+icon-1320185158722776676.png" alt="" id="image"></a></td>
-
-              <td><a href="{% url 'edit' id=group_details.id %}"><img src="https://icons-for-free.com/iconfiles/png/512/svg+create+edit+edit+file+office+pencil+writing+creativ+icon-1320185158722776676.png" alt="" id="image"></a></td>
 
 
           </tr>
