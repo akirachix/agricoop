@@ -17,4 +17,3 @@ class Group_details(models.Model):
     kgs_of_beans= models.PositiveSmallIntegerField(null=True)
     Price_per_kg= models.BigIntegerField(null=True)
     total_amount= models.BigIntegerField(null=True)
-
