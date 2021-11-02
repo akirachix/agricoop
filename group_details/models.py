@@ -1,13 +1,21 @@
 from django.db import models
-from django.db import models
-from django.db.models.deletion import CASCADE
-from django.db.models.fields import BigIntegerField
+import datetime
 
 
-class Bean_details(models.Model):
-    # bean_variety=models.OneToOneField(Group_Details,on_delete=models.CASCADE,primary_key=True)
-    price_per_kg=models.PositiveSmallIntegerField
-    total_quantity_purchased=BigIntegerField
-    date_of_delivery=models.DateField(auto_now_add=True)
+class Group_details(models.Model):
+    date_of_delivery=models.DateTimeField(null=True)
+    beans_variety_choice=(
+        ('Bush Beans','Bush Beans'),
+        ('Climbing Beans','Climbing Beans'),
+        ('Ruvuninkingi','Ruvuninkingi')
+    )
+    beans_variety = models.CharField(
+        max_length=800, choices= beans_variety_choice,null=True)
+    group_name= models.CharField(
+        max_length=120,null=True
+    )
+    kgs_of_beans= models.PositiveSmallIntegerField(null=True)
+    Price_per_kg= models.BigIntegerField(null=True)
+    total_amount= models.BigIntegerField(null=True)
+
     
-

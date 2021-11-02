@@ -17,7 +17,7 @@ from django.contrib import admin
 from django.urls import path
 from django.urls.conf import include
 
-from group_details.views import products
+
 
 urlpatterns = [
     path('admin/', admin.site.urls),
