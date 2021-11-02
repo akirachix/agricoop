@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Display group</title>
+</head>
+<body>
+    <table>
+        <tr>
+            <th>group name</th>
+            <th>number of group members</th>
+            <th>profile</th>
+            <th>id</th>
+            <th>phone number</th>
+        </tr> 
+        <tr>
+        {% for group in groups %}
+        <td>{{group.group_name}}</td>
+        <td>{{group.number_of_group_member}}</td>
+        <td>{{group.profile}}</td>
+        <td>{{group.id}}</td>
+        <td>{{group.phone_number}}</td>
+</tr>
+ {%endfor%}
+    </table>
+</body>
+</html>

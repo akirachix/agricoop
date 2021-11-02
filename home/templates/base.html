@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>homepage</title>
+</head>
+<body>
+    
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'css/styles.css' %}">
+    <style type="text/css">
+    body{
+      background-color:#b4bfcc;
+      font-family: Arial, Helvetica, sans-serif;
+     
+    }
+    .sidebar-nav{
+      height: 100%;
+      width: 300px;
+      position: fixed;
+      z-index: 1;
+      top: 0;
+      left: 0;
+      background-color:#192E5B;
+      overflow: hidden;
+      padding-top: 100px;
+    
+    }
+    .sidebar-nav a{
+      padding:10px 10px 10px 16px;
+      text-decoration: none;
+      font-size: 20px;
+      color: #F1F1F1;
+      display: block;
+    
+      }
+    .sidebar-nav a:hover{
+      color: black;
+          }
+    h1{
+      text-align: center;
+      text-decoration-color: black;
+      margin-top: 0%;
+      padding-left: 3%;
+    } 
+  
+    #groups{
+      padding-left: 30%;
+      color: black;
+    }
+  
+  .topnav {
+    overflow: hidden;
+    padding-left: 40%;
+    margin-top: -30px;
+    
+  }
+  .button {
+  background-color: #192E5B;
+  border: none;
+  color: white;
+  padding: 15px 60px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 20px;
+  margin-left: 600px;
+  position: relative;
+  bottom: -80px;
+  border-radius: 10px;
+  cursor: pointer;
+}
+#addbutton {
+  background-color: #192E5B;
+  border: none;
+  color: #FFFFFF;
+  padding: 5px 10px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 20px;
+  margin-left: 1050px;
+  position: relative;
+  bottom: 165px;
+  border-radius: 10px;
+  cursor: pointer;
+  border-radius: 50%;
+}
+</style>
+  <div class="content" >
+  <h1>Group List</h1>
+        <div class="sidebar-nav">
+          <a href="{ %url 'home_page'% }">Home</a>
+          <a href="">Group</a> 
+          <a href="">Beans</a>
+          <a href="">Payment</a>
+          <a href="">Setting</a>
+          <a href="">LogOut</a>
+        </div>
+   </div> 
+
+    
+ 
+</body>
+</html>

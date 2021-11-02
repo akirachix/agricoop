@@ -1,0 +1,229 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+ {% block title %}<title>Group List</title>{% endblock %}
+ <meta charset="utf-8">
+ <meta name="viewport" content="width=device-width, initial-scale=1">
+ <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+<body>
+
+ <style type="text/css">
+ body{
+   background-color:#b4bfcc;
+   font-family: Arial, Helvetica, sans-serif;
+ 
+ }
+ .sidebar-nav{
+   height: 100%;
+   width: 250px;
+   position: fixed;
+   z-index: 1;
+   top: 0;
+   left: 0;
+   background-color:#192E5B;
+   overflow: hidden;
+   padding-top: 100px;
+  }
+ .sidebar-nav a{
+   padding:10px 10px 10px 16px;
+   text-decoration: none;
+   font-size: 20px;
+   color: #F1F1F1;
+   display: block;
+   }
+ .sidebar-nav a:hover{
+   color: black;
+       }
+ h1{
+   text-align: center;
+   text-decoration-color: black;
+   margin-top: 0%;
+ 
+ }
+ 
+ #groups{
+   padding-left: 30%;
+   color: black;
+ }
+
+.topnav {
+ overflow: hidden;
+ padding-left: 40%;
+ /* margin-top:-20px; */
+  }  
+.dropdown { 
+  float: left;
+  overflow: hidden;
+  margin-left: 34%;
+  /* padding-bottom: -20px; */
+  width: 200px;
+}
+.dropdown .dropbtn {
+  font-size: 16px;  
+  border: none;
+  outline: none;
+  color: black;
+  padding: 14px 16px;
+  background-color: inherit;
+  font-family: inherit;
+  margin: 0;
+  /* padding-bottom: 20%; */
+  
+}
+.navbar a:hover, .dropdown:hover .dropbtn {
+  cursor: pointer; 
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #f9f9f9;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+}
+
+.dropdown-content a {
+  float: none;
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+  text-align: left;
+}
+
+.dropdown-content a:hover {
+  background-color: #ddd;
+}
+
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+.dropdown-menu ul{
+  list-style: none;
+  display: flex;
+  margin: 0%;
+}
+.group{
+ margin-left: 190px;
+ background-color:rgb(244, 240, 245);
+}
+.groups{
+ margin-left: 200px;
+}
+table, td, th {    
+text-align: left;
+padding-left: 45%;
+}
+
+tr:hover {
+cursor: pointer;
+color: antiquewhite;
+}
+
+th, td {
+padding: 15px;
+}
+
+th{
+color: black;
+
+}
+button{
+  border: none;
+  /* height: 3%;
+  width: 3%;  */
+  border-radius: 20%;
+  border-color: #192E5B;
+  cursor: pointer;  
+  transition-duration: 0.4s;
+  margin-bottom: -10%;
+
+} 
+
+ .btn{
+  background-color:white;
+  color: black;
+  font-size: 30px;
+
+} 
+ </style>
+</head>
+<body>
+
+<button class="button btn" onclick="alert('Add Group')">+</button>
+ 
+  <div class="dropdown">
+    <button class="dropbtn">Group info
+      <i class="fa fa-caret-down"></i>
+    </button>
+    <div class="dropdown-content">
+      <a href="#">Deliveries</a>
+
+      <div class="dropdown-menu">
+        <ul>
+          <li><a href="#">Date</a></li>
+          <li><a href="#">Variety</a></li>
+          <li><a href="#">Quantity</a></li>
+        </ul>
+        <ul>
+          <li><a href="#">25th</a></li>
+          <li><a href="#">Pole beans</a></li>
+          <li><a href="#">50kg</a></li>
+        </ul>
+        
+
+      </div>
+    
+    </div>
+  </div> 
+
+<div class="content" >
+ <h1>Group List</h1>
+       <div class="sidebar-nav">
+         <a href="{ %url 'home_page'% }">Home</a>
+         <a href="">Group</a>
+         <a href="">Beans</a>
+         <a href="">Payment</a>
+         <a href="">Setting</a>
+         <a href="">LogOut</a>
+       </div>
+  </div> -->
+  
+       <table>
+         <tr>
+             <th>Group name</th>
+             <th>No of group member</th>
+             <th>Group leader contact</th>
+             <th>Edit</th>
+             <th>Delete</th>
+            
+         </tr>
+        
+         <tr>
+           {% for group in groups %}
+             <td>{{group.group_name}}</td>
+             <td>{{group.no_of_group_member}}</td>
+             <td>{{group.group_leader_contact}}</td>
+             <td>{{group.edit}}</td>
+             <td>{{group.delete}}</td>
+         </tr>
+         {%endfor%}
+     </table> 
+
+  </div>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
