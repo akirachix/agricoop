@@ -256,8 +256,28 @@ form{
   margin-left: 500px;
   position: relative;
   bottom: 200px;
-  text-decoration: none;
+  color: white;
                 
+}
+a:link {
+  text-decoration: none;
+  color: white;
+}
+
+.submit2{
+  text-decoration-style:none;
+  top: 30px;
+  height: 50px;
+  width :30%;
+  border-radius: 6px;
+  align-items: center;
+  font-size: 1.4rem;
+  margin-left: 200px;
+  position: relative;
+  bottom: 200px;
+  background-color: #192E5B;
+  color: white;
+  
 }
 @media screen and (max-width: 700px) {
   .container{
@@ -325,7 +345,7 @@ form{
          {%csrf_token%}
          {{form.as_p}}
          {{Name}}
-         <button class="submit">Submit</button>
+         <button class="submit2">Submit</button>
      </form>
      </div>
      </div>
@@ -349,9 +369,7 @@ form{
          {{form.as_p}}
          {{Name}}
 
-         <button class="submit">Submit</button>
-      
-        
+         <button class="submit2">Submit</button>     
      </form>
      </div>
      </div>
@@ -360,10 +378,6 @@ form{
     </div>
     
   </div>
-
-  
-
-
 <script>
   function toggleAddBtn() {
     var div = document.getElementById("bg-modal");
@@ -371,10 +385,8 @@ form{
      div.style.top = 0
      div.style.margin = '8% 32%'
      div.style.boxShadow = '5px 10px 8px 10px #888888'
-     div.classList.toggle('hidden')
-  
+     div.classList.toggle('hidden') 
 }
-
 function toggleAddBtn2() {
     var div = document.getElementById("bg-modal2");
      div.style.position='absolute'
