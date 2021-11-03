@@ -6,3 +6,7 @@ from.forms import SettingRegistrationForm
 def setting_page(request):
     form= SettingRegistrationForm()
     return render(request,"setting_page.html",{form:"form"})
+
+def notifications(request):
+    form= SettingRegistrationForm()
+    return render(request,"notifications.html",{form:"form"})
