@@ -1,27 +1,37 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    
-    <title>Settings</title>
-</head>
-<body>
-    <div class="row my-3 p-3">
-        <div class="sidebar-nav">
-          <a href="">Home</a>
-          <a href="">Group</a>
-          <a href="">Beans</a>
-          <a href="">Payment</a>
-          <a href="">Setting</a>
-          <a href="">LogOut</a>
-        </div>
-   </div>
-
-   <h1 id="settings">Notifications</h1>
-   <style>
-    .sidebar-nav{
+    <title>Notifications</title>
+    <style>
+body{
+    background-color:#b4bfcc;
+    margin-top: 0;
+}
+.head{
+    color: rgb(112, 22, 112);
+    font-size: 25px;
+    text-align: center;
+    margin-bottom: 40px;
+    padding-top: 40px;
+}
+.container{
+    margin-left: 400px;
+    width: 700px;
+    padding: 2px;
+    font-size: 20px;
+    border-radius: 30px;
+    margin-right: -250px;
+}
+input{
+    width: 100%;
+    outline: none;
+    border: 1px;
+    font-size: 15px;
+    padding: 13px 18px;
+    border-radius: 5px;
+    background-color: rgba(255, 255, 255, 0.938);
+}
+.sidebar-nav{
     height: 100%;
     width: 230px;
     position: fixed;
@@ -42,52 +52,23 @@
   .sidebar-nav a:hover{
     color: black;
         }
-  h1{
-    text-align: center;
-    text-decoration-color: black;
-    margin-top: 0%;
-    padding-left: 3%;
-  }
-  h3{
-    color: black;
-    font-size: 30px;
-    margin-left: 200px;
-  }
-
-  #settings{
-      text-align: center;
-      font-size: 30px;
-      color: black;
-      position: relative;
-      bottom: -50px;
-
-  }
-  .text{
-      text-align: center;
-      position: relative;
-      bottom: -150px;
-
-  }
-  #notifications{
-      margin-left: 25px;
-  }
-
-  #privacy{
-      margin-left: 75px;
-  }
-
- #help{
-      margin-left: 40px;
-  }
-
-  #Aimg{
-
-      position: relative;
-      top: -12px;
-      margin-left: 500px;
-
-  }
-   </style>
-
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h3>Notifications</h3>
+        <form method="POST" enctype="multipart/form-data">
+    {%csrf_token%}
+    {{form.as_p}}
+    </form>
+</div>
+</div>
+<div class="sidebar-nav">
+  <a href="">Group</a>
+  <a href="">Beans</a>
+  <a href="">Payment</a>
+  <a href="">Setting</a>
+  <a href="">LogOut</a>
+</div>
 </body>
 </html>
