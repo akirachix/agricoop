@@ -1,5 +1,8 @@
-from django.shortcuts import redirect, render
+from django.shortcuts import render
+from .models import Setting_page
+from.forms import SettingRegistrationForm
 
-# Create your views here.
-def account(request):
-    return redirect(request,template_name='account.html')
+
+def setting_page(request):
+    form= SettingRegistrationForm()
+    return render(request,"setting_page.html",{form:"form"})

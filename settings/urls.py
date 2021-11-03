@@ -1,9 +1,7 @@
-from django .urls.conf import path
+from django.urls import path
+from .views import setting_page
 
-from .views import account
 
-urlpatterns=[
-    path("settings/",account,name=account)
-
+urlpatterns = [
+        path("settings/",setting_page,name="settings_page"),
 ]
-

@@ -19,4 +19,6 @@ from django.urls.conf import include
 
 urlpatterns = [
     path('admin/', admin.site.urls),
+    path('settings/', include("settings.urls")),
+    
 ]
