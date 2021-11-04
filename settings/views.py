@@ -6,3 +6,6 @@ from.forms import SettingRegistrationForm
 def setting_page(request):
     form= SettingRegistrationForm()
     return render(request,"setting_page.html",{form:"form"})
+
+def help(request):
+    return render(request,"help.html")
