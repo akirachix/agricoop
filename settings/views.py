@@ -1,5 +1,5 @@
 from django.shortcuts import render
-from .models import Setting_page, privacy_info
+from .models import Setting_page
 from.forms import SettingRegistrationForm
 
 
