@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="main.css">
+    <title>Privacy & Security</title>
+</head>
+<body>
+
+ <style>
+body{
+ background-color:#b4bfcc;
+  font-family: Arial, Helvetica, sans-serif;
+}
+label{
+  padding-left: 30%;
+
+}
+input {
+  width: 40%;
+  padding: 15px;
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  box-sizing: border-box;
+  margin-top: 38px;
+  margin-bottom: 25px;
+  font-family: Arial, Helvetica, sans-serif;
+  
+}
+#tentacles{
+  margin-left: 20px;
+  padding-left: 20%;
+}
+
+input[type=submit] {
+  background-color: white;
+  color: black;
+  margin-left: 50%;
+  width:21%;
+}
+
+input[type=number]{
+    margin-left: 30%;
+    width: 40%;
+}
+
+#message {
+  display:none;
+  background: #f1f1f1;
+  color: #000;
+  position: relative;
+  padding: 20px;
+  margin-top: 10px;
+}
+
+#message p {
+  padding: 10px 35px;
+  font-size: 18px;
+}
+h1{
+    text-align: center;
+   text-decoration-color: black;
+   margin-left: 16%; 
+   font-size: 140%;
+  font-weight: bold;
+  margin-top:0%;
+  padding-bottom: 4%;
+}
+
+#pop{
+    color: yellow;
+ }
+ .sidebar-nav{
+    height: 100%;
+    width: 250px;
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    background-color:#192E5B;
+    overflow: hidden;
+    padding-top: 100px;
+  }
+
+.sidebar-nav a{
+    padding:10px 10px 10px 30px;
+    text-decoration: none;
+    font-size: 20px;
+    color: #F1F1F1;
+    display: block;
+}
+
+.sidebar-nav a:hover{
+    color: black;
+}
+
+    </style>
+
+<div class="row my-3 p-3">
+    <div class="sidebar-nav">
+      <a href="">Home</a>
+      <a href="">Group</a>
+      <a href="">Beans</a>
+      <a href="">Payment</a>
+      <a href="" id="pop" >Settings</a>
+      <a href="">LogOut</a>
+    </div>
+</div> 
+
+    <h1>Privacy & Security</h1>
+    <div class="container">
+      <form action="/action_page">
+        <label for="usrname">Change password</label>
+        <input type="text" id="usrname" name="usrname" required>
+
+        <label for="tentacles">Change number</label>
+        <input type="number" id="tentacles" name="tentacles" required>
+        
+        <input type="submit" value="Save changes">
+      </form>
+    </div>
+    
+    <div id="message">
+      <h3>Password must contain the following:</h3>
+      <p id="letter" class="invalid">A <b>lowercase</b> letter</p>
+      <p id="capital" class="invalid">A <b>capital (uppercase)</b> letter</p>
+      <p id="number" class="invalid">A <b>number</b></p>
+      <p id="length" class="invalid">Minimum <b>8 characters</b></p>
+    </div>                   
+  <script>
+    var myInput = document.getElementById("psw");
+    var letter = document.getElementById("letter");
+    var capital = document.getElementById("capital");
+    var number = document.getElementById("number");
+    var length = document.getElementById("length");
+    </script>
+    
+  
+
+    
+</body>
+</html>
