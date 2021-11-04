@@ -1,5 +1,5 @@
 from django.urls import path
-from . views import register_request ,logout_request,login_request,index
+from . views import register_request ,logout_request,login_request,
 
 urlpatterns = [
     path("",register_request,name="register"),
