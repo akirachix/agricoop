@@ -1,35 +1,89 @@
+{% load static %}
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-    <title>Notifications</title>
-    <style>
-body{
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="vapid-key" content="{{ vapid_key }}">
+    {% if user.id %}
+        <meta name="user_id" content="{{ user.id }}">
+    {% endif %}
+    <title>Web Push</title>
+    <link href="https://fonts.googleapis.com/css?family=PT+Sans:400,700" rel="stylesheet">
+
+<style>
+    body {
+    height: 100%;
     background-color:#b4bfcc;
-    margin-top: 0;
+    font-family: 'PT Sans', sans-serif;
 }
-.head{
-    color: rgb(112, 22, 112);
-    font-size: 25px;
-    text-align: center;
-    margin-bottom: 40px;
-    padding-top: 40px;
+
+.send-push {
+    height: 100%;
+    margin-left:-20%;
+    align-items: center;
+
 }
-.container{
-    margin-left: 400px;
-    width: 700px;
-    padding: 2px;
-    font-size: 20px;
-    border-radius: 30px;
-    margin-right: -250px;
+
+form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 45%;
+    margin: 5% auto;
+    margin-left: 40%;
 }
-input{
-    width: 100%;
-    outline: none;
-    border: 1px;
+
+form > h3 {
+    font-size: 17px;
+    font-weight: bold;
+    margin: 15px 0;
+    color: #F1F1F1;
+    text-transform: uppercase;
+}
+
+form > .error {
+    margin: 0;
     font-size: 15px;
-    padding: 13px 18px;
-    border-radius: 5px;
-    background-color: rgba(255, 255, 255, 0.938);
+    font-weight: normal;
+    color: orange;
+    opacity: 0.7;
+}
+
+form > input, form > textarea {
+    border: 3px solid white;
+    box-shadow: unset;
+    padding: 13px 12px;
+    margin: 12px auto;
+    width: 80%;
+    font-size: 13px;
+    font-weight: 500;
+}
+form > input:focus, form > textarea:focus {
+    border: 3px solid white;
+    box-shadow: 0 2px 3px 0 rgba(0, 0, 0, 0.2);
+    outline: unset;
+}
+ form > button {
+    justify-self: center;
+    padding: 12px 25px;
+    border-radius: 0;
+    text-transform: uppercase;
+    font-weight: 600;
+    background-color: #192E5B;
+    border: none;
+    color: white;
+    text-align: center;
+    font-size: 14px;
+    letter-spacing: -0.1px;
+    cursor: pointer;
+}
+
+form > button:disabled {
+    background: dimgrey;
+    cursor: not-allowed;
 }
 .sidebar-nav{
     height: 100%;
@@ -51,24 +105,29 @@ input{
     }
   .sidebar-nav a:hover{
     color: black;
-        }
-    </style>
+  }
+
+</style>
 </head>
+<script src="{% static '/registerSw.js' %}"></script>
+<script src="{% static '/site.js' %}"></script>
+
 <body>
-    <div class="container">
-        <h3>Notifications</h3>
-        <form method="POST" enctype="multipart/form-data">
-    {%csrf_token%}
-    {{form.as_p}}
+<div class="send-push">
+    <form id="send-push__form">
+        <h3 class="header">Send a push notification</h3>
+        <p class="error"></p>
+        <input type="text" name="head" placeholder="Header: Your favorite airline 😍">
+        <textarea name="body" id="" cols="30" rows="10" placeholder="Body: Your flight has been cancelled 😱😱😱"></textarea>
+        <button>Send Me</button>
     </form>
 </div>
-</div>
 <div class="sidebar-nav">
-  <a href="">Group</a>
-  <a href="">Beans</a>
-  <a href="">Payment</a>
-  <a href="">Setting</a>
-  <a href="">LogOut</a>
-</div>
+    <a href="">Group</a>
+    <a href="">Beans</a>
+    <a href="">Payment</a>
+    <a href="">Setting</a>
+    <a href="">LogOut</a>
+  </div>
 </body>
 </html>
