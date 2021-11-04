@@ -12,14 +12,10 @@
         <h1> Edit details </h1>
         {{form.as_p}}
         <input type="submit" value="Submit" id="button">
-
-
-
     </form>
     <table id="table">
         {% for group_details in product %}
         <tr>
-
           <td>{{group_details.date_of_delivery}}</td>
           <td>{{group_details.beans_variety}}</td>
           <td>{{group_details.group_name}}</td>
@@ -54,6 +50,5 @@
             color:black;
         }
     </style>
-    
 </body>
 </html>

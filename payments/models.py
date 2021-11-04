@@ -6,4 +6,4 @@ class Payments(models.Model):
     price_per_kg=models.PositiveSmallIntegerField
     total_quantity_purchased=BigIntegerField
     date_of_delivery=models.DateField(auto_now_add=True)
-    # group_leader_phonenumberfield=models.phonenumberfield
+  

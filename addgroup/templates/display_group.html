@@ -124,8 +124,8 @@
   <div class="content" >
   <h1>Group List</h1>
         <div class="sidebar-nav">
-          <a href="{ %url 'home_page'% }">Home</a>
-          <a href="">Group</a>
+          <a href="">Home</a>
+          <a href="">Add group</a>
           <a href="">Beans</a>
           <a href="">Payment</a>
           <a href="">Setting</a>
@@ -150,8 +150,6 @@
         </tr>
         <tr>
         {% for group in groups %}
-        <!-- <td><img src="{{group.image.url}}"></td> -->
-
         <td>{{group.group_name}}</td>
         <td>{{group.no_of_members}}</td>
         <td>{{group.profile}}</td>

@@ -11,6 +11,10 @@
     <div class="row my-3 p-3">
           <div class="sidebar-nav">
             <a href="">Home</a>
+
+            <a href="">Add group</a>
+            <a href="">Beans</a>
+            <a href="">Payment</a>
             <a href="">Group</a>
             <a href="">Beans</a>
             <a href="{%url 'payments'%}">Payment</a>
@@ -28,8 +32,7 @@
                 <th>Price per kg</th>
                 <th>Total amount paid</th>
                 <th>Edit</th>
-            
-
+                <th>Delete</th>
             </tr>
             {% for group_details in products %}
             <tr>
@@ -40,13 +43,16 @@
               <td>{{group_details.kgs_of_beans}}</td>
               <td>{{group_details.Price_per_kg}}</td>
               <td>{{group_details.total_amount}}</td>
-              <td><a href="{% url 'edit' id=group_details.id %}"><img src="https://icons-for-free.com/iconfiles/png/512/svg+create+edit+edit+file+office+pencil+writing+creativ+icon-1320185158722776676.png" alt="" id="image"></a></td>
+              <td><a href="{% url 'group_details:edit' id=group_details.id %}"><img src="https://icons-for-free.com/iconfiles/png/512/svg+create+edit+edit+file+office+pencil+writing+creativ+icon-1320185158722776676.png" alt="" id="image"></a></td>
+              <td><a href="{% url 'group_details:delete' id=group_details.id %}"><img src="https://cdn.iconscout.com/icon/premium/png-256-thumb/delete-2471204-2066711.png" alt="" id="img"></a></td>
 
-            
+
+
           </tr>
           {% endfor %}
         </table>
     </div>
+
 
     <script>
       function toggleAddBtn() {
@@ -59,14 +65,15 @@
 }
     </script>
 
-
-
   <style type="text/css">
   body{
     background-color:#b4bfcc;
     margin-top: 0;
   }
   #image{
+    width: 35px;
+  }
+  #img{
     width: 35px;
   }
   .sidebar-nav{
