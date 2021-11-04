@@ -1,9 +1,9 @@
 from django import forms
 from django.db.models.base import Model
 from django.forms import fields
-from .models import Group_details
+from .models import Delivaries
 
 class GroupRegistrationForm(forms.ModelForm):
     class Meta:
-        model= Group_details
+        model= Delivaries
         fields= "__all__"

@@ -1,6 +1,6 @@
 from django.shortcuts import  render, redirect
 from .forms import GroupRegistrationForm
-from .models import Group_details
+from .models import Delivaries
 
 def group_details(request):
     if request.method=="POST":
@@ -15,15 +15,15 @@ def group_details(request):
     return render(request,"group_details.html",{"form":form})
 
 def display_beans(request):
-    products=Group_details.objects.all()
+    products=Delivaries.objects.all()
     return render(request,"bean_details.html",{"products":products})
 
 def profile(request,id):
-    product=Group_details.objects.get(id=id)
+    product=Delivaries.objects.get(id=id)
     return render(request,"profile.html",{"product":product})
 
 def edit(request,id):
-    product=Group_details.objects.get(id=id)
+    product=Delivaries.objects.get(id=id)
     if request.method=="POST":
         form=GroupRegistrationForm(request.POST,instance=product)
         if form.is_valid():
