@@ -8,6 +8,6 @@ urlpatterns = [
         path("group_details/",display_beans,name="list"),
         path("edit/<int:id>/",edit,name="edit"),
         path("delete/<int:id>/",delete,name="delete")
-        
+
 
 ]
