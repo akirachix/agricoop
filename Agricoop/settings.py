@@ -41,7 +41,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'crispy_forms',
     'settings',
-    'webpush'
+    'webpush',
 ]
 
 MIDDLEWARE = [
