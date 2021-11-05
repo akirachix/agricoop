@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  {% block title %}<title>Group List</title>{% endblock %}
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  {% load static %}
+  <link rel="stylesheet" href="{% static 'css/styles.css' %}">
+  <div class="content" >
+    <h1>Beans</h1>
+    <div class="row my-3 p-3">
+          <div class="sidebar-nav">
+            <a href="">Home</a>
+            <a href="{% url 'addgroup:add_group' %}">Add group</a>
+            <a href="{% url 'group_details:group_details' %}">Deliveries</a>
+            <a href="">Payment</a>
+            <a href="">Setting</a>
+            <a href="">LogOut</a>
+          </div>
+     </div>
+    <div>
+        <table id="table">
+            <tr>
+                <th>Delivery  date</th>
+                <th>Bean variety</th>
+                <th>Group name</th>
+                <th>Total kgs</th>
+                <th>Price per kg</th>
+                <th>Total amount paid</th>
+                <th>Edit</th>
+                <th>Delete</th>
+            </tr>
+            {% for group_details in products %}
+            <tr>
+              <td>{{group_details.date_of_delivery}}</td>
+              <td>{{group_details.beans_variety}}</td>
+              <td>{{group_details.group_name}}</td>
+              <td>{{group_details.kgs_of_beans}}</td>
+              <td>{{group_details.Price_per_kg}}</td>
+              <td>{{group_details.total_amount}}</td>
+              <td><a href="{% url 'group_details:edit' id=group_details.id %}"><img src="https://icons-for-free.com/iconfiles/png/512/svg+create+edit+edit+file+office+pencil+writing+creativ+icon-1320185158722776676.png" alt="" id="image"></a></td>
+              <td><a href="{% url 'group_details:delete' id=group_details.id %}"><img src="https://cdn.iconscout.com/icon/premium/png-256-thumb/delete-2471204-2066711.png" alt="" id="img"></a></td>
+          </tr>
+          {% endfor %}
+        </table>
+    </div>
+    <script>
+      function toggleAddBtn() {
+    var div = document.getElementById("bg-modal");
+     div.style.position='absolute'
+     div.style.top = 0
+     div.style.margin = '8% 32%'
+     div.style.boxShadow = '5px 10px 8px 10px #888888'
+     div.classList.toggle('hidden')
+}
+    </script>
+  <style type="text/css">
+  body{
+    background-color:#b4bfcc;
+    margin-top: 0;
+  }
+  #image{
+    width: 35px;
+  }
+  #img{
+    width: 35px;
+  }
+  .sidebar-nav{
+    height: 100%;
+    width: 230px;
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    background-color:#192E5B;
+    overflow: hidden;
+    padding-top: 100px;
+  }
+  .sidebar-nav a{
+    padding:10px 10px 10px 30px;
+    text-decoration: none;
+    font-size: 20px;
+    color: #F1F1F1;
+    display: block;
+    }
+  .sidebar-nav a:hover{
+    color: black;
+        }
+  h1{
+    text-align: center;
+    text-decoration-color: black;
+    margin-top: 0%;
+    padding-left: 3%;
+  }
+  h3{
+    color: black;
+    font-size: 30px;
+    margin-left: 200px;
+  }#table {
+            font-family: Arial, Helvetica, sans-serif;
+            border-collapse: collapse;
+            width: 80%;
+            margin-left: 20%;
+         } ;
+        #table td, #table th {
+            border: 1px solid rgb(15, 15, 15);
+            padding: 8px;
+        }
+        #table tr:nth-child(even){
+            background-color: #f2f2f2be;
+        }
+        #table tr:hover {
+            background-color: rgba(221, 221, 221, 0.192);
+        }
+        #table th {
+            padding-top: 12px;
+            padding-bottom: 12px;
+            text-align: left;
+            color:black;
+        }
+  </style>
+</body>
+</html>
