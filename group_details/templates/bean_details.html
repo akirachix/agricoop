@@ -12,12 +12,9 @@
           <div class="sidebar-nav">
             <a href="">Home</a>
 
-            <a href="">Add group</a>
-            <a href="">Beans</a>
+            <a href="{% url 'addgroup:add_group' %}">Add group</a>
+            <a href="{%url 'group_details:group_details' %}">Deliveries</a>
             <a href="">Payment</a>
-            <a href="">Group</a>
-            <a href="">Beans</a>
-            <a href="{%url 'payments'%}">Payment</a>
             <a href="">Setting</a>
             <a href="">LogOut</a>
           </div>
@@ -129,6 +126,29 @@
             text-align: left;
             color:black;
         }
+        .addbutton {
+  background-color: #192E5B;
+  border: none;
+  color: #ffffff;
+  padding: 5px 10px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 20px;
+  margin-left: 1100px;
+  position: relative;
+  bottom: -100px;
+  border-radius: 10px;
+  cursor: pointer;
+  
+ 
+
+}
+a:link {
+  text-decoration: none;
+  color: #ffffff;
+}
   </style>
+
 </body>
 </html>

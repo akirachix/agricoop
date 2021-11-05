@@ -120,13 +120,36 @@
   cursor: pointer;
   border-radius: 50%;
 }
+
+.addbutton {
+  background-color: #192E5B;
+  border: none;
+  color: #ffffff;
+  padding: 5px 10px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 20px;
+  margin-left: 1100px;
+  position: relative;
+  bottom: -350px;
+  border-radius: 10px;
+  cursor: pointer;
+  border-radius: 50%;
+ 
+
+}
+a:link {
+  text-decoration: none;
+  color: #ffffff;
+}
 </style>
   <div class="content" >
   <h1>Group List</h1>
         <div class="sidebar-nav">
-          <a href="">Home</a>
-          <a href="">Add group</a>
-          <a href="">Beans</a>
+          <a href="{% url 'addgroup:display_group' %}">Home</a>
+          <a href="{% url 'addgroup:add_group' %}">Add group</a>
+          <a href="{% url 'group_details:group_details' %}">Deliveries</a>
           <a href="">Payment</a>
           <a href="">Setting</a>
           <a href="">LogOut</a>
@@ -158,6 +181,8 @@
 </tr>
  {%endfor%}
     </table>
+    <button class="addbutton"><a href="{% url 'addgroup:add_group' %}">+</a></button>
+
 
 
 </body>

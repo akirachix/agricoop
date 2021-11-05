@@ -52,11 +52,8 @@
         <div class="sidebar-nav">
           <a href="{% url 'payments' %}">Home</a>
 
-          <a href="">Group</a>
-          <a href="">Beans</a>
-          <a href="">Payment</a>
-          <a href="">Add group</a>
-          <a href="">Beans</a>
+          <a href="{% url 'addgroup:add_group' %}">Add Group</a>
+          <a href="{%url 'group_details:group_details' %}">Deliveries</a>
           <a href="">Payment</a>
           <a href="">Setting</a>
           <a href="">LogOut</a>

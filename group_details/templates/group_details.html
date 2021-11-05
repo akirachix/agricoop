@@ -68,6 +68,28 @@ h3{
   cursor: pointer;
   top: 20px;
 }
+.addbutton {
+  background-color: #192E5B;
+  border: none;
+  color: #ffffff;
+  padding: 5px 10px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 20px;
+  margin-left: 1100px;
+  position: relative;
+  bottom: -100px;
+  border-radius: 10px;
+  cursor: pointer;
+  
+ 
+
+}
+a:link {
+  text-decoration: none;
+  color: #ffffff;
+}
     </style>
 </head>
 <body>
@@ -83,11 +105,12 @@ h3{
 </div>
 <div class="sidebar-nav">
   <a href="">Home</a>
-  <a href="">Add group</a>
-  <a href="">Beans</a>
+  <a href="{% url 'addgroup:add_group' %}">Add group</a>
+  <a href="{%url 'group_details:group_details' %}">Deliveries</a>
   <a href="">Payment</a>
   <a href="">Setting</a>
   <a href="">LogOut</a>
 </div>
+<button class="addbutton"><a href="{% url 'group_details:list' %}">view deliveries</a></button>
 </body>
 </html>

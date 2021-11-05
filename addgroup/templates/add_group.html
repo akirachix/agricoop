@@ -301,8 +301,8 @@ a:link {
   <div class="row my-3 p-3">
     <div class="sidebar-nav">
       <a href="">Home</a>
-      <a href="">Add group</a>
-      <a href="">Add group</a>
+      <a href="{% url 'addgroup:add_group' %}">Add group</a>
+      <a href="{%url 'group_details:group_details' %}">Deliveries</a>
       <a href="">Payments</a>
       <a href="">Setting</a>
       <a href="">LogOut</a>
@@ -318,18 +318,6 @@ a:link {
      <button class="submit1"><a href="{% url 'addgroup:display_group' %}">View groups</a></button>
 
   </div>
-
-
-        <div class="sidebar-nav">
-          
-          <a href="">Home</a>
-          <a href="">Add group</a>
-          <a href="">Beans</a>
-          <a href="">Payment</a>
-          <a href="">Setting</a>
-          <a href="">LogOut</a>
-        
-        </div>
    </div>
    <button onclick="toggleAddBtn()" id="addbutton">+</button>
    <button onclick="toggleAddBtn2()" id="addbutton2">+</button>
