@@ -1,4 +1,5 @@
 import django_heroku
+import os
 """
 Django settings for Agricoop project.
 
@@ -40,6 +41,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'crispy_forms',
     'settings',
+    
     
 ]
 
