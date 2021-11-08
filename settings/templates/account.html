@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <h1>Account</h1>
+  <div class="content">
+    <div class="sidebar-nav">
+      <a href="">Home</a>
+      <a href="">Group</a>
+      <a href="">Beans</a>
+      <a href="">Payment</a>
+      <a href="">Setting</a>
+      <a href="">LogOut</a>
+    </div>
+  </div>
+
+  <div class="profile-pic-div">
+    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT2YI2AxbByQhYkEkFB-Y9qs3MtgZI2Nc-Y1A&usqp=CAU" id="photo">
+     <input type="file" id="photo">
+    <input type="file" id="file">
+    <label for="file" id="uploadBtn">Photo</label>
+  </div>
+
+  <div id="btn3">
+    <button class="btn1">Update picture</button>
+    <button class="btn2">Remove picture</button>
+  </div>
+
+  <p id="para">If you change your username,it will completely be changed</p>
+
+
+  <a href=""><button class="btnUser">Change Username</button></a>
+
+  <h3>Delete account</h3>
+  <p>Once you delete this account,all your information will be lost</p>
+  
+  <a href=""><button id="btnDel" >Delete account</button></a>
+
+  <style>
+        body{
+          background-color:#b4bfcc;
+        }
+        h3{
+          margin-left: 42%;
+        }
+        p{
+          margin-left: 42%;
+        }
+        .sidebar-nav{
+          height: 100%;
+          width: 160px;
+          position: fixed;
+          z-index: 1;
+          top: 0;
+          left: 0;
+          background-color:#192E5B;
+          overflow: hidden;
+          padding-top: 100px;
+        }
+        .sidebar-nav a{
+          padding:10px 10px 10px 16px;
+          text-decoration: none;
+          font-size: 20px;
+          color: #F1F1F1;
+          display: block;
+          }
+        .sidebar-nav a:hover{
+          color: black;
+              }
+        h1{
+          text-align: center;
+          text-decoration-color: black;
+          margin-top: 0%;
+          padding-left: 3%;
+        }
+        #para{
+          margin-left:42%;
+          margin-top:5%;
+        }
+        #btnDel{
+          color: red;
+          margin-left: 42%;
+          background-color: white;
+          border-radius: 10px;
+          padding: 14px 28px;
+          font-size: 13px;
+          cursor: pointer;
+          border: none;
+          box-shadow: -10px 10px 20px rgba(0, 0, 0, 0.3);
+        }
+        .btnUser {
+          border: none;
+          margin-left: 42%;
+          background-color: white;
+          border-radius: 10px;
+          font-size: 13px;
+          cursor: pointer;
+          padding: 14px 28px;
+          box-shadow: -10px 10px 20px rgba(0, 0, 0, 0.3);
+        }
+        #btn3{
+          display: flex;
+          margin-top: 5%;
+        }
+        .btn1 {
+          border: none;
+          margin-left:42%;
+          background-color: white;
+          border-radius: 10px;
+          padding: 14px 28px;
+          font-size: 13px;
+          cursor: pointer;
+          box-shadow: -10px 10px 20px rgba(0, 0, 0, 0.3);
+        }
+        .btn2 {
+          border: none;
+          margin-left:5%;
+          background-color: white;
+          border-radius: 10px;
+          padding: 14px 28px;
+          font-size: 13px;
+          cursor: pointer;
+          box-shadow: -10px 10px 20px rgba(0, 0, 0, 0.3);
+        }
+        img{
+          height: 100px;
+        }
+        *{
+          /* margin: 0%;
+          padding: 0%; */
+          box-sizing: border-box;
+        }
+        .profile-pic-div{
+          height: 90px;
+          width: 90px;
+          position: absolute;
+          top: 20%;
+          left: 30%;
+          border-radius: 50%;
+          transform: translate(-50%,-50%);
+          overflow: hidden;
+          border: 1px solid grey;
+        }
+        #photo{
+          height: 100%;
+          width: 100%;
+        }
+        #file{
+          display: none;
+        }
+        #uploadBtn{
+          height: 40px;
+          width: 100%;
+          position: absolute;
+          bottom: 0%;
+          left: 50%;
+          transform: translateX(-50%);
+          text-align: center;
+          background-color: rgba (0, 0, 0, 0.7);
+          color: grey;
+          font-weight: bold;
+          line-height: 30px;
+          font-family: sans-serif;
+          font-size: 12px;
+          cursor: pointer;
+          padding-left: 10%;
+        }
+        </style>
+</body>
+</html>
