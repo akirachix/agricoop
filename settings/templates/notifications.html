@@ -1,0 +1,122 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="vapid-key" content="{{ vapid_key }}">
+    {% if user.id %}
+        <meta name="user_id" content="{{ user.id }}">
+    {% endif %}
+    <title>Web Push</title>
+    <link href="https://fonts.googleapis.com/css?family=PT+Sans:400,700" rel="stylesheet">
+<style>
+    body {
+    height: 100%;
+    background-color:#b4bfcc;
+    font-family: 'PT Sans', sans-serif;
+}
+.send-push {
+    height: 100%;
+    margin-left:-20%;
+    align-items: center;
+}
+form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 45%;
+    margin: 5% auto;
+    margin-left: 40%;
+}
+form > h3 {
+    font-size: 17px;
+    font-weight: bold;
+    margin: 15px 0;
+    color: #000000;
+    text-transform: uppercase;
+}
+form > .error {
+    margin: 0;
+    font-size: 15px;
+    font-weight: normal;
+    color: orange;
+    opacity: 0.7;
+}
+form > input, form > textarea {
+    border: 3px solid white;
+    box-shadow: unset;
+    padding: 13px 12px;
+    margin: 12px auto;
+    width: 80%;
+    font-size: 13px;
+    font-weight: 500;
+}
+form > input:focus, form > textarea:focus {
+    border: 3px solid white;
+    box-shadow: 0 2px 3px 0 rgba(0, 0, 0, 0.2);
+    outline: unset;
+}
+ form > button {
+    justify-self: center;
+    padding: 12px 25px;
+    border-radius: 0;
+    text-transform: uppercase;
+    font-weight: 600;
+    background-color: #192E5B;
+    border: none;
+    color: white;
+    text-align: center;
+    font-size: 14px;
+    letter-spacing: -0.1px;
+    cursor: pointer;
+}
+form > button:disabled {
+    background: dimgrey;
+    cursor: not-allowed;
+}
+.sidebar-nav{
+    height: 100%;
+    width: 230px;
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    background-color:#192E5B;
+    overflow: hidden;
+    padding-top: 100px;
+  }
+  .sidebar-nav a{
+    padding:10px 10px 10px 30px;
+    text-decoration: none;
+    font-size: 20px;
+    color: #F1F1F1;
+    display: block;
+    }
+  .sidebar-nav a:hover{
+    color: black;
+  }
+</style>
+</head>
+<script src="{% static '/registerSw.js' %}"></script>
+<script src="{% static '/site.js' %}"></script>
+<body>
+<div class="send-push">
+    <form id="send-push__form">
+        <h3 class="header">Notification</h3>
+        <p class="error"></p>
+        <input type="text" name="head" placeholder="Header: Your favorite airline :heart_eyes:">
+        <textarea name="body" id="" cols="30" rows="10" placeholder="Body: Your flight has been cancelled :scream::scream::scream:"></textarea>
+    </form>
+</div>
+<div class="sidebar-nav">
+    <a href="">Group</a>
+    <a href="">Beans</a>
+    <a href="">Payment</a>
+    <a href="">Setting</a>
+    <a href="">LogOut</a>
+  </div>
+</body>
+</html>

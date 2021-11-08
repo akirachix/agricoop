@@ -18,6 +18,8 @@ from django.urls import path
 from django.urls.conf import include
 from django.conf.urls.static import static
 from django.conf import settings
+from django.views.generic import TemplateView
+
 
 
 urlpatterns = [
@@ -27,6 +29,10 @@ urlpatterns = [
      path("group_details/",include("group_details.urls")),
     path("payments/",include("payments.urls")),
     path("group_details/",include("group_details.urls")),
+    path('settings/', include("settings.urls")),
+    # path('send_push', send_push),
+    path('webpush/', include('webpush.urls')),
+    path('sw.js', TemplateView.as_view(template_name='sw.js', content_type='application/x-javascript'))
 
 ]
 
