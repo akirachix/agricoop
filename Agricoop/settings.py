@@ -1,3 +1,4 @@
+import os
 import django_heroku
 """
 Django settings for Agricoop project.
@@ -27,7 +28,7 @@ SECRET_KEY = 'django-insecure-$da-%))urip@h-45-*exazruqop%iea)2+417oo3g1(+8u)#$p
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['your_server_ip', 'ngrok_secure_url']
 
 
 # Application definition
@@ -40,7 +41,12 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'crispy_forms',
+<<<<<<< HEAD
     'settings',  
+=======
+    'settings',
+    'webpush',
+>>>>>>> 9a889d954b64a2dd31bfecc6ecaa9a20dfe988e9
 ]
 AUTH_PROFILE_MODULE = 'settings.Settings_page'
 
@@ -59,7 +65,8 @@ ROOT_URLCONF = 'Agricoop.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        'DIRS': [os.path.join(BASE_DIR, 'templates')],
+
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -103,7 +110,11 @@ AUTH_PASSWORD_VALIDATORS = [
         'NAME': 'django.contrib.auth.password_validation.NumericPasswordValidator',
     },
 ]
-
+WEBPUSH_SETTINGS = {
+   "VAPID_PUBLIC_KEY": "BAmbODlRzOa69GwlmO4XRe_VVYDQh_inFjdDhdMlUIq_iO13li0Z4_xlzssvXPFstpQtq",
+   "VAPID_PRIVATE_KEY": "6_ihf081iWa_Sk0cXKnr9UdrO4uK-fcqJWHSweT2X2g",
+   "VAPID_ADMIN_EMAIL": "farmtoplate05@gmail.com"
+}
 
 # Internationalization
 # https://docs.djangoproject.com/en/3.2/topics/i18n/
@@ -126,6 +137,9 @@ STATIC_URL = '/static/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 MEDIA_URL = '/media/'
 
+STATICFILES_DIRS = [
+    os.path.join(BASE_DIR, "static"),
+]
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/3.2/ref/settings/#default-auto-field
