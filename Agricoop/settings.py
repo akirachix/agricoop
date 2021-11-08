@@ -41,12 +41,8 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'crispy_forms',
-<<<<<<< HEAD
-    'settings',  
-=======
     'settings',
     'webpush',
->>>>>>> 9a889d954b64a2dd31bfecc6ecaa9a20dfe988e9
 ]
 AUTH_PROFILE_MODULE = 'settings.Settings_page'
 
