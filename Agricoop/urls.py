@@ -24,6 +24,10 @@ urlpatterns = [
     path('settings/', include("settings.urls")),  
     path('admin/', admin.site.urls),
     path('settings/', include("settings.urls")),
+<<<<<<< HEAD
+=======
+    # path('webpush/', include('webpush.urls')),
+>>>>>>> 5eec1971585693af0cf8e602b1410896aba14037
     path('sw.js', TemplateView.as_view(template_name='sw.js', content_type='application/x-javascript'))
      
 ]

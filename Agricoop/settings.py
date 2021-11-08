@@ -43,8 +43,11 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'crispy_forms',
     'settings',
+<<<<<<< HEAD
     
 
+=======
+>>>>>>> 5eec1971585693af0cf8e602b1410896aba14037
 ]
 AUTH_PROFILE_MODULE = 'settings.Settings_page'
 
