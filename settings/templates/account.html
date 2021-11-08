@@ -36,12 +36,12 @@
   <p id="para">If you change your username,it will completely be changed</p>
 
 
-  <a href="{% url 'user_name'%}"><button class="btnUser">Change Username</button></a>
+  <a href=""><button class="btnUser">Change Username</button></a>
 
   <h3>Delete account</h3>
   <p>Once you delete this account,all your information will be lost</p>
   
-  <a href="{%url 'delete'%}"><button id="btnDel" >Delete account</button></a>
+  <a href=""><button id="btnDel" >Delete account</button></a>
 
   <style>
         body{
@@ -133,8 +133,6 @@
           height: 100px;
         }
         *{
-          /* margin: 0%;
-          padding: 0%; */
           box-sizing: border-box;
         }
         .profile-pic-div{
@@ -173,6 +171,12 @@
           padding-left: 10%;
         }
         
+        @media screen and (min-width:768px){
+          .btn2{
+            padding: 8px 15px;
+            font-size: 1px;
+          }
+        }
         </style>
 
       
