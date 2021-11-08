@@ -58,3 +58,6 @@ def notifications(request):
    vapid_key = webpush_settings.get('VAPID_PUBLIC_KEY')
    user = request.user
    return render(request, 'notifications.html', {user: user, 'vapid_key': vapid_key})
+
+def privacy_page(request):
+    return render(request,"privacy_page.html")
