@@ -151,17 +151,17 @@ h1{
 
 <div class="row my-3 p-3">
     <div class="sidebar-nav">
-      <a href="">Home</a>
-      <a href="">Add group</a>
-      <a href="">Deliveries</a>
+      <a href="{% url 'addgroup:display_group' %}">Home</a>
+      <a href="{% url 'addgroup:add_group' %}">Add group</a>
+      <a href="{% url 'group_details:group_details' %}">Deliveries</a>
       <a href="">Payment</a>
-      <a href="" id="pop" >Settings</a>
+      <a href="{%url 'setting_page'%}" id="pop" >Settings</a>
       <a href="">LogOut</a>
     
     <div class="profile-pic-div">
       <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT2YI2AxbByQhYkEkFB-Y9qs3MtgZI2Nc-Y1A&usqp=CAU" id="photo">
-       <input type="file" id="photo"> 
-      <input type="file" id="file"> 
+       <input type="file" id="photo">
+      <input type="file" id="file">
       <label for="file" id="uploadBtn">Photo</label>
     </div>
     </div>

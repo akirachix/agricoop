@@ -48,7 +48,7 @@ INSTALLED_APPS = [
     'payments',
     'group_details',
     'webpush',
-    'settings'
+    'settings',
 ]
 
 MIDDLEWARE = [

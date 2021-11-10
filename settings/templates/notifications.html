@@ -112,10 +112,11 @@ form > button:disabled {
     </form>
 </div>
 <div class="sidebar-nav">
-    <a href="">Group</a>
-    <a href="">Beans</a>
+    <a href="{% url 'addgroup:display_group' %}">Home</a>
+    <a href="{% url 'addgroup:add_group' %}">Add Group</a>
+    <a href="{% url 'group_details:group_details' %}">Deliveries</a>
     <a href="">Payment</a>
-    <a href="">Setting</a>
+    <a href="{%url 'setting_page'%}">Setting</a>
     <a href="">LogOut</a>
   </div>
 </body>

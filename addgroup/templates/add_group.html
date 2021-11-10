@@ -283,13 +283,9 @@ a:link {
   .sidebar-nav{
   width:13%;
   }
-}
-@media screen and (max-width: 960px) {
-  .sidebar-nav >a {
+.sidebar-nav >a {
   font-size: 70%;
   }
-}
-@media screen and (max-width: 768px) {
   #group{
     width: 8%;
     height: 900%;
@@ -297,80 +293,65 @@ a:link {
     margin-left: 29%;
     font-size: 50%;
    }
-}
-@media screen and (max-width: 768px) {
-h3{
+   h3{
   margin-left: 20%;
-top: 40%;}
+top: 40%;
 }
-
-@media screen and (max-width: 768px) {
-  #members{
+#members{
     padding: 7px 90px;
     margin-left: 29%;
     width: 8%;
     font-size: 50%;
 
   }
-}
-@media screen and (max-width: 768px) {
   #addbutton {
    right:135%;
    bottom: 72px;
    padding: 1px 6px;
 
 }
+  #addbutton {
+   right:135%;
+   bottom: 72px;
+   padding: 1px 6px;
+
 }
-@media screen and (max-width: 768px) {
-  #addbutton2 {
+#addbutton2 {
   right:135%;
    bottom: 55px;
-   padding: 1px 6px;}
-}
-@media screen and (max-width: 768px) {
+   padding: 1px 6px;
+  }
   .submit1{
   right:50%;
   height: 30px;
   width :25%;
   font-size: 9px;
   }
-}
-@media screen and (max-width: 768px) {
-input{
+  input{
   right:9%;
   height: 1px;
   width :40%;
   font-size: 9px;
 }
-
 }
-@media screen and (max-width: 540px) {
-input{
-  right:9%;
-  height: 1px;
-  width :40%;
-  font-size: 9px;
-}
-
-}
-  </style>
+</style>
 </head>
 <body>
   <div class="row my-3 p-3">
     <div class="sidebar-nav">
-      <a href="">Home</a>
+      <a href="{% url 'addgroup:display_group' %}">Home</a>
       <a href="{% url 'addgroup:add_group' %}">Add group</a>
       <a href="{%url 'group_details:group_details' %}">Deliveries</a>
-      <a href="">Payments</a>
-      <a href="">Setting</a>
+      <a href="{% url 'payments' %}">Payments</a>
+      <a href="{%url 'setting_page'%}">Setting</a>
       <a href="">LogOut</a>
-      
+
     </div>
 </div>
 <div class="content" >
   <h3>Add group</h3>
   <div class="input-field">
-    
+
   <input type="text1" name="name" value="Name of the group">
     <h4 id="group">Group leader details</h4>
      <h4 id="members">Group members</h4>
@@ -380,10 +361,10 @@ input{
    </div>
    <button onclick="toggleAddBtn()" id="addbutton">+</button>
    <button onclick="toggleAddBtn2()" id="addbutton2">+</button>
-  
+
   <div id="bg-modal"  class="hidden">
     <div class="modal-content">
-      
+
       <form method="POST">
      <h2>Group leader details</h2>
      <div class="wrapper">

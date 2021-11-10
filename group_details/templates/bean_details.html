@@ -10,11 +10,11 @@
     <h1>Beans</h1>
     <div class="row my-3 p-3">
           <div class="sidebar-nav">
-            <a href="">Home</a>
+            <a href="{% url 'addgroup:display_group' %}">Home</a>
             <a href="{% url 'addgroup:add_group' %}">Add group</a>
             <a href="{% url 'group_details:group_details' %}">Deliveries</a>
-            <a href="">Payment</a>
-            <a href="">Setting</a>
+            <a href="{% url 'payments' %}">Payment</a>
+            <a href="{%url 'setting_page'%}">Setting</a>
             <a href="">LogOut</a>
           </div>
      </div>
