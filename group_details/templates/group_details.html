@@ -2,6 +2,8 @@
 <html>
 <head>
     <title>Group Details</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <style>
 body{
     background-color:#b4bfcc;
@@ -81,9 +83,37 @@ h3{
   bottom: 200px;
   background-color: #192E5B;
   color: white;
-
-  
+  /* border-radius: 50%; */
 }
+  @media screen and (max-width: 960px) {
+  .sidebar-nav >a {
+     font-size: 13px;
+    margin-top: -2px;
+    /* height: 9%; */
+
+  }
+  }
+@media screen and (max-width: 960px) {
+  .sidebar-nav{
+    height: 90%;
+    width: 30%;
+
+  }
+}
+@media screen and (max-width: 768px) {
+.container{
+   margin-left:35%;
+   width: 50%;
+   }
+}
+@media screen and (max-width: 768px) {
+.submit2{
+  font-size: 90%;
+  width: 30%;
+  height: 30px;
+}
+}
+
     </style>
 </head>
 <body>
@@ -125,11 +155,11 @@ h3{
 </div>
 </div>
 <div class="sidebar-nav">
-  <a href="">Home</a>
+  <a href="{% url 'addgroup:display_group' %}">Home</a>
   <a href="{% url 'addgroup:add_group' %}">Add group</a>
   <a href="{% url 'group_details:group_details' %}">Deliveries</a>
-  <a href="">Payment</a>
-  <a href="">Setting</a>
+  <a href="{% url 'payments' %}">Payment</a>
+  <a href="{%url 'setting_page'%}">Setting</a>
   <a href="">LogOut</a>
 </div>
 <button class="submit2"><a href="{% url 'group_details:list' %}">View deliveries</a></button>

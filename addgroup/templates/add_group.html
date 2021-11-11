@@ -205,8 +205,8 @@ input{
 
  
 }  
-input[type=text1]{
-  width: 81%;
+input{
+  width: 84%;
   border: 2px;
   margin: 8px 0;
   outline: none;
@@ -257,7 +257,7 @@ form{
   position: relative;
   bottom: 200px;
   color: white;
-                
+
 }
 a:link {
   text-decoration: none;
@@ -279,40 +279,80 @@ a:link {
   color: white;
   
 }
-@media screen and (max-width: 700px) {
-  .container{
-    font-size: 20px;
-    margin-left: 90px;
+@media screen and (max-width: 960px) {
+  .sidebar-nav{
+  width:8%;
+  font-size: 16%;
   }
+.sidebar-nav >a {
+  font-size: 70%;
+  }
+  #group{
+    width: 8%;
+    height: 900%;
+    padding: 2px 90px;
+    margin-left: 17%;
+    font-size: 50%;
+   }
+   h3{
+  margin-left:-6%;
+  top: 40%;
 }
-@media screen and (max-width: 700px) {
-  .input> h1 {
-    font-size: 50px;
-    margin-top: -10px;
+#members{
+    padding: 7px 90px;
+    margin-left: 17%;
+    width: 8%;
+    font-size: 50%;
+
   }
-  .button-add{
-    font-size: 30px;
-    margin-left: 50px;
-  }
+  #addbutton {
+   right:135%;
+   bottom: 72px;
+   padding: 1px 6px;
+
 }
-  </style>
+  #addbutton {
+   right:150%;
+   bottom: 72px;
+   padding: 1px 6px;
+
+}
+#addbutton2 {
+  right:150%;
+   bottom: 55px;
+   padding: 1px 6px;
+  }
+  .submit1{
+  right:60%;
+  height: 30px;
+  width :25%;
+  font-size: 9px;
+  }
+  input{
+  right:21%;
+  height: 1px;
+  width :38%;
+  font-size: 9px;
+}
+}
+</style>
 </head>
 <body>
   <div class="row my-3 p-3">
     <div class="sidebar-nav">
-      <a href="">Home</a>
+      <a href="{% url 'addgroup:display_group' %}">Home</a>
       <a href="{% url 'addgroup:add_group' %}">Add group</a>
       <a href="{%url 'group_details:group_details' %}">Deliveries</a>
-      <a href="">Payments</a>
-      <a href="">Setting</a>
+      <a href="{% url 'payments' %}">Payments</a>
+      <a href="{%url 'setting_page'%}">Setting</a>
       <a href="">LogOut</a>
-      
+
     </div>
 </div>
 <div class="content" >
   <h3>Add group</h3>
   <div class="input-field">
-    
+
   <input type="text1" name="name" value="Name of the group">
     <h4 id="group">Group leader details</h4>
      <h4 id="members">Group members</h4>
@@ -322,10 +362,10 @@ a:link {
    </div>
    <button onclick="toggleAddBtn()" id="addbutton">+</button>
    <button onclick="toggleAddBtn2()" id="addbutton2">+</button>
-  
+
   <div id="bg-modal"  class="hidden">
     <div class="modal-content">
-      
+
       <form method="POST">
      <h2>Group leader details</h2>
      <div class="wrapper">
@@ -362,10 +402,10 @@ a:link {
      </form>
      </div>
      </div>
-    
+
       </form>
     </div>
-    
+
   </div>
 <script>
   function toggleAddBtn() {

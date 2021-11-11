@@ -10,11 +10,11 @@
     <h1>Beans</h1>
     <div class="row my-3 p-3">
           <div class="sidebar-nav">
-            <a href="">Home</a>
+            <a href="{% url 'addgroup:display_group' %}">Home</a>
             <a href="{% url 'addgroup:add_group' %}">Add group</a>
             <a href="{% url 'group_details:group_details' %}">Deliveries</a>
-            <a href="">Payment</a>
-            <a href="">Setting</a>
+            <a href="{% url 'payments' %}">Payment</a>
+            <a href="{%url 'setting_page'%}">Setting</a>
             <a href="">LogOut</a>
           </div>
      </div>
@@ -134,20 +134,37 @@
             text-align: left;
             color:black;
         }
-        @media only screen and (min-width: 1200px) {
-           #table{
-            font-family: Arial, Helvetica, sans-serif;
-            border-collapse: collapse;
-            width: 80%;
-            margin-left: 20%;
-            }
-}
-@media only screen and (min-width: 1024px) {
-  .sidebar-nav {
-    display: flex;
+        @media screen and (max-width: 960px) {
+  .sidebar-nav >a {
+     font-size: 13px;
+    margin-top: -15px;
+    height: 30px;
+
+  }
+  }
+@media screen and (max-width: 960px) {
+  .sidebar-nav{
+    height: 90%;
+    width: 30%;
   }
 }
-
+@media screen and (max-width: 768px) {
+  #table{
+    width: 65%;
+    margin-left: 35%; 
+    font-size: 40%;
+   }
+}
+@media screen and (max-width: 768px) {
+  #image{
+    width: 20px;
+  }
+}
+@media screen and (max-width: 768px) {
+  #img{
+    width: 14px;
+  }
+}
   </style>
 </body>
 </html>

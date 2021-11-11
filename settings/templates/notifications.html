@@ -45,14 +45,14 @@ form > .error {
     color: orange;
     opacity: 0.7;
 }
-form > input, form > textarea {
+ form > input, form > textarea {
     border: 3px solid white;
     box-shadow: unset;
     padding: 13px 12px;
     margin: 12px auto;
     width: 80%;
     font-size: 13px;
-    font-weight: 500;
+    font-weight: 500; 
 }
 form > input:focus, form > textarea:focus {
     border: 3px solid white;
@@ -72,7 +72,7 @@ form > input:focus, form > textarea:focus {
     font-size: 14px;
     letter-spacing: -0.1px;
     cursor: pointer;
-}
+} */
 form > button:disabled {
     background: dimgrey;
     cursor: not-allowed;
@@ -98,6 +98,28 @@ form > button:disabled {
   .sidebar-nav a:hover{
     color: black;
   }
+
+  @media screen and (max-width: 960px) {
+  .sidebar-nav >a {
+     font-size: 13px;
+    margin-top: -2px;
+    /* height: 9%; */
+
+  }
+  }
+@media screen and (max-width: 960px) {
+  .sidebar-nav{
+    height: 90%;
+    width: 30%;
+  }
+}
+@media screen and (max-width: 768px) {
+form > input, form > textarea{
+   margin-left:9%;
+   }
+}
+
+
 </style>
 </head>
 <script src="{% static '/registerSw.js' %}"></script>
@@ -112,10 +134,11 @@ form > button:disabled {
     </form>
 </div>
 <div class="sidebar-nav">
-    <a href="">Group</a>
-    <a href="">Beans</a>
+    <a href="{% url 'addgroup:display_group' %}">Home</a>
+    <a href="{% url 'addgroup:add_group' %}">Add Group</a>
+    <a href="{% url 'group_details:group_details' %}">Deliveries</a>
     <a href="">Payment</a>
-    <a href="">Setting</a>
+    <a href="{%url 'setting_page'%}">Setting</a>
     <a href="">LogOut</a>
   </div>
 </body>

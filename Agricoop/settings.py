@@ -47,7 +47,6 @@ INSTALLED_APPS = [
     'addgroup',
     'payments',
     'group_details',
-    # 'webpush',
     'settings'
 ]
 

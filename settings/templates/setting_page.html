@@ -10,21 +10,21 @@
 <body>
     <div class="row my-3 p-3">
         <div class="sidebar-nav">
-          <a href="">Home</a>
-          <a href="">Group</a>
-          <a href="">Beans</a>
+          <a href="{% url 'addgroup:display_group' %}">Home</a>
+          <a href="{% url 'addgroup:add_group' %}">Add Group</a>
+          <a href="{% url 'group_details:group_details' %}">Deliveries</a>
           <a href="">Payment</a>
-          <a href="">Setting</a>
+          <a href="{%url 'setting_page'%}">Setting</a>
           <a href="">LogOut</a>
         </div>
    </div>
 
    <h1 id="settings">Settings</h1>
 <div class="text">
-   <h4 id="accounts">Accounts</h4>
-   <h4 id="notifications">Notifications</h4>
-   <h4 id="privacy">Privacy and Security</h4>
-   <h4 id="help">Help & support</h4>
+  <a href="{%url 'accounts'%}"><h4 id="accounts">Accounts</h4></a>
+  <a href="{%url 'notifications'%}"><h4 id="notifications">Notifications</h4></a>
+  <a href="{%url 'privacy'%}"> <h4 id="privacy">Privacy and Security</h4></a>
+  <a href="{%url 'help'%}"> <h4 id="help">Help & support</h4></a>
 </div>
 <img id="Aimg" width="20px" height="20px"  src="https://cdn-icons-png.flaticon.com/128/1077/1077114.png" alt="">
 
