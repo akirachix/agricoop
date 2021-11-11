@@ -70,6 +70,10 @@ h3{
   cursor: pointer;
   top: 20px;
 }
+a{
+  color: white;
+  text-decoration: none;
+}
 .submit2{
   text-decoration-style:none;
   top: 30px;
@@ -118,37 +122,11 @@ h3{
 </head>
 <body>
     <div class="container">
-        <h3>Deliveries </h3>
+        <!-- <h3>Deliveries </h3> -->
         <form method="POST" enctype="multipart/form-data">
           {%csrf_token%}
           {{form.as_p}}
-          <!-- {{bean.as_p}} -->
-
-    <!-- </form>
-
-    <form method="get" >
-      Bean
-      <select name='drop1'>
-          <option selected disabled="true">Select beans</option>
-          {% for b in beans %}
-          <option id="bean" type="text" name="bean" value="{{ b.beans_variety}}">
-          {{ b.beans_variety }}
-          </option>
-          {% endfor %}
-      </select>
-
-      <form method="get" >
-        Bean
-        <select name='drop1'>
-            <option selected disabled="true">Select price</option>
-            {% for b in beans %}
-            <option id="bean" type="text" name="bean" value="{{ b.Price_per_kg}}">
-            {{ b.price_per_kg }}
-            </option>
-            {% endfor %}
-        </select>
-
-      <input type="submit" value="OK"> -->
+         
       <input type="submit" value="Confirm delivery" class="button-add">
 
 
@@ -158,7 +136,7 @@ h3{
   <a href="{% url 'addgroup:display_group' %}">Home</a>
   <a href="{% url 'addgroup:add_group' %}">Add group</a>
   <a href="{% url 'group_details:group_details' %}">Deliveries</a>
-  <a href="{% url 'payments' %}">Payment</a>
+  <a href="{% url 'payments:payments' %}">Payment</a>
   <a href="{%url 'setting_page'%}">Setting</a>
   <a href="">LogOut</a>
 </div>

@@ -12,6 +12,9 @@ body{
  background-color:#b4bfcc;
   font-family: Arial, Helvetica, sans-serif;
 }
+#group{
+  text-decoration: none;
+}
 .sidebar-nav{
   height: 100%;
   width: 250px;
@@ -212,14 +215,14 @@ tr, th{
         <a href="{% url 'addgroup:display_group' %}">Home</a>
         <a href="{% url 'addgroup:add_group' %}" id="grp" >Add group</a>
         <a href="{% url 'group_details:group_details' %}">Deliveries</a>
-        <a href="{% url 'payments' %}">Payment</a>
+        <a href="{% url 'payments:payments' %}">Payment</a>
         <a href="{%url 'setting_page'%}">Setting</a>
         <a href="">LogOut</a>
       </div>
  </div>
        <table>
         <tr>
-          <td>
+          <!-- <td>
            <div class="dropdown">
              <button id="info" >Group info
                <i class="fa fa-caret-down"></i>
@@ -240,7 +243,7 @@ tr, th{
                </div>
              </div>
            </div>
-          </td>
+          </td> -->
             <th id="name" >Group name</th>
             <th>No of group member</th>
             <th>Group leader contact</th>
@@ -249,7 +252,9 @@ tr, th{
         </tr>
         <tr>
           {% for group in groups %}
-            <td>{{group.group_name}}</td>
+
+
+            <td><a href="{% url 'group_details:group_details'%}" id="group" >{{group.group_name}}</a>{{group.no_of_group_member}}</td>
             <td>{{group.no_of_group_member}}</td>
             <td>{{group.group_leader_contact}}</td>
             <td>{{group.edit}}</td>
