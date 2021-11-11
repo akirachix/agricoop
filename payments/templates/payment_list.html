@@ -19,9 +19,16 @@
   <style type="text/css">
   body{
     margin-top: 0;
+    background-color: #b4bfcc;
+  }
+  #image{
+    width: 33px;
+  }
+  #img{
+    width: 30px;
   }
   form{
-      padding: 15%;
+    padding: 15%;
      margin-top: -15%;
   }
   .sidebar-nav{
@@ -46,16 +53,40 @@
     color: black;
         }
   h1{
+    color: black;
     text-align: center;
     font-size: 30px;
     text-decoration-color: black;
     margin-top: 0%;
     padding-left: 3%;
   }
-table{
-   margin-left: 12%;
-   margin-right: 10%;
-}
+
+#table {
+            font-family: Arial, Helvetica, sans-serif;
+            border-collapse: collapse;
+            width: 80%;
+            margin-left: 20%;
+         } ;
+        #table td, #table th {
+            border: 1px solid rgb(15, 15, 15);
+            padding: 8px;
+            
+        }
+        td{
+          color: black;
+        }
+        #table tr:nth-child(even){
+            background-color: #f2f2f2be;
+        }
+        #table tr:hover {
+            background-color: rgba(221, 221, 221, 0.192);
+        }
+        #table th {
+            padding-top: 12px;
+            padding-bottom: 12px;
+            text-align: left;
+            color:black;
+        }
   </style>
 <div class="content" >
         <div class="sidebar-nav">
@@ -67,34 +98,32 @@ table{
           <a href="">LogOut</a>
         </div>
    </div>
-   <table class="table">
+   <table id="table">
     <h1>Payments</h1>
-    <thead>
+    
         <tr>
-            <th>Group</th>
-            <th>PhoneNumber</th>
-            <th>Address</th>
-            <th>Total Amount</th>
-            <th>Paid Amount</th>
+            <th>Group name</th>
+            <th>Phone number</th>
+            <th>Total amount</th>
+            <th>Paid amount</th>
             <th>Balance</th>
             <th>Edit </th>
             <th>Delete</th>
         </tr>
-    </thead>
-    <tbody>
+  
         <tr>
-{% for payment in payments %}
+{% for payment in groups %}
 <tr>
-    <td>{{payments.price_per_kg}}</td>
-    <td>{{payments.total_quantity_purchased}}</td>
-    <td>{{payments.date_of_delivery}}</td>
-    <td>{{payments.contact_person}}</td>
-    <td>{{payments.contact_person}}</td>
-    <td><a href="{%url 'edit_recipient' id=recipient.id%}"><i class="material-icons" >edit</i></a></td>
-    <td><a href="{%url 'delete_recipient' id=recipient.id%}"><i id="delete" class="material-icons" >close</i></a></td>
+   <td>{{payment.group_name}}</td>
+    <td>{{payment.phone_number}}</td>
+    {% for pay in batch %}
+    <td>{{pay.total_amount}}</td>
+    {% endfor%}
+    <td><a href="{% url 'payments:edit' id=payment.id %}"><img src="https://icons-for-free.com/iconfiles/png/512/svg+create+edit+edit+file+office+pencil+writing+creativ+icon-1320185158722776676.png" alt="" id="image"></a></td>
+    <td><a href="{% url 'payments:delete' id=payment.id %}"><img src="https://cdn.iconscout.com/icon/premium/png-256-thumb/delete-2471204-2066711.png" alt="" id="img"></a></td>
 </tr>
 {%endfor%}
-    </tbody>
+   
 </table>
   </body>
   </html>

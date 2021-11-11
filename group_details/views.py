@@ -1,8 +1,5 @@
 from django.shortcuts import  render, redirect
 from .forms import GroupRegistrationForm
-
-from .models import Delivaries
-
 from .models import Delivaries
 from django.http.response import HttpResponseRedirect
 from django.urls import reverse
@@ -10,17 +7,20 @@ from django.urls import reverse
 def group_details(request):
     if request.method=="POST":
         form = GroupRegistrationForm(request.POST,request.FILES)
+        # bean=BeanRegistrationForm(request.POST,request.FILES)
         if form.is_valid():
             form.save()
-            return redirect('group_details')
+            return redirect("group_details:group_details")
         else:
             print(form.errors)
     else:
         form= GroupRegistrationForm()
+        # bean= BeanRegistrationForm()
     return render(request,"group_details.html",{"form":form})
 
 def display_beans(request):
     products=Delivaries.objects.all()
+    # beans=Bean_details.objects.all()
     return render(request,"bean_details.html",{"products":products})
 
 
@@ -33,7 +33,7 @@ def edit(request,id):
     if request.method=="POST":
         form=GroupRegistrationForm(request.POST,instance=product)
         if form.is_valid():
-            form.save()
+            form.save() 
             return redirect("group_details:list")
     else:
         form=GroupRegistrationForm(instance=product)
@@ -46,4 +46,7 @@ def delete(request,id):
         return HttpResponseRedirect(reverse("group_details:list"))
     context={"product":product}
     return render(request,'delete.html')
-
+    
+def total_amount(self):
+    total_amount=self.kgs_of_beans*self.price_per_kg
+    return total_amount 

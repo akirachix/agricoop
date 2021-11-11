@@ -81,7 +81,7 @@ h3{
   bottom: 200px;
   background-color: #192E5B;
   color: white;
-  /* border-radius: 50%; */
+
   
 }
     </style>
@@ -92,8 +92,36 @@ h3{
         <form method="POST" enctype="multipart/form-data">
           {%csrf_token%}
           {{form.as_p}}
-    <input type="submit" value="Confirm delivery" class="button-add">
-    </form>
+          <!-- {{bean.as_p}} -->
+
+    <!-- </form>
+
+    <form method="get" >
+      Bean
+      <select name='drop1'>
+          <option selected disabled="true">Select beans</option>
+          {% for b in beans %}
+          <option id="bean" type="text" name="bean" value="{{ b.beans_variety}}">
+          {{ b.beans_variety }}
+          </option>
+          {% endfor %}
+      </select>
+
+      <form method="get" >
+        Bean
+        <select name='drop1'>
+            <option selected disabled="true">Select price</option>
+            {% for b in beans %}
+            <option id="bean" type="text" name="bean" value="{{ b.Price_per_kg}}">
+            {{ b.price_per_kg }}
+            </option>
+            {% endfor %}
+        </select>
+
+      <input type="submit" value="OK"> -->
+      <input type="submit" value="Confirm delivery" class="button-add">
+
+
 </div>
 </div>
 <div class="sidebar-nav">

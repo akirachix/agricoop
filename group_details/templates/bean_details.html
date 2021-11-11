@@ -19,21 +19,34 @@
           </div>
      </div>
     <div>
+    
         <table id="table">
             <tr>
-                <th>Delivery  date</th>
                 <th>Bean variety</th>
+                <th>Delivery  date</th>
                 <th>Group name</th>
                 <th>Total kgs</th>
                 <th>Price per kg</th>
-                <th>Total amount paid</th>
                 <th>Edit</th>
                 <th>Delete</th>
+
             </tr>
-            {% for group_details in products %}
+            {% for group_details in products%}
+            
+              <td>{{group_details.beans_variety}}</td>
+              <td>{{group_details.date_of_delivery}}</td>
+              <td>{{group_details.group_name}}</td>
+              <td>{{group_details.kgs_of_beans}}</td>
+              <td>{{group_details.price_per_kg}}</td>
+              <td><a href="{% url 'group_details:edit' id=group_details.id %}"><img src="https://icons-for-free.com/iconfiles/png/512/svg+create+edit+edit+file+office+pencil+writing+creativ+icon-1320185158722776676.png" alt="" id="image"></a></td>
+              <td><a href="{% url 'group_details:delete' id=group_details.id %}"><img src="https://cdn.iconscout.com/icon/premium/png-256-thumb/delete-2471204-2066711.png" alt="" id="img"></a></td>
+          </tr>
+          </tr>
+          {% endfor %}
+
+            <!-- {% for group_details in products %}
             <tr>
               <td>{{group_details.date_of_delivery}}</td>
-              <td>{{group_details.beans_variety}}</td>
               <td>{{group_details.group_name}}</td>
               <td>{{group_details.kgs_of_beans}}</td>
               <td>{{group_details.Price_per_kg}}</td>
@@ -41,7 +54,10 @@
               <td><a href="{% url 'group_details:edit' id=group_details.id %}"><img src="https://icons-for-free.com/iconfiles/png/512/svg+create+edit+edit+file+office+pencil+writing+creativ+icon-1320185158722776676.png" alt="" id="image"></a></td>
               <td><a href="{% url 'group_details:delete' id=group_details.id %}"><img src="https://cdn.iconscout.com/icon/premium/png-256-thumb/delete-2471204-2066711.png" alt="" id="img"></a></td>
           </tr>
-          {% endfor %}
+          {% endfor %} -->
+        
+        </form>
+
         </table>
     </div>
     <script>
@@ -131,11 +147,7 @@
     display: flex;
   }
 }
-/* @media only screen and (max-width: 1024px) {
-  .cards__item {
-    margin-bottom: 2rem;
-  }
-} */
+
   </style>
 </body>
 </html>
