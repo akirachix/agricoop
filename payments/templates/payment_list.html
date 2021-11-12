@@ -138,6 +138,8 @@ font-size:18px ;
     {% for pay in batch %}
     <td>{{pay.total_amount}}</td>
     {% endfor%}
+    <td>{{payment.amount_paid}}</td>
+    
     <td><a href="{% url 'payments:edit' id=payment.id %}"><img src="https://icons-for-free.com/iconfiles/png/512/svg+create+edit+edit+file+office+pencil+writing+creativ+icon-1320185158722776676.png" alt="" id="image"></a></td>
     <td><a href="{% url 'payments:delete' id=payment.id %}"><img src="https://cdn.iconscout.com/icon/premium/png-256-thumb/delete-2471204-2066711.png" alt="" id="img"></a></td>
 </tr>
