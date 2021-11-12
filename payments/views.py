@@ -9,7 +9,6 @@ from .forms import PaymentsDetailsRegistrationForm
 from django.http.response import HttpResponseRedirect
 from django.urls import reverse
 from django.http import HttpResponse, JsonResponse
-import requests
 from requests.auth import HTTPBasicAuth
 import json
 from . mpesa_credentials import MpesaAccessToken, LipanaMpesaPpassword
