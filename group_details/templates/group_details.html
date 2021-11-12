@@ -125,7 +125,9 @@ a:hover{
 </head>
 <body>
     <div class="container">
-        <h1>{{groups.group_name}}</h1>
+    
+
+      <center><h1>Komera cooperative</h1></center>
         <form method="POST" enctype="multipart/form-data">
           {%csrf_token%}
           {{form.as_p}}
@@ -137,7 +139,7 @@ a:hover{
 <div class="sidebar-nav">
   <a href="{% url 'addgroup:display_group' %}">Home</a>
   <a href="{% url 'addgroup:add_group' %}">Add group</a>
-  <a href="{% url 'group_details:group_details' %}">Deliveries</a>
+  <a href="{% url 'group_details:list' %}">Deliveries</a>
   <a href="{% url 'payments:payments' %}">Payments</a>
   <a href="{%url 'setting_page'%}">Settings</a>
   <a href="">LogOut</a>

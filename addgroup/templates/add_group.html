@@ -7,8 +7,6 @@
   {% load static %}
   <link rel="stylesheet" href="{% static 'css/styles.css' %}">
   <style type="text/css">
-
-  
   body{
     background-color:#b4bfcc;
     margin-top: 0;
@@ -46,7 +44,7 @@
     margin-left: 200px;
     text-align: center;
     margin-right:60px;
-    font-family: Arial, Helvetica, sans-serif;
+    margin-bottom: 5%;
   }
   h4{
     color: black;
@@ -54,7 +52,7 @@
     margin-left: 200px;
     position: relative;
     bottom: -40px;
-
+    width:27% ;
   }
   #group{
     background-color: white;
@@ -62,22 +60,16 @@
     text-align: right 100px;
     text-align: top;
     box-shadow: 0 0 8px black;
-
   }
-
   #leader{
     background-color: white;
     padding: 15px 350px;
-    
-
   }
   #members{
     background-color: white;
     padding: 15px 350px;
     box-shadow: 0 0 8px black;
-
   }
-
 .button {
   background-color: #192E5B;
   border: none;
@@ -92,12 +84,11 @@
   bottom: -80px;
   border-radius: 10px;
   cursor: pointer;
-
 }
 #addbutton {
-  background-color: #192E5B;
+ background-color: #192E5B;
   border: none;
-  color: #ffffff;
+  color: #FFFFFF;
   padding: 5px 10px;
   text-align: center;
   text-decoration: none;
@@ -109,13 +100,11 @@
   border-radius: 10px;
   cursor: pointer;
   border-radius: 50%;
-
 }
-
 #addbutton2 {
   background-color: #192E5B;
   border: none;
-  color: #ffffff;
+  color: #FFFFFF;
   padding: 5px 10px;
   text-align: center;
   text-decoration: none;
@@ -128,9 +117,6 @@
   cursor: pointer;
   border-radius: 50%;
 }
-
-
-
 .mybutton {
   background-color: #192E5B;
   border: none;
@@ -145,9 +131,7 @@
   bottom: -90px;
   border-radius: 10px;
   cursor: pointer;
-
 }
-
 #btn {
   background-color: #192E5B;
   border: none;
@@ -162,28 +146,28 @@
   bottom: -90px;
   border-radius: 10px;
   cursor: pointer;
-
 }
 /* pop up one */
-
 .hidden{
-  display: flex;
   justify-content: center;
   align-items: center;
   position: absolute;
   top: 0;
-  margin:8% 32%;
+  margin:15% 32%;
   display: none;
 }
-.modal-content{
+.entry{
+  background-color: whitesmoke;
+  padding-left: 5%;
   width: 600px;
-  height: 550px;
-  background-color: white;
 }
-
-
+.entries{
+  background-color:whitesmoke;
+  padding-left: 5%;
+  width: 600px;
+}
 .hidden2{
-  display: flex;
+   display: flex;
   justify-content: center;
   align-items: center;
   position: absolute;
@@ -192,45 +176,36 @@
   display: none;
 }
 .modal-content2{
-  width: 600px;
+  width: 800px;
   height: 550px;
-  background-color: white;
+ background-color:whitesmoke;
 }
 input{
   width: 50%;
   padding: 10px;
- 
- position: relative;
- bottom: -50px;
- margin-left: 100px;
-
- 
-}  
-input{
-  width: 84%;
+  position: relative;
+  bottom: -50px;
+  margin-left: 100px;
+}
+ input{
+  width: 50%;
   border: 2px;
   margin: 8px 0;
   outline: none;
-  margin-left: 200px; 
+  margin-left: 200px;
   padding-bottom: 28px;
   position: relative;
-
   font-size: 15px;
   font-weight: bold;
- 
-} 
-
+}
 input[type=text1]{
-  box-shadow: 0 0 8px black;
+ box-shadow: 0 0 8px black;
   text-align: center;
   margin-right: -100px;
-} 
-
-
-
+  width: 80%;
+}
 h5{
   padding: 5px 100px;
-  
 }
 h2{
   text-align: center;
@@ -244,7 +219,6 @@ form input{
 form{
   position: relative;
   bottom: -20px;
-  
 }
 .submit1{
   text-decoration-style:none;
@@ -256,18 +230,16 @@ form{
   font-size: 1.4rem;
   margin-left: 500px;
   position: relative;
-  bottom: 200px;
+  bottom: 100px;
   color: white;
-
 }
 a:link {
   text-decoration: none;
   color: white;
 }
-
 .submit2{
   text-decoration-style:none;
-  top: 30px;
+  top: 0px;
   height: 50px;
   width :30%;
   border-radius: 6px;
@@ -278,7 +250,6 @@ a:link {
   bottom: 200px;
   background-color: #192E5B;
   color: white;
-  
 }
 @media screen and (max-width: 960px) {
   .sidebar-nav{
@@ -301,22 +272,19 @@ a:link {
 }
 #members{
     padding: 7px 90px;
-    margin-left: 17%;
-    width: 8%;
+     margin-left: 17%;
+     width: 8%;
     font-size: 50%;
-
   }
   #addbutton {
    right:135%;
    bottom: 72px;
    padding: 1px 6px;
-
 }
   #addbutton {
    right:150%;
    bottom: 72px;
    padding: 1px 6px;
-
 }
 #addbutton2 {
   right:150%;
@@ -343,30 +311,25 @@ a:link {
     <div class="sidebar-nav">
       <a href="{% url 'addgroup:display_group' %}">Home</a>
       <a href="{% url 'addgroup:add_group' %}">Add group</a>
-      <a href="{%url 'group_details:group_details' %}">Deliveries</a>
+      <a href="{%url 'group_details:list' %}">Deliveries</a>
       <a href="{% url 'payments:payments' %}">Payments</a>
-      <a href="{%url 'setting_page'%}">Settings</a>
+      <a href="{%url 'setting_page'%}">Setting</a>
       <a href="">LogOut</a>
-
     </div>
 </div>
 <div class="content" >
   <h3>Add group</h3>
   <div class="input-field">
-
-  <input type="text1" name="name" value="Name of the group">
+    <input type="text1" id="name" value="Name of the group">
     <h4 id="group">Group leader details</h4>
      <h4 id="members">Group members</h4>
      <button class="submit1"><a href="{% url 'addgroup:display_group' %}">View groups</a></button>
-
   </div>
    </div>
    <button onclick="toggleAddBtn()" id="addbutton">+</button>
    <button onclick="toggleAddBtn2()" id="addbutton2">+</button>
-
   <div id="bg-modal"  class="hidden">
-    <div class="modal-content">
-
+    <div class="entry">
       <form method="POST">
      <h2>Group leader details</h2>
      <div class="wrapper">
@@ -379,34 +342,27 @@ a:link {
      </form>
      </div>
      </div>
-    
-      </form>
+        </form>
     </div>
-    
   </div>
-
   <div id="bg-modal2"  class="hidden2">
-    <div class="modal-content2">
-      
+    <div class="entries">
       <form method="POST">
           {% csrf_token %}
           {{from.as_p}}
-     <h2>Add members</h2>   
+     <h2>Add members</h2>
      <div class="wrapper">
         <div class="form">
-     <form method="POST" enctype="multipart/form-data">
+      <form method="POST" enctype="multipart/form-data">
          {%csrf_token%}
          {{form.as_p}}
          {{Name}}
-
-         <button class="submit2">Submit</button>     
+         <button class="submit2">Submit</button>
      </form>
      </div>
      </div>
-
       </form>
     </div>
-
   </div>
 <script>
   function toggleAddBtn() {
@@ -414,18 +370,17 @@ a:link {
      div.style.position='absolute'
      div.style.top = 0
      div.style.margin = '8% 32%'
-     div.style.boxShadow = '5px 10px 8px 10px #888888'
-     div.classList.toggle('hidden') 
+    //  div.style.boxShadow = '5px 10px 8px 10px #888888'
+     div.classList.toggle('hidden')
 }
 function toggleAddBtn2() {
     var div = document.getElementById("bg-modal2");
      div.style.position='absolute'
      div.style.top = 0
      div.style.margin = '8% 32%'
-     div.style.boxShadow = '5px 10px 8px 10px #888888'
+    //  div.style.boxShadow = '5px 10px 8px 10px #888888'
      div.classList.toggle('hidden2')
-  
 }
 </script>
 </body>
-</html> 
+</html>

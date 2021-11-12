@@ -5,8 +5,7 @@ from  addgroup.models import Group_list
 from django.http.response import HttpResponseRedirect
 from django.urls import reverse
 
-def group_details(request,id):
-    groups=Group_list.objects.get(id=id)
+def group_details(request):
     if request.method=="POST":
         form = GroupRegistrationForm(request.POST,request.FILES)
         # bean=BeanRegistrationForm(request.POST,request.FILES)
@@ -18,12 +17,18 @@ def group_details(request,id):
     else:
         form= GroupRegistrationForm()
         # bean= BeanRegistrationForm()
-    return render(request,"group_details.html",{"form":form,"groups":groups})
+    return render(request,"group_details.html",{"form":form})
 
 def display_beans(request):
     products=Delivaries.objects.all()
     # beans=Bean_details.objects.all()
     return render(request,"bean_details.html",{"products":products})
+
+def grouped_bens(request,id):
+    groups=Group_list.objects.get(id=id)
+    return render(request,"group_details.html",{"groups":groups})
+
+
 
 
 def profile(request,id):
