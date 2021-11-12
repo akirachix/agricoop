@@ -121,11 +121,17 @@ a{
     </style>
 </head>
 <body>
+
     <div class="container">
-        <!-- <h3>Deliveries </h3> -->
+
+      
+      <h1>{{groups.group_name}}</h1>
+     
+
         <form method="POST" enctype="multipart/form-data">
           {%csrf_token%}
           {{form.as_p}}
+
          
       <input type="submit" value="Confirm delivery" class="button-add">
 
@@ -135,7 +141,7 @@ a{
 <div class="sidebar-nav">
   <a href="{% url 'addgroup:display_group' %}">Home</a>
   <a href="{% url 'addgroup:add_group' %}">Add group</a>
-  <a href="{% url 'group_details:group_details' %}">Deliveries</a>
+  <a href="{% url 'group_details:list' %}">Deliveries</a>
   <a href="{% url 'payments:payments' %}">Payment</a>
   <a href="{%url 'setting_page'%}">Setting</a>
   <a href="">LogOut</a>

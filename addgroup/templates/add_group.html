@@ -163,8 +163,6 @@
   cursor: pointer;
 
 }
-/* pop up one */
-
 .hidden{
   display: flex;
   justify-content: center;
@@ -342,7 +340,7 @@ a:link {
     <div class="sidebar-nav">
       <a href="{% url 'addgroup:display_group' %}">Home</a>
       <a href="{% url 'addgroup:add_group' %}">Add group</a>
-      <a href="{%url 'group_details:group_details' %}">Deliveries</a>
+      <a href="{%url 'group_details:list' %}">Deliveries</a>
       <a href="{% url 'payments:payments' %}">Payments</a>
       <a href="{%url 'setting_page'%}">Setting</a>
       <a href="">LogOut</a>

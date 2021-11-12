@@ -26,12 +26,9 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('',include('registration.urls')),
     path('addgroup/',include('addgroup.urls')),
-     path("group_details/",include("group_details.urls")),
-    path("payments/",include("payments.urls")),
     path("group_details/",include("group_details.urls")),
+    path("payments/",include("payments.urls")),
     path('settings/', include("settings.urls")),
-    # path('send_push', send_push),
-    # path('webpush/', include('webpush.urls')),
     path('sw.js', TemplateView.as_view(template_name='sw.js', content_type='application/x-javascript'))
 
 ]

@@ -1,32 +1,28 @@
 from django.shortcuts import  render, redirect
+
+from addgroup.models import Group_list
 from .forms import GroupRegistrationForm
 from .models import Delivaries
 from django.http.response import HttpResponseRedirect
 from django.urls import reverse
 
-def group_details(request):
+def group_details(request,id):
+    groups=Group_list.objects.get(id = id)
     if request.method=="POST":
         form = GroupRegistrationForm(request.POST,request.FILES)
-        # bean=BeanRegistrationForm(request.POST,request.FILES)
         if form.is_valid():
             form.save()
-            return redirect("group_details:group_details")
+            return redirect("group_details:list")
         else:
             print(form.errors)
     else:
         form= GroupRegistrationForm()
-        # bean= BeanRegistrationForm()
-    return render(request,"group_details.html",{"form":form})
+    return render(request,"group_details.html",{"form":form,"groups":groups})
+
 
 def display_beans(request):
     products=Delivaries.objects.all()
-    # beans=Bean_details.objects.all()
     return render(request,"bean_details.html",{"products":products})
-
-
-def profile(request,id):
-    product=Delivaries.objects.get(id=id)
-    return render(request,"profile.html",{"product":product})
 
 def edit(request,id):
     product=Delivaries.objects.get(id=id)
