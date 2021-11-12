@@ -138,6 +138,12 @@ padding:14px 14px 14px 18px;
 }#name{
  padding-bottom: -15%;
 }
+#image{
+    width: 35px;
+  }
+  #img{
+    width: 35px;
+  }
 .addbutton {
   background-color: #192E5B;
   border: none;
@@ -212,35 +218,12 @@ tr, th{
         <a href="{% url 'addgroup:display_group' %}">Home</a>
         <a href="{% url 'addgroup:add_group' %}" id="grp" >Add group</a>
         <a href="{% url 'group_details:group_details' %}">Deliveries</a>
-        <a href="{% url 'payments' %}">Payment</a>
-        <a href="{%url 'setting_page'%}">Setting</a>
+        <a href="{% url 'payments:payments' %}">Payments</a>
+        <a href="{%url 'setting_page'%}">Settings</a>
         <a href="">LogOut</a>
       </div>
  </div>
        <table>
-        <tr>
-          <td>
-           <div class="dropdown">
-             <button id="info" >Group info
-               <i class="fa fa-caret-down"></i>
-             </button>
-              <div class="dropdown-content">
-               <a href="#">Deliveries</a>
-               <div class="dropdown-menu">
-                 <ul>
-                   <li><a href="#">Date</a></li>
-                   <li><a href="#">Variety</a></li>
-                   <li><a href="#">Quantity</a></li>
-                 </ul>
-                 <ul>
-                   <li><a href="#">25th</a></li>
-                   <li><a href="#">Pole beans</a></li>
-                   <li><a href="#">50kg</a></li>
-                 </ul>
-               </div>
-             </div>
-           </div>
-          </td>
             <th id="name" >Group name</th>
             <th>No of group member</th>
             <th>Group leader contact</th>
@@ -250,10 +233,10 @@ tr, th{
         <tr>
           {% for group in groups %}
             <td>{{group.group_name}}</td>
-            <td>{{group.no_of_group_member}}</td>
-            <td>{{group.group_leader_contact}}</td>
-            <td>{{group.edit}}</td>
-            <td>{{group.delete}}</td>
+            <td>{{group.no_of_members}}</td>
+            <td>{{group.phone_number}}</td>
+            <td><a href="{% url 'addgroup:add_group' %}"><img src="https://icons-for-free.com/iconfiles/png/512/svg+create+edit+edit+file+office+pencil+writing+creativ+icon-1320185158722776676.png" alt="" id="image"></a></td>
+            <td><a href="{% url 'group_details:list' %}"><img src="https://cdn.iconscout.com/icon/premium/png-256-thumb/delete-2471204-2066711.png" alt="" id="img"></a></td>
         </tr> -
         {%endfor%}
     </table>

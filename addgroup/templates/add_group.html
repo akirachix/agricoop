@@ -42,10 +42,11 @@
   }
   h3{
     color: black;
-    font-size: 30px;
+    font-size: 20px;
     margin-left: 200px;
     text-align: center;
     margin-right:60px;
+    font-family: Arial, Helvetica, sans-serif;
   }
   h4{
     color: black;
@@ -343,8 +344,8 @@ a:link {
       <a href="{% url 'addgroup:display_group' %}">Home</a>
       <a href="{% url 'addgroup:add_group' %}">Add group</a>
       <a href="{%url 'group_details:group_details' %}">Deliveries</a>
-      <a href="{% url 'payments' %}">Payments</a>
-      <a href="{%url 'setting_page'%}">Setting</a>
+      <a href="{% url 'payments:payments' %}">Payments</a>
+      <a href="{%url 'setting_page'%}">Settings</a>
       <a href="">LogOut</a>
 
     </div>

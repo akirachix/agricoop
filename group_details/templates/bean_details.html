@@ -13,8 +13,8 @@
             <a href="{% url 'addgroup:display_group' %}">Home</a>
             <a href="{% url 'addgroup:add_group' %}">Add group</a>
             <a href="{% url 'group_details:group_details' %}">Deliveries</a>
-            <a href="{% url 'payments' %}">Payment</a>
-            <a href="{%url 'setting_page'%}">Setting</a>
+            <a href="{% url 'payments:payments' %}">Payments</a>
+            <a href="{%url 'setting_page'%}">Settings</a>
             <a href="">LogOut</a>
           </div>
      </div>
@@ -29,6 +29,7 @@
                 <th>Price per kg</th>
                 <th>Edit</th>
                 <th>Delete</th>
+                <th>Status</th>
 
             </tr>
             {% for group_details in products%}
@@ -40,22 +41,11 @@
               <td>{{group_details.price_per_kg}}</td>
               <td><a href="{% url 'group_details:edit' id=group_details.id %}"><img src="https://icons-for-free.com/iconfiles/png/512/svg+create+edit+edit+file+office+pencil+writing+creativ+icon-1320185158722776676.png" alt="" id="image"></a></td>
               <td><a href="{% url 'group_details:delete' id=group_details.id %}"><img src="https://cdn.iconscout.com/icon/premium/png-256-thumb/delete-2471204-2066711.png" alt="" id="img"></a></td>
+              <td class="status">{{group_details.status}}</td>
           </tr>
           </tr>
           {% endfor %}
 
-            <!-- {% for group_details in products %}
-            <tr>
-              <td>{{group_details.date_of_delivery}}</td>
-              <td>{{group_details.group_name}}</td>
-              <td>{{group_details.kgs_of_beans}}</td>
-              <td>{{group_details.Price_per_kg}}</td>
-              <td>{{group_details.total_amount}}</td>
-              <td><a href="{% url 'group_details:edit' id=group_details.id %}"><img src="https://icons-for-free.com/iconfiles/png/512/svg+create+edit+edit+file+office+pencil+writing+creativ+icon-1320185158722776676.png" alt="" id="image"></a></td>
-              <td><a href="{% url 'group_details:delete' id=group_details.id %}"><img src="https://cdn.iconscout.com/icon/premium/png-256-thumb/delete-2471204-2066711.png" alt="" id="img"></a></td>
-          </tr>
-          {% endfor %} -->
-        
         </form>
 
         </table>
@@ -112,7 +102,8 @@
     color: black;
     font-size: 30px;
     margin-left: 200px;
-  }#table {
+  }
+  #table {
             font-family: Arial, Helvetica, sans-serif;
             border-collapse: collapse;
             width: 80%;
