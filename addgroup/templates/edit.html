@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form method="POST" enctype="multipart/form-data">
+        {% csrf_token%}
+        <h1> Edit details </h1>
+        {{form.as_p}}
+        <input type="submit" value="Submit" id="button">
+    </form>
+    <table id="table">
+        {% for group_details in product %}
+        <tr>
+          <td>{{group_details.date_of_delivery}}</td>
+          <td>{{group_details.beans_variety}}</td>
+          <td>{{group_details.group_name}}</td>
+          <td>{{group_details.kgs_of_beans}}</td>
+          <td>{{group_details.Price_per_kg}}</td>
+          <td>{{group_details.total_amount}}</td>
+      </tr>
+      {% endfor %}
+    </table>
+    <style>
+        #table {
+            font-family: Arial, Helvetica, sans-serif;
+            border-collapse: collapse;
+            width: 80%;
+            margin-left: 20%;
+         } ;
+        #table td, #table th {
+            border: 1px solid rgb(15, 15, 15);
+            padding: 8px;
+        }
+        #table tr:nth-child(even){
+            background-color: #f2f2f2be;
+        }
+        #table tr:hover {
+            background-color: rgba(221, 221, 221, 0.192);
+        }
+        #table th {
+            padding-top: 12px;
+            padding-bottom: 12px;
+            text-align: left;
+            color:black;
+        }
+    </style>
+</body>
+</html>

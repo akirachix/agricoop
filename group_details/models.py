@@ -22,10 +22,12 @@ class Delivaries(models.Model):
     beans_variety=models.CharField(max_length=200,choices= beans_variety_choice,null=True)
     kgs_of_beans= models.PositiveSmallIntegerField(null=True)
     price_per_kg=models.PositiveSmallIntegerField(null=True)
-    # group=models.ForeignKey(Group_list ,on_delete=CASCADE,null=True)
-   
-   
-
+    status_choice=(
+        ('Paid','Paid'),
+        ('Unpaid','Unpaid'),
+        ('Rejected','Rejected')
+    )
+    status=models.CharField(max_length=90,choices=status_choice,null=True)
     @property
     def total_amount(self):
         total_amount=self.kgs_of_beans* self.price_per_kg

@@ -40,8 +40,12 @@
   h1{
     text-align: center;
     text-decoration-color: black;
-    margin-top: 0%;
+    margin-bottom: 7%;
     padding-left: 3%;
+  }
+  form{
+    margin-top:-250px;
+    margin-left: 30%;
   }
   </style>
 </head>
@@ -70,8 +74,13 @@
   </html>
   <script>
      function functionCalled() {
+<<<<<<< HEAD
           window.open("{%url 'payments:payment_list'%}"); 
           window.location = "{%url 'payments:payment_list'%}"; 
+=======
+          window.open("{%url 'payments:payments'%}"); //if you want to open in new window
+          window.location = "{%url 'payments:payment_list'%}"; //if you want to redirect
+>>>>>>> f6351c266273e4cd1eba49b896d71da798128e0c
      }
   </script>
 </body>
