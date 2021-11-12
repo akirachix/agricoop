@@ -137,12 +137,16 @@ a:hover{
 </div>
 </div>
 <div class="sidebar-nav">
+  
   <a href="{% url 'addgroup:display_group' %}">Home</a>
   <a href="{% url 'addgroup:add_group' %}">Add group</a>
-  <a href="{% url 'group_details:group_details' %}">Deliveries</a>
+  {% for group in groups %} 
+  <a href="{% url 'group_details:group_details' id=group.id %}">Deliveries</a>
+  {% endfor %}
   <a href="{% url 'payments:payments' %}">Payments</a>
   <a href="{%url 'setting_page'%}">Settings</a>
   <a href="">LogOut</a>
+ 
 </div>
 <button class="submit2"><a href="{% url 'group_details:list' %}">View deliveries</a></button>
 </body>
