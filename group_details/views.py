@@ -1,10 +1,12 @@
 from django.shortcuts import  render, redirect
 from .forms import GroupRegistrationForm
 from .models import Delivaries
+from  addgroup.models import Group_list
 from django.http.response import HttpResponseRedirect
 from django.urls import reverse
 
-def group_details(request):
+def group_details(request,id):
+    groups=Group_list.objects.get(id=id)
     if request.method=="POST":
         form = GroupRegistrationForm(request.POST,request.FILES)
         # bean=BeanRegistrationForm(request.POST,request.FILES)
@@ -16,7 +18,7 @@ def group_details(request):
     else:
         form= GroupRegistrationForm()
         # bean= BeanRegistrationForm()
-    return render(request,"group_details.html",{"form":form})
+    return render(request,"group_details.html",{"form":form,"groups":groups})
 
 def display_beans(request):
     products=Delivaries.objects.all()

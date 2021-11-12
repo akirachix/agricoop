@@ -232,8 +232,8 @@ tr, th{
         </tr>
         <tr>
           {% for group in groups %}
-            <td>{{group.group_name}}</td>
-            <td>{{group.no_of_members}}</td>
+          <td><a href="{% url 'group_details:group_details'%}" id="group" >{{group.group_name}}</a>{{group.no_of_group_member}}</td>
+          <td>{{group.no_of_members}}</td>
             <td>{{group.phone_number}}</td>
             <td><a href="{% url 'addgroup:add_group' %}"><img src="https://icons-for-free.com/iconfiles/png/512/svg+create+edit+edit+file+office+pencil+writing+creativ+icon-1320185158722776676.png" alt="" id="image"></a></td>
             <td><a href="{% url 'group_details:list' %}"><img src="https://cdn.iconscout.com/icon/premium/png-256-thumb/delete-2471204-2066711.png" alt="" id="img"></a></td>
