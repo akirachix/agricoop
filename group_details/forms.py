@@ -8,8 +8,3 @@ class GroupRegistrationForm(forms.ModelForm):
     class Meta:
         model= Delivaries
         fields= "__all__"
-
-# class BeanRegistrationForm(forms.ModelForm):
-#     class Meta:
-#         model=Bean_details
-#         fields="__all__"     
