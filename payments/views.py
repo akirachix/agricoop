@@ -3,13 +3,16 @@ from django import forms
 from django.shortcuts import  render, redirect
 from group_details.forms import GroupRegistrationForm
 from group_details.models import Delivaries
+from django.http.response import HttpResponse
 from payments.models import Payments
 from addgroup.models import Group_list
 from .forms import PaymentsDetailsRegistrationForm
+from django.urls import reverse
+from django.http.response import HttpResponseRedirect
 
 
 def payments(request):
-    return render(request,"payment.html",{"form":forms})
+    return render(request,"payment.html",{"forms":forms})
 
 
 def payment_list(request):
