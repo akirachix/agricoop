@@ -1,3 +1,5 @@
+{%load static%}
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -7,23 +9,24 @@
   {% load static %}
   <link rel="stylesheet" href="{% static 'css/styles.css' %}">
   <style type="text/css">
+    
   body{
     background-color:#b4bfcc;
     margin-top: 0;
   }
   .sidebar-nav{
     height: 100%;
-    width: 160px;
+    width: 180px;
     position: fixed;
     z-index: 1;
     top: 0;
     left: 0;
     background-color:#192E5B;
     overflow: hidden;
-    padding-top: 100px;
+    padding-top: 20px;
   }
   .sidebar-nav a{
-    padding:10px 10px 10px 16px;
+    padding:10px 10px 10px 30px;
     text-decoration: none;
     font-size: 20px;
     color: #F1F1F1;
@@ -147,10 +150,6 @@
   border-radius: 10px;
   cursor: pointer;
 }
-<<<<<<< HEAD
-/* pop up one */
-=======
->>>>>>> 41b40fc7f92eec105a0b5d14755b91b20542487a
 .hidden{
   justify-content: center;
   align-items: center;
@@ -312,6 +311,7 @@ a:link {
 <body>
   <div class="row my-3 p-3">
     <div class="sidebar-nav">
+      <img src="{% static 'imges/Farm to Plate.png' %}" alt="" style="width: 90px; height: 90px; margin-left: 28px; margin-bottom: 20px; border-radius: 5%;">
       <a href="{% url 'addgroup:display_group' %}">Home</a>
       <a href="{% url 'addgroup:add_group' %}">Add group</a>
       <a href="{%url 'group_details:list' %}">Deliveries</a>

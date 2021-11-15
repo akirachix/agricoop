@@ -7,19 +7,13 @@
   {% load static %}
   <link rel="stylesheet" href="{% static 'css/styles.css' %}">
   <div class="content" >
-    <h1>Beans</h1>
     <div class="row my-3 p-3">
 
           <div class="sidebar-nav">
+            <img src="{% static 'imges/Farm to Plate.png' %}" alt="" style="width: px; height: 90px; margin-left: 28px; margin-bottom: 20px; border-radius: 5%;">
             <a href="{% url 'addgroup:display_group' %}">Home</a>
             <a href="{% url 'addgroup:add_group' %}">Add group</a>
-<<<<<<< HEAD
-            {% for group in groups %} 
-            <a href="{% url 'group_details:group_details' id=group.id %}">Deliveries</a>
-            {% endfor %}
-=======
             <a href="{% url 'group_details:list' %}">Deliveries</a>
->>>>>>> 41b40fc7f92eec105a0b5d14755b91b20542487a
             <a href="{% url 'payments:payments' %}">Payments</a>
             <a href="{%url 'setting_page'%}">Settings</a>
             <a href="">LogOut</a>
@@ -28,6 +22,8 @@
     <div>
 
         <table id="table">
+          <center><h1>Beans</h1> </center>
+          <hr>
             <tr>
                 <th>Group name</th>
                 <th>Bean variety</th>
@@ -88,8 +84,10 @@
     left: 0;
     background-color:#192E5B;
     overflow: hidden;
-    padding-top: 100px;
+    padding-top: 20px;
+
   }
+ 
   .sidebar-nav a{
     padding:10px 10px 10px 30px;
     text-decoration: none;
@@ -100,12 +98,6 @@
   .sidebar-nav a:hover{
     color: black;
         }
-  h1{
-    text-align: center;
-    text-decoration-color: black;
-    margin-top: 0%;
-    padding-left: 3%;
-  }
   h3{
     color: black;
     font-size: 30px;
@@ -116,6 +108,7 @@
             border-collapse: collapse;
             width: 80%;
             margin-left: 20%;
+            margin-top: 50px;
          } ;
         #table td, #table th {
             border: 1px solid rgb(15, 15, 15);

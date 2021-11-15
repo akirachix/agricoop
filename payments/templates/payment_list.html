@@ -43,7 +43,7 @@
     padding-top: 100px;
   }
   .sidebar-nav a{
-    padding:10px 10px 10px 16px;
+    padding:10px 10px 10px 30px;
     text-decoration: none;
     font-size: 20px;
     color: #F1F1F1;
@@ -70,7 +70,6 @@
         #table td, #table th {
             border: 1px solid rgb(15, 15, 15);
             padding: 8px;
-            
         }
         td{
           color: black;
@@ -109,16 +108,12 @@ font-size:18px ;
   </style>
 <div class="content" >
         <div class="sidebar-nav">
+          <img src="{% static 'imges/Farm to Plate.png' %}" alt="" style="width: 120px; height: 120px; margin-left: 28px; margin-bottom: 20px; border-radius: 5%;">
           <a href="{% url 'addgroup:display_group' %}">Home</a>
           <a href="{% url 'addgroup:add_group' %}">Add Group</a>
           <a href="{%url 'group_details:list' %}">Deliveries</a>
-<<<<<<< HEAD
-          <a href="{% url 'payments:payments' %}">Payments</a>
-          <a href="{%url 'setting_page'%}">Settings</a>
-=======
           <a href="">Payment</a>
           <a href="">Setting</a>
->>>>>>> 41b40fc7f92eec105a0b5d14755b91b20542487a
           <a href="">LogOut</a>
         </div>
    </div>

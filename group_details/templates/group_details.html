@@ -1,3 +1,4 @@
+{% load static %}
 <!DOCTYPE html>
 <html>
 <head>
@@ -42,7 +43,7 @@ input{
     left: 0;
     background-color:#192E5B;
     overflow: hidden;
-    padding-top: 150px;
+    padding-top: 20px;
   }
   .sidebar-nav a{
     padding:10px 10px 10px 30px;
@@ -142,7 +143,7 @@ a:hover{
 </div>
 </div>
 <div class="sidebar-nav">
-  
+  <img src="{% static 'imges/Farm to Plate.png' %}" alt="" style="width: 90px; height: 90px; margin-left: 28px; margin-bottom: 20px; border-radius: 5%;">
   <a href="{% url 'addgroup:display_group' %}">Home</a>
   <a href="{% url 'addgroup:add_group' %}">Add group</a>
   <a href="{% url 'group_details:list' %}">Deliveries</a>
