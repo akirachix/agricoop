@@ -25,18 +25,6 @@ def display_beans(request):
     products=Delivaries.objects.all()
     return render(request,"bean_details.html",{"products":products})
 
-<<<<<<< HEAD
-def grouped_bens(request,id):
-    groups=Group_list.objects.get(id=id)
-    return render(request,"group_details.html",{"groups":groups})
-
-
-def profile(request,id):
-    product=Delivaries.objects.get(id=id)
-    return render(request,"profile.html",{"product":product})
-
-=======
->>>>>>> 41b40fc7f92eec105a0b5d14755b91b20542487a
 def edit(request,id):
     product=Delivaries.objects.get(id=id)
     if request.method=="POST":

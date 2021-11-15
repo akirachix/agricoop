@@ -31,4 +31,4 @@ class Delivaries(models.Model):
     @property
     def total_amount(self):
         total_amount=self.kgs_of_beans* self.price_per_kg
-        return total_amount    
+        return total_amount
