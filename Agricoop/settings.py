@@ -35,6 +35,7 @@ ALLOWED_HOSTS = ['0.0.0.0', 'localhost', '127.0.0.1','agricoop-project.herokuapp
 # Application definition
 
 INSTALLED_APPS = [
+    'rest_framework',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -47,7 +48,11 @@ INSTALLED_APPS = [
     'addgroup',
     'payments',
     'group_details',
-    'settings'
+    'settings',
+    'mpesa',
+  
+
+
 ]
 
 MIDDLEWARE = [

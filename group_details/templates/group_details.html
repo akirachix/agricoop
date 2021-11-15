@@ -90,13 +90,12 @@ a:hover{
   bottom: 200px;
   background-color: #192E5B;
   color: white;
-  /* border-radius: 50%; */
 }
+
   @media screen and (max-width: 960px) {
   .sidebar-nav >a {
      font-size: 13px;
     margin-top: -2px;
-    /* height: 9%; */
 
   }
   }
@@ -135,12 +134,10 @@ a:hover{
           {%csrf_token%}
           {{form.as_p}}
 
-         
       <input type="submit" value="Confirm delivery" class="button-add">
-
-
 </div>
 </div>
+
 <div class="sidebar-nav">
   <a href="{% url 'addgroup:display_group' %}">Home</a>
   <a href="{% url 'addgroup:add_group' %}">Add group</a>

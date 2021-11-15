@@ -5,14 +5,9 @@ from django.db.models.deletion import CASCADE
 from addgroup.models import Group_list
 
 
-class Delivaries(models.Model):
 
-    group_name_choice= (
-        ('Iwacu group','Iwacu group'),
-        ('Komera cooperative','Komera cooperative'),
-        ('Ubwiyunge cooperative','Ubwiyunge cooperative'),
-        )
-    group_name=models.CharField(max_length=200,choices= group_name_choice,null=True)
+class Delivaries(models.Model):
+    group_name=models.ForeignKey(Group_list,max_length=200,null=True,on_delete=CASCADE)
     date_of_delivery=models.DateTimeField(null=True)
     beans_variety_choice= (
         ('Bush beans','Bush beans'),
@@ -28,28 +23,13 @@ class Delivaries(models.Model):
         ('Rejected','Rejected')
     )
     status=models.CharField(max_length=90,choices=status_choice,null=True)
+    
     @property
     def total_amount(self):
         total_amount=self.kgs_of_beans* self.price_per_kg
         return total_amount    
 
+    def __str__(self):
+        return self.group_name.group_name    
 
-# class Bean_details(models.Model):
 
-#     # beans_variety_choice= (
-#     #     ('Bush beans','Bush beans'),
-#     #     ('Ruvuninkingi','Ruvuninkingi'),
-#     #     ('Climbing beans','Climbing beans'),
-#     #     )
-#     beans_variety = models.CharField(max_length=30,null=True)
-#     price_per_kg=models.PositiveSmallIntegerField(null=True)
-
-    
-# def create_varieties():
-#     new = Bean_details.objects.bulk_create([
-#     Bean_details(beans_variety = 'Bush Beans' ),
-#     Bean_details(beans_variety = 'Ruvuninkingi' ),
-#     Bean_details(beans_variety = 'Climbing Beans' ),
-  
-#         ])
-#     return new  

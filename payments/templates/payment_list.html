@@ -106,6 +106,9 @@ font-size:18px ;
 .butt:hover{
   color: black;
 }
+.submit2{
+  margin-top:25%;
+}
   </style>
 <div class="content" >
         <div class="sidebar-nav">
@@ -135,16 +138,17 @@ font-size:18px ;
 <tr>
    <td>{{payment.group_name}}</td>
     <td>{{payment.phone_number}}</td>
+    
     {% for pay in batch %}
     <td>{{pay.total_amount}}</td>
-    {% endfor%}
+    {% endfor %}
     <td><a href="{% url 'payments:edit' id=payment.id %}"><img src="https://icons-for-free.com/iconfiles/png/512/svg+create+edit+edit+file+office+pencil+writing+creativ+icon-1320185158722776676.png" alt="" id="image"></a></td>
     <td><a href="{% url 'payments:delete' id=payment.id %}"><img src="https://cdn.iconscout.com/icon/premium/png-256-thumb/delete-2471204-2066711.png" alt="" id="img"></a></td>
 </tr>
 {%endfor%}
    
 </table>
-<button class="submit2"><a href="{% url 'group_details:list' %}" class="butt">Make Payments</a></button>
+<button class="submit2"><a href="{% url 'lipa_na_mpesa' %}" class="butt">Make Payments</a></button>
   </body>
   </html>
 </body>
