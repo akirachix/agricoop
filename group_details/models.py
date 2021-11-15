@@ -30,24 +30,3 @@ class Delivaries(models.Model):
     def total_amount(self):
         total_amount=self.kgs_of_beans* self.price_per_kg
         return total_amount    
-
-
-# class Bean_details(models.Model):
-
-#     # beans_variety_choice= (
-#     #     ('Bush beans','Bush beans'),
-#     #     ('Ruvuninkingi','Ruvuninkingi'),
-#     #     ('Climbing beans','Climbing beans'),
-#     #     )
-#     beans_variety = models.CharField(max_length=30,null=True)
-#     price_per_kg=models.PositiveSmallIntegerField(null=True)
-
-    
-# def create_varieties():
-#     new = Bean_details.objects.bulk_create([
-#     Bean_details(beans_variety = 'Bush Beans' ),
-#     Bean_details(beans_variety = 'Ruvuninkingi' ),
-#     Bean_details(beans_variety = 'Climbing Beans' ),
-  
-#         ])
-#     return new  
