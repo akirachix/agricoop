@@ -124,13 +124,27 @@ a:hover{
     </style>
 </head>
 <body>
+
     <div class="container">
+<<<<<<< HEAD
     
 
       <center><h1>Komera cooperative</h1></center>
         <form method="POST" enctype="multipart/form-data">
           {%csrf_token%}
           {{form.as_p}}
+=======
+
+      
+      <h1>{{groups.group_name}}</h1>
+     
+
+        <form method="POST" enctype="multipart/form-data">
+          {%csrf_token%}
+          {{form.as_p}}
+
+         
+>>>>>>> 41b40fc7f92eec105a0b5d14755b91b20542487a
       <input type="submit" value="Confirm delivery" class="button-add">
 
 
@@ -140,11 +154,17 @@ a:hover{
   
   <a href="{% url 'addgroup:display_group' %}">Home</a>
   <a href="{% url 'addgroup:add_group' %}">Add group</a>
+<<<<<<< HEAD
   {% for group in groups %} 
   <a href="{% url 'group_details:group_details' id=group.id %}">Deliveries</a>
   {% endfor %}
   <a href="{% url 'payments:payments' %}">Payments</a>
   <a href="{%url 'setting_page'%}">Settings</a>
+=======
+  <a href="{% url 'group_details:list' %}">Deliveries</a>
+  <a href="{% url 'payments:payments' %}">Payment</a>
+  <a href="{%url 'setting_page'%}">Setting</a>
+>>>>>>> 41b40fc7f92eec105a0b5d14755b91b20542487a
   <a href="">LogOut</a>
  
 </div>

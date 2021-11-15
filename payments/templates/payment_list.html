@@ -9,7 +9,7 @@
     <meta content='width=device-width, initial-scale=1.0, shrink-to-fit=no' name='viewport' />  `d
     <link href="https://appsrv1-147a1.kxcdn.com/material-dashboard-pro/css/material-dashboard.min.css?v=2.1.2" rel="stylesheet" />
     <link href="https://appsrv1-147a1.kxcdn.com/material-dashboard-pro/demo/demo.css" rel="stylesheet" />
-    <!-- Specific Page CSS goes HERE  Down-->
+    
   </head>
   {% block title %}<title>Payments</title>{% endblock %}
   {% load static %}
@@ -112,8 +112,13 @@ font-size:18px ;
           <a href="{% url 'addgroup:display_group' %}">Home</a>
           <a href="{% url 'addgroup:add_group' %}">Add Group</a>
           <a href="{%url 'group_details:list' %}">Deliveries</a>
+<<<<<<< HEAD
           <a href="{% url 'payments:payments' %}">Payments</a>
           <a href="{%url 'setting_page'%}">Settings</a>
+=======
+          <a href="">Payment</a>
+          <a href="">Setting</a>
+>>>>>>> 41b40fc7f92eec105a0b5d14755b91b20542487a
           <a href="">LogOut</a>
         </div>
    </div>

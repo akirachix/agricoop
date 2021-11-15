@@ -2,8 +2,11 @@ from django.db import models
 import datetime
 from django.db.models.deletion import CASCADE
 
+from addgroup.models import Group_list
+
 
 class Delivaries(models.Model):
+
     group_name_choice= (
         ('Iwacu group','Iwacu group'),
         ('Komera cooperative','Komera cooperative'),
@@ -23,7 +26,6 @@ class Delivaries(models.Model):
         ('Paid','Paid'),
         ('Unpaid','Unpaid'),
         ('Rejected','Rejected')
-
     )
     status=models.CharField(max_length=90,choices=status_choice,null=True)
     @property

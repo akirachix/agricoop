@@ -12,6 +12,9 @@ body{
  background-color:#b4bfcc;
   font-family: Arial, Helvetica, sans-serif;
 }
+#group{
+  text-decoration: none;
+}
 .sidebar-nav{
   height: 100%;
   width: 250px;
@@ -217,12 +220,20 @@ tr, th{
       <div class="sidebar-nav">
         <a href="{% url 'addgroup:display_group' %}">Home</a>
         <a href="{% url 'addgroup:add_group' %}" id="grp" >Add group</a>
+<<<<<<< HEAD
         <a href="{% url 'payments:payments' %}">Payments</a>
         <a href="{%url 'setting_page'%}">Settings</a>
+=======
+        <a href="{% url 'group_details:list' %}">Deliveries</a>
+        <a href="{% url 'payments:payments' %}">Payment</a>
+        <a href="{%url 'setting_page'%}">Setting</a>
+>>>>>>> 41b40fc7f92eec105a0b5d14755b91b20542487a
         <a href="">LogOut</a>
       </div>
  </div>
        <table>
+        <tr>
+         
             <th id="name" >Group name</th>
             <th>No of group member</th>
             <th>Group leader contact</th>
@@ -231,6 +242,7 @@ tr, th{
         </tr>
         <tr>
           {% for group in groups %}
+<<<<<<< HEAD
           <td><a href="{% url 'group_details:group_details' %}" id="group" >{{group.group_name}}</a>{{group.no_of_group_member}}</td>
 
           <td>{{group.no_of_members}}</td>
@@ -238,6 +250,15 @@ tr, th{
             <td><a href="{% url 'addgroup:add_group' %}"><img src="https://icons-for-free.com/iconfiles/png/512/svg+create+edit+edit+file+office+pencil+writing+creativ+icon-1320185158722776676.png" alt="" id="image"></a></td>
             <td><a href="{% url 'group_details:list' %}"><img src="https://cdn.iconscout.com/icon/premium/png-256-thumb/delete-2471204-2066711.png" alt="" id="img"></a></td>
         </tr> -
+=======
+
+            <td><a href="{% url 'group_details:group_details' id=group.id %}" id="group" >{{group.group_name}}</a>{{group.no_of_group_member}}</td>
+            <td>{{group.no_of_group_member}}</td>
+            <td>{{group.group_leader_contact}}</td>
+            <td>{{group.edit}}</td>
+            <td>{{group.delete}}</td>
+        </tr> 
+>>>>>>> 41b40fc7f92eec105a0b5d14755b91b20542487a
         {%endfor%}
     </table>
 </body>
