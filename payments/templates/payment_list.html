@@ -9,7 +9,7 @@
     <meta content='width=device-width, initial-scale=1.0, shrink-to-fit=no' name='viewport' />  `d
     <link href="https://appsrv1-147a1.kxcdn.com/material-dashboard-pro/css/material-dashboard.min.css?v=2.1.2" rel="stylesheet" />
     <link href="https://appsrv1-147a1.kxcdn.com/material-dashboard-pro/demo/demo.css" rel="stylesheet" />
-    
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@200&display=swap" rel="stylesheet">
   </head>
   {% block title %}<title>Payments</title>{% endblock %}
   {% load static %}
@@ -40,10 +40,11 @@
     left: 0;
     background-color:#192E5B;
     overflow: hidden;
-    padding-top: 100px;
+    padding-top: 20px;
+    font-family: 'Nunito', sans-serif;
   }
   .sidebar-nav a{
-    padding:10px 10px 10px 16px;
+    padding:10px 10px 10px 30px;
     text-decoration: none;
     font-size: 20px;
     color: #F1F1F1;
@@ -59,6 +60,7 @@
     text-decoration-color: black;
     margin-top: 0%;
     padding-left: 3%;
+    font-family: 'Nunito', sans-serif;
   }
   
 #table {
@@ -70,10 +72,10 @@
         #table td, #table th {
             border: 1px solid rgb(15, 15, 15);
             padding: 8px;
-            
         }
         td{
           color: black;
+          font-family: 'Nunito', sans-serif;
         }
         #table tr:nth-child(even){
             background-color: #f2f2f2be;
@@ -86,6 +88,7 @@
             padding-bottom: 12px;
             text-align: left;
             color:black;
+            font-family: 'Nunito', sans-serif;
         }
         .submit2{
   text-decoration-style:none;
@@ -95,7 +98,7 @@
   align-items: center;
   font-size: 1.4rem;
   margin-left: 75%;
-  margin-top:500px;
+  margin-top:450px;
   background-color: #192E5B;
   color: white;
 }
@@ -108,11 +111,13 @@ font-size:18px ;
 }
 .submit2{
   margin-top:25%;
+  font-family: 'Nunito', sans-serif;
 }
   </style>
 <div class="content" >
         <div class="sidebar-nav">
-          <a href="">Home</a>
+          <img src="{% static 'imges/Farm to Plate.png' %}" alt="" style="width: 90px; height: 90px; margin-left: 28px; margin-bottom: 20px; border-radius: 5%;">
+          <a href="{% url 'addgroup:display_group' %}">Home</a>
           <a href="{% url 'addgroup:add_group' %}">Add Group</a>
           <a href="{%url 'group_details:list' %}">Deliveries</a>
           <a href="">Payment</a>
@@ -124,11 +129,11 @@ font-size:18px ;
     <h1>Payments</h1>
     
         <tr>
+          <hr>
             <th>Group name</th>
             <th>Phone number</th>
             <th>Total amount</th>
             <th>Paid amount</th>
-            <!-- <th>Balance</th> -->
             <th>Edit </th>
             <th>Delete</th>
         </tr>
@@ -141,7 +146,9 @@ font-size:18px ;
     
     {% for pay in batch %}
     <td>{{pay.total_amount}}</td>
-    {% endfor %}
+    {% endfor%}
+    <td>{{payment.amount_paid}}</td>
+    
     <td><a href="{% url 'payments:edit' id=payment.id %}"><img src="https://icons-for-free.com/iconfiles/png/512/svg+create+edit+edit+file+office+pencil+writing+creativ+icon-1320185158722776676.png" alt="" id="image"></a></td>
     <td><a href="{% url 'payments:delete' id=payment.id %}"><img src="https://cdn.iconscout.com/icon/premium/png-256-thumb/delete-2471204-2066711.png" alt="" id="img"></a></td>
 </tr>

@@ -1,3 +1,5 @@
+
+{%load static%}
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -6,13 +8,38 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   {% load static %}
   <link rel="stylesheet" href="{% static 'css/styles.css' %}">
+  <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@200&display=swap" rel="stylesheet">
   <style type="text/css">
-
-  
   body{
+    margin:0;
     background-color:#b4bfcc;
-    margin-top: 0;
-  }
+    }
+   .reg{
+    padding:180px;
+    width:350px;
+    height:240px;
+    overflow:hidden;
+    background:#fcfafb;
+    border-radius:10px;
+    margin-left:30%;
+    margin-top: 2%;
+    font-family: 'Nunito', sans-serif;
+          }
+.reg:hover{
+    background: rgba(107, 121, 150, 0.659);
+          }
+    button{
+     background-color: #192E5B;
+     width: 45%;
+      color: black;
+      font-size: 14px;
+      padding: 30px;
+      margin: 10px 0px;
+      border: none;
+      cursor: pointer;
+      border-radius: 20px;
+      font-family: 'Nunito', sans-serif;
+     }
   .sidebar-nav{
     height: 100%;
     width: 160px;
@@ -22,7 +49,7 @@
     left: 0;
     background-color:#192E5B;
     overflow: hidden;
-    padding-top: 100px;
+    padding-top: 20px;
   }
   .sidebar-nav a{
     padding:10px 10px 10px 16px;
@@ -30,6 +57,7 @@
     font-size: 20px;
     color: #F1F1F1;
     display: block;
+    font-family: 'Nunito', sans-serif;
     }
   .sidebar-nav a:hover{
     color: black;
@@ -38,46 +66,50 @@
     text-align: center;
     text-decoration-color: black;
     margin-top: 0%;
-    padding-left: 3%;
+    font-family: 'Nunito', sans-serif;
   }
   h3{
     color: black;
     font-size: 20px;
-    margin-left: 200px;
+    margin-left: 20%;
     text-align: center;
     margin-right:60px;
-    font-family: Arial, Helvetica, sans-serif;
+    margin-bottom: 3%;
+    font-family: 'Nunito', sans-serif;
   }
   h4{
     color: black;
     font-size: 20px;
-    margin-left: 200px;
+    margin-left: 20px;
     position: relative;
     bottom: -40px;
-
+    width:28% ;
+    font-family: 'Nunito', sans-serif;
   }
   #group{
     background-color: white;
-    padding: 15px 350px;
+    padding: 10px 250px;
     text-align: right 100px;
     text-align: top;
-    box-shadow: 0 0 8px black;
-
+    box-shadow: 0 0 5px black;
+    margin-left: -35%;
+    font-size: small;
+    font-family: 'Nunito', sans-serif;
   }
-
   #leader{
     background-color: white;
     padding: 15px 350px;
-    
-
   }
   #members{
     background-color: white;
-    padding: 15px 350px;
-    box-shadow: 0 0 8px black;
-
+    padding: 18px 250px;
+    text-align: right 100px;
+    text-align: top;
+    box-shadow: 0 0 5px black;
+    margin-left: -35%;
+    font-size: small;
+    font-family: 'Nunito', sans-serif;
   }
-
 .button {
   background-color: #192E5B;
   border: none;
@@ -86,56 +118,50 @@
   text-align: center;
   text-decoration: none;
   display: inline-block;
-  font-size: 20px;
-  margin-left: 600px;
+  font-size: 24px;
+  margin-left: 500px;
   position: relative;
-  bottom: -80px;
+  bottom: -50px;
   border-radius: 10px;
   cursor: pointer;
-
 }
 #addbutton {
   background-color: #192E5B;
   border: none;
-  color: #ffffff;
-  padding: 5px 10px;
-  text-align: center;
+  color: #FFFFFF;
   text-decoration: none;
   display: inline-block;
   font-size: 20px;
-  margin-left: 1050px;
   position: relative;
-  bottom: 165px;
-  border-radius: 10px;
+  bottom: 240px;
   cursor: pointer;
+  margin-left: 79%;
   border-radius: 50%;
-
+  width: 2.6%;
+  height: 2%;
+  padding: 5px;
 }
-
 #addbutton2 {
   background-color: #192E5B;
   border: none;
-  color: #ffffff;
-  padding: 5px 10px;
-  text-align: center;
+  color: #FFFFFF;
   text-decoration: none;
   display: inline-block;
   font-size: 20px;
-  margin-left: 1050px;
   position: relative;
-  bottom: 115px;
-  border-radius: 10px;
+  bottom: 223px;
   cursor: pointer;
+  margin-left: 79%;
   border-radius: 50%;
+  width: 2.6%;
+  height: 2%;
+  padding: 5px;
 }
-
-
-
-.mybutton {
+ .mybutton {
   background-color: #192E5B;
   border: none;
   color: white;
-  padding: 15px 60px;
+ padding: 15px 60px;
   text-align: center;
   text-decoration: none;
   display: inline-block;
@@ -145,10 +171,8 @@
   bottom: -90px;
   border-radius: 10px;
   cursor: pointer;
-
 }
-
-#btn {
+ #btn {
   background-color: #192E5B;
   border: none;
   color: white;
@@ -162,26 +186,29 @@
   bottom: -90px;
   border-radius: 10px;
   cursor: pointer;
-
 }
+/* pop up one */
 .hidden{
-  display: flex;
   justify-content: center;
   align-items: center;
   position: absolute;
   top: 0;
-  margin:8% 32%;
+  margin:15% 32%;
   display: none;
 }
-.modal-content{
+.entry{
+  background-color: whitesmoke;
+  padding-left: 5%;
   width: 600px;
-  height: 550px;
-  background-color: white;
 }
-
-
+.entries{
+  background-color:whitesmoke;
+  padding-left: 5%;
+  width: 600px;
+  font-family: 'Nunito', sans-serif;
+}
 .hidden2{
-  display: flex;
+   display: flex;
   justify-content: center;
   align-items: center;
   position: absolute;
@@ -190,45 +217,40 @@
   display: none;
 }
 .modal-content2{
-  width: 600px;
+  width: 800px;
   height: 550px;
-  background-color: white;
+ background-color:whitesmoke;
 }
 input{
   width: 50%;
   padding: 10px;
- 
- position: relative;
- bottom: -50px;
- margin-left: 100px;
-
- 
-}  
-input{
-  width: 84%;
+  position: relative;
+  bottom: -50px;
+  margin-left: 100px;
+}
+ input{
+  width: 50%;
   border: 2px;
   margin: 8px 0;
   outline: none;
-  margin-left: 200px; 
+  margin-left: 200px;
   padding-bottom: 28px;
   position: relative;
-
   font-size: 15px;
   font-weight: bold;
- 
-} 
-
+}
 input[type=text1]{
-  box-shadow: 0 0 8px black;
+  padding: 5% 51%;
+  box-shadow: 0 0 5px black;
   text-align: center;
-  margin-right: -100px;
-} 
-
-
-
+  margin-left: -35%;
+  margin-right: -42%;
+  width: 68%;
+  font-size: 12px;
+  font-weight: lighter;
+}
 h5{
   padding: 5px 100px;
-  
 }
 h2{
   text-align: center;
@@ -242,30 +264,24 @@ form input{
 form{
   position: relative;
   bottom: -20px;
-  
 }
 .submit1{
   text-decoration-style:none;
-  top: 30px;
-  height: 50px;
-  width :30%;
+  top: 60px;
+  padding: 5px 10px;
   border-radius: 6px;
   align-items: center;
   font-size: 1.4rem;
-  margin-left: 500px;
+  margin-left: 120px;
   position: relative;
-  bottom: 200px;
-  color: white;
-
-}
-a:link {
+  bottom: 100px;
+}.submit1 a{
+  color: #F1F1F1;
   text-decoration: none;
-  color: white;
 }
-
 .submit2{
   text-decoration-style:none;
-  top: 30px;
+  top: 0px;
   height: 50px;
   width :30%;
   border-radius: 6px;
@@ -276,7 +292,6 @@ a:link {
   bottom: 200px;
   background-color: #192E5B;
   color: white;
-  
 }
 @media screen and (max-width: 960px) {
   .sidebar-nav{
@@ -294,39 +309,39 @@ a:link {
     font-size: 50%;
    }
    h3{
-  margin-left:-6%;
-  top: 40%;
-}
+  margin-left:-40%;
+  top: 50%;
+  }
 #members{
     padding: 7px 90px;
-    margin-left: 17%;
-    width: 8%;
+     margin-left: 17%;
+     width: 8%;
     font-size: 50%;
-
   }
-  #addbutton {
+   #addbutton {
    right:135%;
    bottom: 72px;
    padding: 1px 6px;
-
+   margin-left:50%;
 }
-  #addbutton {
-   right:150%;
+   #addbutton {
+   right:-160%;
    bottom: 72px;
    padding: 1px 6px;
-
 }
-#addbutton2 {
-  right:150%;
+
+ #addbutton2 {
+   right:60%;
    bottom: 55px;
    padding: 1px 6px;
   }
-  .submit1{
+ .submit1{
   right:60%;
   height: 30px;
   width :25%;
   font-size: 9px;
   }
+
   input{
   right:21%;
   height: 1px;
@@ -339,32 +354,30 @@ a:link {
 <body>
   <div class="row my-3 p-3">
     <div class="sidebar-nav">
+      <img src="{% static 'imges/Farm to Plate.png' %}" alt="" style="width: 90px; height: 90px; margin-left: 28px; margin-bottom: 20px; border-radius: 5%;">
       <a href="{% url 'addgroup:display_group' %}">Home</a>
       <a href="{% url 'addgroup:add_group' %}">Add group</a>
       <a href="{%url 'group_details:list' %}">Deliveries</a>
       <a href="{% url 'payments:payments' %}">Payments</a>
       <a href="{%url 'setting_page'%}">Setting</a>
       <a href="">LogOut</a>
-
     </div>
 </div>
+<div class="reg">
 <div class="content" >
   <h3>Add group</h3>
   <div class="input-field">
-
-  <input type="text1" name="name" value="Name of the group">
+    <input type="text1" id="name" value="Name of the group">
     <h4 id="group">Group leader details</h4>
      <h4 id="members">Group members</h4>
      <button class="submit1"><a href="{% url 'addgroup:display_group' %}">View groups</a></button>
-
   </div>
+   </div>
    </div>
    <button onclick="toggleAddBtn()" id="addbutton">+</button>
    <button onclick="toggleAddBtn2()" id="addbutton2">+</button>
-
   <div id="bg-modal"  class="hidden">
-    <div class="modal-content">
-
+    <div class="entry">
       <form method="POST">
      <h2>Group leader details</h2>
      <div class="wrapper">
@@ -377,53 +390,43 @@ a:link {
      </form>
      </div>
      </div>
-    
-      </form>
+        </form>
     </div>
-    
   </div>
-
   <div id="bg-modal2"  class="hidden2">
-    <div class="modal-content2">
-      
+    <div class="entries">
       <form method="POST">
           {% csrf_token %}
           {{from.as_p}}
-     <h2>Add members</h2>   
+     <h2>Add members</h2>
      <div class="wrapper">
         <div class="form">
-     <form method="POST" enctype="multipart/form-data">
+      <form method="POST" enctype="multipart/form-data">
          {%csrf_token%}
          {{form.as_p}}
          {{Name}}
-
-         <button class="submit2">Submit</button>     
+         <button class="submit2">Submit</button>
      </form>
      </div>
-     </div>
-
       </form>
     </div>
-
   </div>
 <script>
   function toggleAddBtn() {
     var div = document.getElementById("bg-modal");
      div.style.position='absolute'
      div.style.top = 0
-     div.style.margin = '8% 32%'
-     div.style.boxShadow = '5px 10px 8px 10px #888888'
-     div.classList.toggle('hidden') 
+     div.style.margin = '4% 32%'
+     div.classList.toggle('hidden')
 }
 function toggleAddBtn2() {
     var div = document.getElementById("bg-modal2");
      div.style.position='absolute'
      div.style.top = 0
-     div.style.margin = '8% 32%'
-     div.style.boxShadow = '5px 10px 8px 10px #888888'
+     div.style.margin = '4% 32%'
      div.classList.toggle('hidden2')
-  
 }
 </script>
+</div>
 </body>
-</html> 
+</html>

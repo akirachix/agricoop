@@ -1,3 +1,5 @@
+{%load static%}
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -5,12 +7,17 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<link href="https://fonts.googleapis.com/css2?family=Nunito:wght@200&display=swap" rel="stylesheet">
 </head>
 <body>
 <style type="text/css">
 body{
  background-color:#b4bfcc;
   font-family: Arial, Helvetica, sans-serif;
+}
+h1{
+  font-family: 'Nunito', sans-serif;
+  font-weight: 900;
 }
 #group{
   text-decoration: none;
@@ -24,30 +31,23 @@ body{
   left: 0;
   background-color:#192E5B;
   overflow: hidden;
-  padding-top: 100px;
+  padding-top: 20px;
  }
 .sidebar-nav a{
-  padding:18px 18px 18px 24px;
-  text-decoration: none;
-  font-size: 20px;
-  color: #F1F1F1;
-  display: block;
-  padding-left: 20%;
-  }
+    padding:10px 10px 10px 30px;
+    text-decoration: none;
+    font-size: 20px;
+    color: #F1F1F1;
+    display: block;
+    font-family: 'Nunito', sans-serif;
+    }
 .sidebar-nav a:hover{
   color: black;
 }
 .content{
  align-items: center;
 }
-h1{
-  text-decoration-color: black;
-  margin-left: 50%;
-  font-size: 180%;
-  font-weight: lighter;
-  padding-bottom: -17%;
- margin-top:-3%;
-}
+
 #groups{
   padding-left: 30%;
   color: black;
@@ -101,7 +101,7 @@ padding-left: 40%;
 }
 #info{
 font-weight: bold;
-font-family: Arial, Helvetica, sans-serif;
+font-family: 'Nunito', sans-serif;
 background: none;
 border: none;
 font-size: 15px;
@@ -112,34 +112,20 @@ margin-left: 190px;
 .groups{
 margin-left: 200px;
 }
-table, td, th {
-padding-left: 24%;
-font-size: 15px;
-font-family: Arial, Helvetica, sans-serif;
-}
-tr:hover {
-cursor: pointer;
-color: antiquewhite;
-}
-th, td {
-padding: 15px;
-margin-top: -9%;
-}
-th{
-color: black;
-}
-tr, th{
-padding:14px 14px 14px 18px;
-}
 .dropbtn{
  position: relative;
   bottom: -45px;
   padding-right: 30px;
 }
 #grp{
- color: yellow;
-}#name{
+ color: white;
+}
+#grp:hover{
+ color: black;
+}
+#name{
  padding-bottom: -15%;
+ font-family: 'Nunito', sans-serif;
 }
 #image{
     width: 35px;
@@ -166,12 +152,14 @@ padding:14px 14px 14px 18px;
 #table {
             font-family: Arial, Helvetica, sans-serif;
             border-collapse: collapse;
-            width: 80%;
+            width: 70%;
             margin-left: 20%;
          } ;
         #table td, #table th {
             border: 1px solid rgb(15, 15, 15);
             padding: 8px;
+            font-family: 'Nunito', sans-serif;
+            margin-left: 20%;
         }
         #table tr:nth-child(even){
             background-color: #f2f2f2be;
@@ -183,7 +171,12 @@ padding:14px 14px 14px 18px;
             padding-top: 12px;
             padding-bottom: 12px;
             text-align: left;
+            padding: -5px;
             color:black;
+            font-family: 'Nunito', sans-serif;
+        }
+        td a{
+          margin-left: 10%;
         }
 @media screen and (max-width: 960px) {
   .sidebar-nav >a {
@@ -238,8 +231,8 @@ tr, th{
 <body>
 <button class="addbutton"><a href="{% url 'addgroup:add_group' %}">+</a></button>
 <div class="content" >
-<h1>Group List</h1>
       <div class="sidebar-nav">
+        <img src="{% static 'imges/Farm to Plate.png' %}" alt="" style="width: 90px; height: 90px; margin-left: 28px; margin-bottom: 20px; border-radius: 5%;">
         <a href="{% url 'addgroup:display_group' %}">Home</a>
         <a href="{% url 'addgroup:add_group' %}" id="grp" >Add group</a>
         <a href="{% url 'group_details:list' %}">Deliveries</a>
@@ -249,6 +242,8 @@ tr, th{
       </div>
  </div>
        <table id="table">
+         <center><h1>Group List</h1></center>
+         <hr>
         <tr>
          
             <th id="name" >Group name</th>
@@ -261,10 +256,10 @@ tr, th{
           {% for group in groups %}
 
             <td><a href="{% url 'group_details:group_details' id=group.id %}" id="group" >{{group.group_name}}</a>{{group.no_of_group_member}}</td>
-            <td>{{group.no_of_members}}</td>
-            <td>{{group.phone_number}}</td>
-            <td>{{group.edit}}</td>
-            <td>{{group.delete}}</td>
+            <td id="one"  >{{group.no_of_members}}</td>
+            <td id="two" >{{group.phone_number}}</td>
+            <td><a href="{% url 'group_details:group_details' id=group.id %}"><img src="https://icons-for-free.com/iconfiles/png/512/svg+create+edit+edit+file+office+pencil+writing+creativ+icon-1320185158722776676.png" alt="" id="image"></a></td>
+            <td><a href="{% url 'group_details:group_details' id=group.id %}"><img src="https://cdn.iconscout.com/icon/premium/png-256-thumb/delete-2471204-2066711.png" alt="" id="img"></a></td>
         </tr> 
         {%endfor%}
     </table>

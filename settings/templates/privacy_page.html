@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="main.css">
     <link href="app.js">
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@200&display=swap" rel="stylesheet">
     <title>Privacy & Security</title>
 </head>
 <body>
@@ -13,7 +14,7 @@
  <style>
 body{
  background-color:#b4bfcc;
-  font-family: Arial, Helvetica, sans-serif;
+ font-family: 'Nunito', sans-serif;
   height: 100vh;
   width: 100%;
 }
@@ -29,7 +30,7 @@ input {
   box-sizing: border-box;
   margin-top: 40px;
   margin-bottom: 30px;
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: 'Nunito', sans-serif;
   
 }
 #tentacles{
@@ -54,6 +55,7 @@ img{
   transform: translate(-50%,-50%); 
   overflow: hidden;
   border: 1px solid grey; 
+  font-family: 'Nunito', sans-serif;
 }
 
 #photo{
@@ -79,6 +81,7 @@ img{
   font-size: 12px;
   cursor: pointer;
   padding-left: 10%;
+  font-family: 'Nunito', sans-serif;
  
 }
 
@@ -102,6 +105,7 @@ input[type=number]{
   position: relative;
   padding: 20px;
   margin-top: 10px;
+  font-family: 'Nunito', sans-serif;
 }
 
 #message p {
@@ -132,6 +136,7 @@ h1{
     overflow: hidden;
     padding-top: 100px;
     padding-left: 1%;
+    font-family: 'Nunito', sans-serif;
   }
 
 .sidebar-nav a{
@@ -173,7 +178,7 @@ h1{
     <div class="sidebar-nav">
       <a href="{% url 'addgroup:display_group' %}">Home</a>
       <a href="{% url 'addgroup:add_group' %}">Add group</a>
-      <a href="{% url 'group_details:group_details' %}">Deliveries</a>
+      <a href="{% url 'group_details:list' %}">Deliveries</a>
       <a href="">Payments</a>
       <a href="{%url 'setting_page'%}" id="pop" >Settings</a>
       <a href="">LogOut</a>

@@ -6,10 +6,12 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   {% load static %}
   <link rel="stylesheet" href="{% static 'css/styles.css' %}">
+  <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@200&display=swap" rel="stylesheet">
   <div class="content" >
-    <h1>Beans</h1>
     <div class="row my-3 p-3">
+
           <div class="sidebar-nav">
+            <img src="{% static 'imges/Farm to Plate.png' %}" alt="" style="width:90px; height: 90px; margin-left: 28px; margin-bottom: 20px; border-radius: 5%;">
             <a href="{% url 'addgroup:display_group' %}">Home</a>
             <a href="{% url 'addgroup:add_group' %}">Add group</a>
             <a href="{% url 'group_details:list' %}">Deliveries</a>
@@ -19,8 +21,10 @@
           </div>
      </div>
     <div>
-    
+
         <table id="table">
+          <center><h1>Beans</h1> </center>
+          <hr>
             <tr>
                 <th>Group name</th>
                 <th>Bean variety</th>
@@ -29,7 +33,7 @@
                 <th>Price per kg</th>
                 <th>Edit</th>
                 <th>Delete</th>
-                <th>Status</th>
+                <!-- <th>Status</th> -->
 
             </tr>
 
@@ -65,6 +69,7 @@
   body{
     background-color:#b4bfcc;
     margin-top: 0;
+    font-family: 'Nunito', sans-serif;
   }
   #image{
     width: 35px;
@@ -81,35 +86,34 @@
     left: 0;
     background-color:#192E5B;
     overflow: hidden;
-    padding-top: 100px;
-    
+    padding-top: 20px;
+
   }
+ 
   .sidebar-nav a{
     padding:10px 10px 10px 30px;
     text-decoration: none;
     font-size: 20px;
     color: #F1F1F1;
     display: block;
+    font-family: 'Nunito', sans-serif;
     }
   .sidebar-nav a:hover{
     color: black;
         }
-  h1{
-    text-align: center;
-    text-decoration-color: black;
-    margin-top: 0%;
-    padding-left: 3%;
-  }
   h3{
     color: black;
     font-size: 30px;
     margin-left: 200px;
+    font-family: 'Nunito', sans-serif;
   }
   #table {
             font-family: Arial, Helvetica, sans-serif;
             border-collapse: collapse;
             width: 80%;
             margin-left: 20%;
+            margin-top: 50px;
+            font-family: 'Nunito', sans-serif;
          } ;
         #table td, #table th {
             border: 1px solid rgb(15, 15, 15);
@@ -126,6 +130,7 @@
             padding-bottom: 12px;
             text-align: left;
             color:black;
+            font-family: 'Nunito', sans-serif;
         }
         @media screen and (max-width: 960px) {
   .sidebar-nav >a {

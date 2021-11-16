@@ -3,6 +3,7 @@ from django.shortcuts import  render, redirect
 from addgroup.models import Group_list
 from .forms import GroupRegistrationForm
 from .models import Delivaries
+from  addgroup.models import Group_list
 from django.http.response import HttpResponseRedirect
 from django.urls import reverse
 
@@ -29,7 +30,7 @@ def edit(request,id):
     if request.method=="POST":
         form=GroupRegistrationForm(request.POST,instance=product)
         if form.is_valid():
-            form.save() 
+            form.save()
             return redirect("group_details:list")
     else:
         form=GroupRegistrationForm(instance=product)
