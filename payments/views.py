@@ -46,11 +46,11 @@ def total_amount(self):
     
 def lipa(request):
     if request.method=="POST":
-        fom=LipaRegistrationForm (request.POST)
-        if fom.is_valid():
-            fom.save() 
+        form=LipaRegistrationForm (request.POST)
+        if form.is_valid():
+            form.save() 
     else:
-        fom=LipaRegistrationForm()
-    return render(request,"payment_list.html",{"fom":fom})
+        form=LipaRegistrationForm()
+    return render(request,"payment_list.html",{"form":form})
 
 
