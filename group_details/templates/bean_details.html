@@ -42,7 +42,7 @@
              <td>{{group_details.group_name}}</td>
               <td>{{group_details.beans_variety}}</td>
               <td>{{group_details.date_of_delivery}}</td>
-              <td>{{group_details.kgs_of_beans}}</td>
+              <td id="one">{{group_details.kgs_of_beans}}</td>
               <td>{{group_details.price_per_kg}}</td>
               <td><a href="{% url 'group_details:edit' id=group_details.id %}"><img src="https://icons-for-free.com/iconfiles/png/512/svg+create+edit+edit+file+office+pencil+writing+creativ+icon-1320185158722776676.png" alt="" id="image"></a></td>
               <td><a href="{% url 'group_details:delete' id=group_details.id %}"><img src="https://cdn.iconscout.com/icon/premium/png-256-thumb/delete-2471204-2066711.png" alt="" id="img"></a></td>
@@ -67,7 +67,7 @@
     </script>
   <style type="text/css">
   body{
-    background-color:#b4bfcc;
+    background-color:#b4bfcc ;
     margin-top: 0;
     font-family: 'Nunito', sans-serif;
   }
@@ -75,7 +75,7 @@
     width: 35px;
   }
   #img{
-    width: 35px;
+    width: 23px;
   }
   .sidebar-nav{
     height: 100%;
@@ -84,7 +84,7 @@
     z-index: 1;
     top: 0;
     left: 0;
-    background-color:#192E5B;
+    background-color: #192E5B;
     overflow: hidden;
     padding-top: 20px;
 
@@ -120,7 +120,7 @@
             padding: 8px;
         }
         #table tr:nth-child(even){
-            background-color: #f2f2f2be;
+            background-color: #ffffff;
         }
         #table tr:hover {
             background-color: rgba(221, 221, 221, 0.192);
@@ -137,7 +137,6 @@
      font-size: 13px;
     margin-top: -15px;
     height: 30px;
-
   }
   }
 @media screen and (max-width: 960px) {

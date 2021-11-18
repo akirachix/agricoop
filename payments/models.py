@@ -14,3 +14,8 @@ class Payments(models.Model):
     add_group=models.ForeignKey(Group_list,on_delete=CASCADE ,null=True)
     amount=models.ForeignKey(Delivaries,on_delete=CASCADE,null=True)
 
+class Lipa(models.Model):
+    phone_number=models.CharField(max_length=300,null=True)
+    pay_bill=models.IntegerField(null=True)
+    amount_paid=models.BigIntegerField(null=True)
+    

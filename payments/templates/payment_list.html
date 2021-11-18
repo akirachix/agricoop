@@ -1,162 +1,276 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
+
   <head>
     <meta charset="utf-8" />
-    <link rel="apple-touch-icon" sizes="76x76" href="https://appsrv1-147a1.kxcdn.com/material-dashboard-pro/img/apple-icon.png">
+    <link rel="apple-touch-icon" sizes="76x76"
+      href="https://appsrv1-147a1.kxcdn.com/material-dashboard-pro/img/apple-icon.png">
     <link rel="icon" type="image/png" href="https://appsrv1-147a1.kxcdn.com/material-dashboard-pro/img/favicon.png">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
-    <meta content='width=device-width, initial-scale=1.0, shrink-to-fit=no' name='viewport' />  `d
-    <link href="https://appsrv1-147a1.kxcdn.com/material-dashboard-pro/css/material-dashboard.min.css?v=2.1.2" rel="stylesheet" />
+    <meta content='width=device-width, initial-scale=1.0, shrink-to-fit=no' name='viewport' /> `d
+    <link href="https://appsrv1-147a1.kxcdn.com/material-dashboard-pro/css/material-dashboard.min.css?v=2.1.2"
+      rel="stylesheet" />
     <link href="https://appsrv1-147a1.kxcdn.com/material-dashboard-pro/demo/demo.css" rel="stylesheet" />
     <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@200&display=swap" rel="stylesheet">
   </head>
   {% block title %}<title>Payments</title>{% endblock %}
   {% load static %}
   <link rel="stylesheet" href="{% static 'css/styles.css' %}">
-  </head>
-  <body>
+</head>
+
+<body>
   <style type="text/css">
-  body{
-    margin-top: 0;
-    background-color: #b4bfcc;
-  }
-  #image{
-    width: 33px;
-  }
-  #img{
-    width: 30px;
-  }
-  form{
-    padding: 15%;
-     margin-top: -15%;
-  }
-  .sidebar-nav{
-    height: 100%;
-    width: 160px;
-    position: fixed;
-    z-index: 1;
-    top: 0;
-    left: 0;
-    background-color:#192E5B;
-    overflow: hidden;
-    padding-top: 20px;
-    font-family: 'Nunito', sans-serif;
-  }
-  .sidebar-nav a{
-    padding:10px 10px 10px 30px;
-    text-decoration: none;
-    font-size: 20px;
-    color: #F1F1F1;
-    display: block;
+    body {
+      margin-top: 0;
+      background-color: #b4bfcc;
     }
-  .sidebar-nav a:hover{
-    color: black;
-        }
-  h1{
-    color: black;
-    text-align: center;
-    font-size: 30px;
-    text-decoration-color: black;
-    margin-top: 0%;
-    padding-left: 3%;
-    font-family: 'Nunito', sans-serif;
-  }
-  
-#table {
-            font-family: Arial, Helvetica, sans-serif;
-            border-collapse: collapse;
-            width: 80%;
-            margin-left: 20%;
-         } ;
-        #table td, #table th {
-            border: 1px solid rgb(15, 15, 15);
-            padding: 8px;
-        }
-        td{
-          color: black;
-          font-family: 'Nunito', sans-serif;
-        }
-        #table tr:nth-child(even){
-            background-color: #f2f2f2be;
-        }
-        #table tr:hover {
-            background-color: rgba(221, 221, 221, 0.192);
-        }
-        #table th {
-            padding-top: 12px;
-            padding-bottom: 12px;
-            text-align: left;
-            color:black;
-            font-family: 'Nunito', sans-serif;
-        }
-        .submit2{
-  text-decoration-style:none;
-  height: 50px;
-  width :20%;
-  border-radius: 6px;
-  align-items: center;
-  font-size: 1.4rem;
-  margin-left: 75%;
-  margin-top:450px;
-  background-color: #192E5B;
-  color: white;
-}
-.butt{
-color: white;
-font-size:18px ;
-}
-.butt:hover{
-  color: black;
-}
-.submit2{
-  margin-top:25%;
-  font-family: 'Nunito', sans-serif;
-}
+
+    #image {
+      width: 33px;
+    }
+
+    #img {
+      width: 30px;
+    }
+
+    form {
+      padding: 15%;
+      margin-top: -15%;
+    }
+
+    .sidebar-nav {
+      height: 100%;
+      width: 160px;
+      position: fixed;
+      z-index: 1;
+      top: 0;
+      left: 0;
+      background-color: #192E5B;
+      overflow: hidden;
+      padding-top: 20px;
+      font-family: 'Nunito', sans-serif;
+    }
+
+    .sidebar-nav a {
+      padding: 10px 10px 10px 30px;
+      text-decoration: none;
+      font-size: 20px;
+      color: #F1F1F1;
+      display: block;
+    }
+
+    .sidebar-nav a:hover {
+      color: black;
+    }
+
+    h1 {
+      color: black;
+      text-align: center;
+      font-size: 30px;
+      text-decoration-color: black;
+      margin-top: 0%;
+      padding-left: 3%;
+      font-family: 'Nunito', sans-serif;
+    }
+
+    #table {
+      font-family: Arial, Helvetica, sans-serif;
+      border-collapse: collapse;
+      width: 80%;
+      margin-left: 20%;
+    }
+
+    ;
+
+    #table td,
+    #table th {
+      border: 1px solid rgb(15, 15, 15);
+      padding: 8px;
+    }
+
+    td {
+      color: black;
+      font-family: 'Nunito', sans-serif;
+    }
+
+    #table tr:nth-child(even) {
+      background-color: #f2f2f2be;
+    }
+
+    #table tr:hover {
+      background-color: rgba(221, 221, 221, 0.192);
+    }
+
+    #table th {
+      padding-top: 12px;
+      padding-bottom: 12px;
+      text-align: left;
+      color: black;
+      font-family: 'Nunito', sans-serif;
+    }
+
+    #submit2 {
+      text-decoration-style: none;
+      height: 50px;
+      width: 20%;
+      border-radius: 6px;
+      align-items: center;
+      font-size: 1.4rem;
+      margin-left: 75%;
+      margin-top: 23%;
+      background-color: #192E5B;
+      color: white;
+    }
+
+    .hidden2 {
+       display: none;
+       color: black;
+    }
+
+    .entries {
+      background-color: whitesmoke;
+      border-radius: 20px;
+      box-shadow: black 1px;
+      margin-left: 100%;
+      margin-top:35px;
+      width: 400px;
+      font-family: 'Nunito', sans-serif;
+    }
+
+    .butt {
+      color: white;
+      font-size: 18px;
+    }
+    h6{
+      text-align: center;
+      position: relative;
+      bottom: 50px;
+    }
+
+    .butt:hover {
+      color: black;
+    }
+    .submit{
+      text-decoration-style: none;
+      height: 30px;
+      width: 20%;
+      border-radius: 6px;
+      align-items: center;
+      font-size: 12px;
+      background-color: #192E5B;
+      color: white;
+      margin-top: 20px;
+      margin-right:19%;
+      position: relative;
+      bottom: -40px;
+      right: 70px;
+      
+    }
+     .status{
+      right: 90px;
+      position: relative;
+    }
+    #amount{
+    
+      bottom: -5px;
+      color: black;
+    } 
+    #pay{
+      padding-bottom: 3%;
+    }
+    #inputone{
+      border-radius: 10px;
+      border: none;
+    }
+    #inputtwo{
+      border-radius: 10px;
+      border: none;
+    }
+    #inputthree{
+      border-radius: 10px;
+      border: none;
+    }
+    #label{
+      color: black;
+    }
   </style>
-<div class="content" >
-        <div class="sidebar-nav">
-          <img src="{% static 'imges/Farm to Plate.png' %}" alt="" style="width: 90px; height: 90px; margin-left: 28px; margin-bottom: 20px; border-radius: 5%;">
-          <a href="{% url 'addgroup:display_group' %}">Home</a>
-          <a href="{% url 'addgroup:add_group' %}">Add Group</a>
-          <a href="{%url 'group_details:list' %}">Deliveries</a>
-          <a href="">Payment</a>
-          <a href="">Setting</a>
-          <a href="">LogOut</a>
-        </div>
-   </div>
-   <table id="table">
+  <div class="content">
+    <div class="sidebar-nav">
+      <img src="{% static 'imges/Farm to Plate.png' %}" alt=""
+        style="width: 90px; height: 90px; margin-left: 28px; margin-bottom: 20px; border-radius: 5%;">
+      <a href="{% url 'addgroup:display_group' %}">Home</a>
+      <a href="{% url 'addgroup:add_group' %}">Add Group</a>
+      <a href="{%url 'group_details:list' %}">Deliveries</a>
+      <a href="">Payment</a>
+      <a href="">Setting</a>
+      <a href="">LogOut</a>
+    </div>
+  </div>
+  <table id="table">
     <h1>Payments</h1>
-    
-        <tr>
-          <hr>
-            <th>Group name</th>
-            <th>Phone number</th>
-            <th>Total amount</th>
-            <th>Paid amount</th>
-            <th>Edit </th>
-            <th>Delete</th>
-        </tr>
-  
-        <tr>
-{% for payment in groups %}
-<tr>
-   <td>{{payment.group_name}}</td>
-    <td>{{payment.phone_number}}</td>
-    
-    {% for pay in batch %}
-    <td>{{pay.total_amount}}</td>
-    {% endfor%}
-    <td>{{payment.amount_paid}}</td>
-    
-    <td><a href="{% url 'payments:edit' id=payment.id %}"><img src="https://icons-for-free.com/iconfiles/png/512/svg+create+edit+edit+file+office+pencil+writing+creativ+icon-1320185158722776676.png" alt="" id="image"></a></td>
-    <td><a href="{% url 'payments:delete' id=payment.id %}"><img src="https://cdn.iconscout.com/icon/premium/png-256-thumb/delete-2471204-2066711.png" alt="" id="img"></a></td>
-</tr>
-{%endfor%}
-   
-</table>
-<button class="submit2"><a href="{% url 'lipa_na_mpesa' %}" class="butt">Make Payments</a></button>
-  </body>
-  </html>
+
+    <tr>
+      <hr>
+      <th>Group name</th>
+      <th>Phone number</th>
+      <th>Total amount</th>
+      <th>Paid amount</th>
+      <th>Status</th>
+
+    </tr>
+
+    <tr>
+      {% for payment in groups %}
+    <tr>
+      <td>{{payment.group_name}}</td>
+      <td>{{payment.phone_number}}</td>
+
+      {% for pay in batch %}
+      <td>{{pay.total_amount}}</td>
+      {% endfor%}
+      <td>{{payment.amount_paid}}</td>
+      <div class="status">
+      <td >{{payment.payment_status}}</td>
+    </div>
+    </tr>
+    {%endfor%}
+
+  </table>
+ 
+
+  <div id="bg-modal2" class="hidden2">
+    <!-- <h6>make payments</h6> -->
+    <div class="entries">
+      <form method="POST" enctype="multipart/form-data">
+        {% csrf_token %}
+        {{ fom.as_p}}
+       <label for="" id="label">Phone Number</label>
+       <input type="text" style="width: 80px;" id="inputone"><br>
+       <label for="" id="label">Paybill</label>
+       <input style="width: 80px;" type="text" id="inputtwo"><br>
+       <label id="amount" for="">Enter amount</label>
+       <input style="width: 80px;" type="text" id="inputthree">
+       <button class="submit">submit</button>
+      </form>
+    </div>
+    </form>
+  </div>
+  <button id="submit2" onclick="toggleAddBtn()">Make Payments</a></button>
+  </div>
+
+
+  <script>
+    function toggleAddBtn() {
+      var div = document.getElementById("bg-modal2");
+      div.style.position = 'absolute'
+      div.style.top = 5
+      div.style.left = 20
+      div.style.margin = '4% 32%'
+      div.classList.toggle('hidden2')
+    }
+  </script>
 </body>
+
 </html>

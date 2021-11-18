@@ -6,7 +6,7 @@ from group_details.models import Delivaries
 from django.http.response import HttpResponse
 from payments.models import Payments
 from addgroup.models import Group_list
-from .forms import PaymentsDetailsRegistrationForm
+from .forms import LipaRegistrationForm, PaymentsDetailsRegistrationForm
 from django.urls import reverse
 from django.http.response import HttpResponseRedirect
 
@@ -44,4 +44,13 @@ def total_amount(self):
     total_amount=self.kgs_of_beans*self.price_per_kg
     return total_amount
     
+def lipa(request):
+    if request.method=="POST":
+        fom=LipaRegistrationForm (request.POST)
+        if fom.is_valid():
+            fom.save() 
+    else:
+        fom=LipaRegistrationForm()
+    return render(request,"payment_list.html",{"fom":fom})
+
 
