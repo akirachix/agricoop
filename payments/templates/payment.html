@@ -20,14 +20,14 @@
   }
   .sidebar-nav{
     height: 100%;
-    width: 160px;
+    width: 250x;
     position: fixed;
     z-index: 1;
     top: 0;
     left: 0;
     background-color:#192E5B;
     overflow: hidden;
-    padding-top: 100px;
+    padding-top: 20px;
 
   }
   .sidebar-nav a{
@@ -62,9 +62,9 @@
           <a href="{% url 'addgroup:display_group' %}">Home</a>
            <a href="{% url 'addgroup:add_group' %}">Add Group</a>
           <a href="{%url 'group_details:list' %}">Deliveries</a>
-          <a href="">Payment</a>
+          <a href="{% url 'payments:payments' %}">Payment</a>
           <a href="{%url 'setting_page'%}">Setting</a>
-          <a href="">LogOut</a>
+          <a href="{% url 'login'%}">LogOut</a>
         </div>
    </div>
   <form action="/action_page.php">

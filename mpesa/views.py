@@ -34,7 +34,7 @@ def lipa_na_mpesa_online(request):
         "TransactionDesc": "Testing stk push"
     }
     response = requests.post(api_url, json=request, headers=headers)
-    return HttpResponse('success')
+    return HttpResponse('Successfully Paid')
 @csrf_exempt
 def register_urls(request):
     access_token = MpesaAccessToken.validated_mpesa_access_token

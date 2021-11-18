@@ -12,17 +12,11 @@ class Delivaries(models.Model):
     beans_variety_choice= (
         ('Bush beans','Bush beans'),
         ('Climbing beans','Climbing beans'),
-        ('Ruvuninkingi','Ruvuninkingi'),   
+        ('Ruvuninkingi','Ruvuninkingi'),
         )
     beans_variety=models.CharField(max_length=200,choices= beans_variety_choice,null=True)
     kgs_of_beans= models.PositiveSmallIntegerField(null=True)
     price_per_kg=models.PositiveSmallIntegerField(null=True)
-    status_choice=(
-        ('Paid','Paid'),
-        ('Unpaid','Unpaid'),
-        ('Rejected','Rejected')
-    )
-    payment_status=models.CharField(max_length=200,choices=status_choice,null=True)
 
     @property
     def total_amount(self):

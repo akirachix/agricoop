@@ -120,9 +120,9 @@ font-size:18px ;
           <a href="{% url 'addgroup:display_group' %}">Home</a>
           <a href="{% url 'addgroup:add_group' %}">Add Group</a>
           <a href="{%url 'group_details:list' %}">Deliveries</a>
-          <a href="">Payment</a>
-          <a href="">Setting</a>
-          <a href="">LogOut</a>
+          <a href="{% url 'payments:payments' %}">Payment</a>
+          <a href="{%url 'setting_page'%}">Setting</a>
+          <a href="{% url 'login'%}">LogOut</a>
         </div>
    </div>
    <table id="table">
@@ -134,8 +134,7 @@ font-size:18px ;
             <th>Phone number</th>
             <th>Total amount</th>
             <th>Paid amount</th>
-            <th>Edit </th>
-            <th>Delete</th>
+            <th>Status</th>
         </tr>
   
         <tr>
@@ -143,17 +142,15 @@ font-size:18px ;
 <tr>
    <td>{{payment.group_name}}</td>
     <td>{{payment.phone_number}}</td>
-    
+
     {% for pay in batch %}
     <td>{{pay.total_amount}}</td>
     {% endfor%}
     <td>{{payment.amount_paid}}</td>
-    
-    <td><a href="{% url 'payments:edit' id=payment.id %}"><img src="https://icons-for-free.com/iconfiles/png/512/svg+create+edit+edit+file+office+pencil+writing+creativ+icon-1320185158722776676.png" alt="" id="image"></a></td>
-    <td><a href="{% url 'payments:delete' id=payment.id %}"><img src="https://cdn.iconscout.com/icon/premium/png-256-thumb/delete-2471204-2066711.png" alt="" id="img"></a></td>
+    <td>{{payment.status}}</td>
 </tr>
 {%endfor%}
-   
+
 </table>
 <button class="submit2"><a href="{% url 'lipa_na_mpesa' %}" class="butt">Make Payments</a></button>
   </body>

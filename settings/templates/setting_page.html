@@ -1,3 +1,5 @@
+
+{% load static %}
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -11,12 +13,13 @@
 <body>
     <div class="row my-3 p-3">
         <div class="sidebar-nav">
+          <img src="{% static 'imges/Farm to Plate.png' %}" alt="" style="width: 90px; height: 90px; margin-left: 28px; margin-bottom: 20px; border-radius: 5%;">
           <a href="{% url 'addgroup:display_group' %}">Home</a>
           <a href="{% url 'addgroup:add_group' %}">Add Group</a>
           <a href="{% url 'group_details:list' %}">Deliveries</a>
-          <a href="">Payments</a>
+          <a href="{% url 'payments:payments' %}">Payments</a>
           <a href="{%url 'setting_page'%}">Settings</a>
-          <a href="">LogOut</a>
+          <a href="{% url 'login'%}">LogOut</a>
         </div>
    </div>
 
@@ -27,7 +30,7 @@
   <a href="{%url 'privacy'%}"> <h4 id="privacy">Privacy and Security</h4></a>
   <a href="{%url 'help'%}"> <h4 id="help">Help & support</h4></a>
 </div>
-<img id="Aimg" width="20px" height="20px"  src="https://cdn-icons-png.flaticon.com/128/1077/1077114.png" alt="">
+<!-- <img id="Aimg" width="20px" height="20px"  src="https://cdn-icons-png.flaticon.com/128/1077/1077114.png" alt=""> -->
 
 
    <style>
@@ -40,7 +43,7 @@
     left: 0;
     background-color:#192E5B;
     overflow: hidden;
-    padding-top: 100px;
+    padding-top: 20px;
   }
   .sidebar-nav a{
     padding:10px 10px 10px 30px;
