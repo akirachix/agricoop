@@ -30,7 +30,7 @@ urlpatterns = [
     path("group_details/",include("group_details.urls")),
     path("payments/",include("payments.urls")),
     path('settings/', include("settings.urls")),
-    path('api/v1/', include('mpesa.urls')),
+    path('mympesa', include('mympesa.urls')),
     path('sw.js', TemplateView.as_view(template_name='sw.js', content_type='application/x-javascript'))
 
 ]
