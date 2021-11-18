@@ -17,7 +17,7 @@
             <a href="{% url 'group_details:list' %}">Deliveries</a>
             <a href="{% url 'payments:payments' %}">Payments</a>
             <a href="{%url 'setting_page'%}">Settings</a>
-            <a href="">LogOut</a>
+            <a href="{% url 'login'%}">LogOut</a>
           </div>
      </div>
     <div>
@@ -79,7 +79,7 @@
   }
   .sidebar-nav{
     height: 100%;
-    width: 230px;
+    width: 180px;
     position: fixed;
     z-index: 1;
     top: 0;
@@ -91,12 +91,13 @@
   }
  
   .sidebar-nav a{
-    padding:10px 10px 10px 30px;
+    padding:13px 13px 13px 30px;
     text-decoration: none;
-    font-size: 20px;
+    font-size: 18px;
     color: #F1F1F1;
     display: block;
     font-family: 'Nunito', sans-serif;
+    font-weight: bold;
     }
   .sidebar-nav a:hover{
     color: black;

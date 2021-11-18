@@ -7,6 +7,9 @@ class Group_list(models.Model):
         ('Iwacu group','Iwacu group'),
         ('Komera cooperative','Komera cooperative'),
         ('Ubwiyunge cooperative','Ubwiyunge cooperative'),
+        ('Green farm cooperative','Green farm cooperative'),
+        ('Uwase cooperative','Uwase cooperative'),
+
         )
     group_name=models.CharField(max_length=200,choices= group_name_choice,null=True)
     no_of_members=models.PositiveSmallIntegerField()
