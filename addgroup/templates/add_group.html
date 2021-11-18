@@ -28,6 +28,9 @@
 .reg:hover{
     background: rgba(107, 121, 150, 0.659);
           }
+.content{
+  margin-top: -18%;
+}
     button{
      background-color: #192E5B;
      width: 45%;
@@ -52,12 +55,13 @@
     padding-top: 20px;
   }
   .sidebar-nav a{
-    padding:10px 10px 10px 16px;
+    padding:13px 13px 13px 30px;
     text-decoration: none;
-    font-size: 20px;
+    font-size: 18px;
     color: #F1F1F1;
     display: block;
     font-family: 'Nunito', sans-serif;
+    font-weight: bold;
     }
   .sidebar-nav a:hover{
     color: black;
@@ -79,7 +83,7 @@
   }
   h4{
     color: black;
-    font-size: 20px;
+    font-size: 18px;
     margin-left: 20px;
     position: relative;
     bottom: -40px;
@@ -88,7 +92,7 @@
   }
   #group{
     background-color: white;
-    padding: 10px 250px;
+    padding: 8px 250px;
     text-align: right 100px;
     text-align: top;
     box-shadow: 0 0 5px black;
@@ -133,9 +137,9 @@
   display: inline-block;
   font-size: 20px;
   position: relative;
-  bottom: 240px;
+  bottom: 302px;
   cursor: pointer;
-  margin-left: 76%;
+  margin-left: 75%;
   border-radius: 50%;
   width: 2.6%;
   height: 2%;
@@ -149,9 +153,9 @@
   display: inline-block;
   font-size: 20px;
   position: relative;
-  bottom: 223px;
+  bottom: 288px;
   cursor: pointer;
-  margin-left: 76%;
+  margin-left: 75%;
   border-radius: 50%;
   width: 2.6%;
   height: 2%;
@@ -293,6 +297,7 @@ form{
   background-color: #192E5B;
   color: white;
 }
+
 @media screen and (max-width: 960px) {
   .sidebar-nav{
   width:8%;
@@ -306,7 +311,6 @@ form{
     height: 900%;
     padding: 2px 90px;
     margin-left: 17%;
-    font-size: 50%;
    }
    h3{
   margin-left:-40%;
@@ -359,7 +363,7 @@ form{
       <a href="{% url 'addgroup:add_group' %}">Add group</a>
       <a href="{%url 'group_details:list' %}">Deliveries</a>
       <a href="{% url 'payments:payments' %}">Payments</a>
-      <a href="{%url 'setting_page'%}">Setting</a>
+      <a href="{%url 'setting_page'%}">Settings</a>
       <a href="{% url 'login'%}">LogOut</a>
     </div>
 </div>
